@@ -5236,12 +5236,30 @@ body.media-modal-open {
   padding-left: 8px;
 }
 
-.case-more-list a span {
+.case-more-label {
+  min-width: 0;
+}
+
+.case-more-num {
+  margin-right: 0.45em;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-subtle);
+  transition: color 0.25s var(--ease-out);
+}
+
+.case-more-list a:hover .case-more-num {
+  color: var(--accent-bold);
+}
+
+.case-more-arrow {
+  flex: 0 0 auto;
   color: var(--text-subtle);
   transition: color 0.25s var(--ease-out), transform 0.3s var(--ease-out);
 }
 
-.case-more-list a:hover span {
+.case-more-list a:hover .case-more-arrow {
   color: var(--accent-bold);
   transform: translateX(4px);
 }

@@ -607,8 +607,7 @@ body.page-home main {
 
 .project-card:hover .project-visual--03 .project-visual-gif {
   transform: none;
-  /* Keep window shadow on hover (do not clear filter) */
-  filter: drop-shadow(0 2.1cqw 4.4cqw rgba(60, 40, 90, 0.28));
+  filter: drop-shadow(0 1.76cqw 3.91cqw rgba(60, 40, 90, 0.22));
 }
 
 .project-visual--04 {
@@ -650,6 +649,11 @@ body.page-home main {
 
 .project-card:hover .project-visual {
   transform: scale(1.03);
+}
+
+/* No hover zoom on CS3 header/preview image */
+.project-card:hover .project-visual--03 {
+  transform: none;
 }
 
 .project-visual::after {

@@ -1235,6 +1235,9 @@ body.media-modal-open {
 
 .case-hero-mockup {
   max-width: none;
+  /* Reset browser <figure> defaults so CS2/CS3 match CS1 full width */
+  margin-block: 0 clamp(32px, 5vw, 48px);
+  margin-inline: 0;
   overflow: hidden;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
@@ -1295,6 +1298,56 @@ body.media-modal-open {
   transform: translateZ(0);
 }
 
+@media (max-width: 720px) {
+  /* Fill width like CS1: match GIF aspect so contain doesn't letterbox */
+  .case-hero-mockup.case-hero-mockup--cs2 {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    aspect-ratio: 2160 / 1350;
+  }
+
+  .case-hero-mockup--cs2 .case-media-img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Keep CS2 readable on small screens */
+  body.page-case:has(.case-hero-mockup--cs2) {
+    overflow-x: clip;
+  }
+
+  body.page-case:has(.case-hero-mockup--cs2) .case-wrap {
+    overflow-x: clip;
+  }
+
+  body.page-case:has(.case-hero-mockup--cs2) .case-layout,
+  body.page-case:has(.case-hero-mockup--cs2) .case-content,
+  body.page-case:has(.case-hero-mockup--cs2) .case-block,
+  body.page-case:has(.case-hero-mockup--cs2) .case-accordion,
+  body.page-case:has(.case-hero-mockup--cs2) .case-media-img,
+  body.page-case:has(.case-hero-mockup--cs2) .case-decision-figure,
+  body.page-case:has(.case-hero-mockup--cs2) img {
+    max-width: 100%;
+  }
+
+  body.page-case:has(.case-hero-mockup--cs2) .case-accordion-summary {
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  body.page-case:has(.case-hero-mockup--cs2) .case-accordion-meta {
+    white-space: normal;
+    text-align: left;
+  }
+
+  body.page-case:has(.case-hero-mockup--cs2) pre,
+  body.page-case:has(.case-hero-mockup--cs2) table {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
 .hero-scene--video {
   background: linear-gradient(180deg, #f98db0 0%, #f69eae 45%, #f1b5b4 100%);
 }
@@ -1326,6 +1379,22 @@ body.media-modal-open {
   object-position: center;
   background: transparent;
   filter: drop-shadow(0 1.76cqw 3.91cqw rgba(60, 40, 90, 0.22));
+}
+
+@media (max-width: 720px) {
+  /* Match CS1 full content width — fill frame instead of letterboxing */
+  .case-hero-mockup.case-hero-mockup--cs3 {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    aspect-ratio: 1440 / 900;
+  }
+
+  .case-hero-mockup--cs3 .case-media-img {
+    object-fit: cover;
+    object-position: center;
+    filter: none;
+  }
 }
 
 .hero-scene--video .case-hero-video {
@@ -5216,6 +5285,23 @@ body.page-resume main.resume-page {
 
 body.page-resume .resume {
   max-width: 8.5in;
+}
+
+@media (max-width: 720px) {
+  body.page-resume main.resume-page {
+    padding-top: 28px;
+    padding-bottom: 56px;
+  }
+
+  .resume-toolbar {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .resume-download {
+    padding: 9px 14px;
+    font-size: 0.78rem;
+  }
 }
 
 

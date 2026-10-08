@@ -356,6 +356,7 @@
 /* Case study hero mockups (larger) */
 .case-hero-mockup {
   margin-bottom: clamp(32px, 5vw, 48px);
+  margin-inline: 0;
   padding: 0;
   background: var(--bg-soft);
   border: 1px solid var(--border);

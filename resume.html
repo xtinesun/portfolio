@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=copyemail1" />
+    <link rel="stylesheet" href="./styles.css?v=resumemobile1" />
     <style>
       :root {
         --ink: #171512;
@@ -572,9 +572,12 @@
       }
       @media (max-width: 720px) {
         .resume {
+          width: 100%;
           margin: 0;
           min-height: auto;
-          padding: 28px 22px 36px 28px;
+          padding: 28px 20px 36px;
+          font-size: 10pt;
+          line-height: 1.45;
           box-shadow:
             0 1px 1px rgb(23 21 18 / 0.04),
             0 12px 32px rgb(23 21 18 / 0.06);
@@ -582,16 +585,165 @@
 
         .resume .masthead {
           grid-template-columns: 1fr;
-          gap: 16px;
+          gap: 14px;
+          padding-bottom: 4px;
+        }
+
+        .resume h1 {
+          font-size: 26pt;
+          line-height: 1;
+        }
+
+        .resume .role {
+          margin: 0.12in 0 0;
+          font-size: 8pt;
+          letter-spacing: 0.12em;
         }
 
         .resume .contact {
+          align-items: flex-start;
           text-align: left;
+          padding: 0;
+          gap: 2px;
+          font-size: 9pt;
+          line-height: 1.45;
+        }
+
+        .resume .contact a {
+          white-space: normal;
+          word-break: break-word;
+        }
+
+        .resume .contact .loc {
+          font-size: 9pt;
+        }
+
+        .resume .summary {
+          max-width: none;
+          font-size: 10.5pt;
+          line-height: 1.5;
+        }
+
+        .resume .experience {
+          margin-top: 0.28in;
+        }
+
+        .resume .section-label {
+          gap: 0.12in;
+          margin-bottom: 0.14in;
+        }
+
+        .resume .section-label h2 {
+          font-size: 7.5pt;
+          letter-spacing: 0.16em;
+        }
+
+        /* Stack dates under title — avoid squeezing role + company */
+        .resume .job {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+        }
+
+        .resume .job + .job {
+          margin-top: 0.16in;
+          padding-top: 0.16in;
+        }
+
+        .resume .job-main {
+          display: contents;
+        }
+
+        .resume .job-role {
+          order: 1;
+          font-size: 10.5pt;
+          line-height: 1.3;
+        }
+
+        .resume .job-dates {
+          order: 2;
+          margin: 0.04in 0 0.02in;
+          text-align: left;
+          white-space: normal;
+          font-size: 8pt;
+          line-height: 1.3;
+        }
+
+        .resume .job-meta {
+          order: 3;
+          margin: 0 0 0.08in;
+          font-size: 8.25pt;
+          line-height: 1.35;
+        }
+
+        .resume .job-main ul {
+          order: 4;
+        }
+
+        .resume .job-main li,
+        .resume li {
+          padding-left: 0.2in;
+          margin-bottom: 0.05in;
+          font-size: 9.5pt;
+          line-height: 1.4;
+        }
+
+        .resume .job-main li::before,
+        .resume li::before {
+          width: 0.1in;
+          top: 0.55em;
+          transform: none;
         }
 
         .resume .triad {
           grid-template-columns: 1fr;
-          gap: 20px;
+          gap: 0.28in;
+          margin-top: 0.36in;
+          --triad-entry-gap: 0.14in;
+          --triad-stack-gap: 0.04in;
+          --triad-lh: 1.4;
+        }
+
+        .resume .edu-item {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+        }
+
+        .resume .edu-main {
+          display: contents;
+        }
+
+        .resume .edu-item strong {
+          order: 1;
+          font-size: 9.25pt;
+        }
+
+        .resume .edu-item .job-dates {
+          order: 2;
+          margin: 0.02in 0 0;
+          text-align: left;
+          font-size: 7.75pt;
+        }
+
+        .resume .edu-degree {
+          order: 3;
+          font-size: 9pt;
+        }
+
+        .resume .skills strong,
+        .resume .awards .award-org {
+          font-size: 7pt;
+          letter-spacing: 0.12em;
+        }
+
+        .resume .skill-list,
+        .resume .award-detail {
+          font-size: 9.25pt;
+        }
+
+        .resume .skill {
+          white-space: normal;
         }
       }
 
@@ -652,7 +804,7 @@
         <a class="brand" href="./index.html" data-page-link>Christine Noh</a>
         <nav class="header-nav" aria-label="Primary">
           <a class="nav-link" href="./resume.html" aria-current="page" data-page-link>Resume</a>
-          <a class="nav-link" href="https://www.linkedin.com/in/xtineysun" target="_blank" rel="noopener noreferrer">
+          <a class="nav-link" href="https://www.linkedin.com/in/xtinesun/" target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>
           <a class="nav-link nav-link--accent" href="mailto:xtineysun@gmail.com">Email</a>
@@ -684,7 +836,7 @@
             <a href="mailto:xtineysun@gmail.com">xtineysun@gmail.com</a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/xtineysun" target="_blank" rel="noopener noreferrer">linkedin.com/in/xtineysun</a>
+            <a href="https://www.linkedin.com/in/xtinesun/" target="_blank" rel="noopener noreferrer">linkedin.com/in/xtinesun</a>
           </li>
           <li class="loc">OC · LA · Remote</li>
         </ul>

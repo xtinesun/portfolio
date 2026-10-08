@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440" height="720" viewBox="0 0 1440 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1440" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2EBE4"/>
+      <stop offset="0.5" stop-color="#F8F6F1"/>
+      <stop offset="1" stop-color="#EDE6DC"/>
+    </linearGradient>
+    <linearGradient id="fromFill" x1="180" y1="200" x2="560" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDFBF7"/>
+      <stop offset="1" stop-color="#F0EDE6"/>
+    </linearGradient>
+    <linearGradient id="toFill" x1="880" y1="180" x2="1260" y2="540" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDFBF7"/>
+      <stop offset="1" stop-color="#F7EDE8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="22" flood-color="#1E1A16" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="720" fill="url(#bg)"/>
+  <circle cx="1160" cy="120" r="160" fill="#C95840" fill-opacity="0.05"/>
+  <circle cx="280" cy="600" r="180" fill="#6D7164" fill-opacity="0.06"/>
+
+  <!-- From -->
+  <g filter="url(#shadow)">
+    <rect x="180" y="210" width="380" height="300" rx="28" fill="url(#fromFill)" stroke="#E3DFD6" stroke-width="1.5"/>
+  </g>
+  <text x="370" y="300" text-anchor="middle" fill="#877F75" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="3">FROM</text>
+  <text x="370" y="390" text-anchor="middle" fill="#5C5952" font-family="Georgia, serif" font-size="56">Pictory</text>
+  <text x="370" y="440" text-anchor="middle" fill="#A39B92" font-family="Helvetica, Arial, sans-serif" font-size="18">Beta video vendor</text>
+
+  <!-- Arrow -->
+  <path d="M620 360 H780" stroke="#1E1C19" stroke-width="3" stroke-linecap="round"/>
+  <path d="M760 340 L800 360 L760 380" fill="none" stroke="#1E1C19" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- To -->
+  <g filter="url(#shadow)">
+    <rect x="880" y="210" width="380" height="300" rx="28" fill="url(#toFill)" stroke="#D9B0A4" stroke-width="1.5"/>
+  </g>
+  <text x="1070" y="300" text-anchor="middle" fill="#C95840" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="3">TO</text>
+  <text x="1070" y="390" text-anchor="middle" fill="#1E1C19" font-family="Georgia, serif" font-size="56">Picsart</text>
+  <text x="1070" y="440" text-anchor="middle" fill="#877F75" font-family="Helvetica, Arial, sans-serif" font-size="18">GA video vendor</text>
+</svg>

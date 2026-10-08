@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-label="Delay · varied replies · auto-like">
+  <defs>
+    <pattern id="hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+      <line x1="0" y1="0" x2="0" y2="14" stroke="#D9CFC3" stroke-width="1" opacity="0.45"/>
+    </pattern>
+  </defs>
+  <rect width="960" height="600" fill="#F7F2EC"/>
+  <rect width="960" height="600" fill="url(#hatch)" opacity="0.35"/>
+  <rect x="24" y="24" width="912" height="552" rx="16" fill="#FFFCF8" stroke="#D9CFC3" stroke-width="1.5" stroke-dasharray="7 6"/>
+  <!-- chrome bar -->
+  <rect x="24" y="24" width="912" height="44" rx="16" fill="#EFE6DC"/>
+  <rect x="24" y="52" width="912" height="16" fill="#EFE6DC"/>
+  <circle cx="52" cy="46" r="5" fill="#D9CFC3"/>
+  <circle cx="70" cy="46" r="5" fill="#D9CFC3"/>
+  <circle cx="88" cy="46" r="5" fill="#9A3F2D" opacity="0.85"/>
+  <text x="480" y="50" text-anchor="middle" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="13" font-weight="600">Delay · varied replies · auto-like</text>
+
+  <rect x="120" y="132" width="560" height="312" rx="14" fill="#FFFCF8" stroke="#D9CFC3" stroke-width="1.5"/>
+  <text x="400" y="168" text-anchor="middle" fill="#2C241C" font-family="system-ui,sans-serif" font-size="15" font-weight="600">Platform safety defaults</text>
+  <rect x="160" y="192" width="480" height="44" rx="8" fill="#EFE6DC"/>
+  <text x="180" y="219" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="13">Delay before DM</text>
+  <text x="600" y="219" text-anchor="end" fill="#9A3F2D" font-family="system-ui,sans-serif" font-size="13" font-weight="600">5–10s</text>
+  <rect x="160" y="248" width="480" height="44" rx="8" fill="#EFE6DC"/>
+  <text x="180" y="275" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="13">Varied reply messages</text>
+  <text x="600" y="275" text-anchor="end" fill="#9A3F2D" font-family="system-ui,sans-serif" font-size="13" font-weight="600">Up to 10</text>
+  <rect x="160" y="304" width="480" height="44" rx="8" fill="#EFE6DC"/>
+  <text x="180" y="331" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="13">Auto-like comment</text>
+  <text x="600" y="331" text-anchor="end" fill="#9A3F2D" font-family="system-ui,sans-serif" font-size="13" font-weight="600">On</text>
+
+  <rect x="320" y="522" width="320" height="36" rx="18" fill="#2C241C" opacity="0.88"/>
+  <text x="480" y="546" text-anchor="middle" fill="#FFFCF8" font-family="system-ui,sans-serif" font-size="13" font-weight="600">Placeholder — replace with screenshot or GIF</text>
+</svg>

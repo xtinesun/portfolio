@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Automations 2.0 · Visual Editor">
+  <defs>
+    <pattern id="hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+      <line x1="0" y1="0" x2="0" y2="14" stroke="#D9CFC3" stroke-width="1" opacity="0.45"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="720" fill="#F7F2EC"/>
+  <rect width="1280" height="720" fill="url(#hatch)" opacity="0.35"/>
+  <rect x="24" y="24" width="1232" height="672" rx="16" fill="#FFFCF8" stroke="#D9CFC3" stroke-width="1.5" stroke-dasharray="7 6"/>
+  <!-- chrome bar -->
+  <rect x="24" y="24" width="1232" height="44" rx="16" fill="#EFE6DC"/>
+  <rect x="24" y="52" width="1232" height="16" fill="#EFE6DC"/>
+  <circle cx="52" cy="46" r="5" fill="#D9CFC3"/>
+  <circle cx="70" cy="46" r="5" fill="#D9CFC3"/>
+  <circle cx="88" cy="46" r="5" fill="#9A3F2D" opacity="0.85"/>
+  <text x="640" y="50" text-anchor="middle" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="13" font-weight="600">Automations 2.0 · Visual Editor</text>
+
+  <rect x="72" y="202" width="140" height="64" rx="10" fill="#FFFFFF" stroke="#D9CFC3" stroke-width="1.5"/>
+  <text x="142" y="230" text-anchor="middle" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Trigger</text>
+  <text x="142" y="248" text-anchor="middle" fill="#C4B6A8" font-family="system-ui,sans-serif" font-size="11">Instagram comment</text>
+  <path d="M212 234 H268" stroke="#C4B6A8" stroke-width="2" stroke-dasharray="4 4"/>
+  <rect x="268" y="158" width="140" height="64" rx="10" fill="#FFFFFF" stroke="#D9CFC3" stroke-width="1.5"/>
+  <text x="338" y="186" text-anchor="middle" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Delay</text>
+  <text x="338" y="204" text-anchor="middle" fill="#C4B6A8" font-family="system-ui,sans-serif" font-size="11">5–10 seconds</text>
+  <path d="M408 190 H464" stroke="#C4B6A8" stroke-width="2" stroke-dasharray="4 4"/>
+  <rect x="464" y="202" width="140" height="64" rx="10" fill="#FFFFFF" stroke="#9A3F2D" stroke-width="1.75"/>
+  <text x="534" y="230" text-anchor="middle" fill="#9A3F2D" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Send DM</text>
+  <text x="534" y="248" text-anchor="middle" fill="#C4B6A8" font-family="system-ui,sans-serif" font-size="11">+ Kajabi link</text>
+  <path d="M338 222 V374 H464" stroke="#C4B6A8" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
+  <rect x="464" y="346" width="140" height="64" rx="10" fill="#FFFFFF" stroke="#D9CFC3" stroke-width="1.5"/>
+  <text x="534" y="374" text-anchor="middle" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Email</text>
+  <text x="534" y="392" text-anchor="middle" fill="#C4B6A8" font-family="system-ui,sans-serif" font-size="11">Nurture sequence</text>
+  <path d="M604 234 H660" stroke="#C4B6A8" stroke-width="2" stroke-dasharray="4 4"/>
+  <rect x="660" y="202" width="140" height="64" rx="10" fill="#FFFFFF" stroke="#D9CFC3" stroke-width="1.5"/>
+  <text x="730" y="230" text-anchor="middle" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Tag contact</text>
+  <text x="730" y="248" text-anchor="middle" fill="#C4B6A8" font-family="system-ui,sans-serif" font-size="11">Lead · warm</text>
+
+  <rect x="480" y="642" width="320" height="36" rx="18" fill="#2C241C" opacity="0.88"/>
+  <text x="640" y="666" text-anchor="middle" fill="#FFFCF8" font-family="system-ui,sans-serif" font-size="13" font-weight="600">Placeholder — replace with image or GIF</text>
+</svg>

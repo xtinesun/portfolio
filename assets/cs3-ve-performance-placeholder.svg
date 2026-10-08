@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Visual Editor · performance data">
+  <defs>
+    <pattern id="hatch-perf" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+      <line x1="0" y1="0" x2="0" y2="14" stroke="#D9CFC3" stroke-width="1" opacity="0.45"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="720" fill="#F7F2EC"/>
+  <rect width="1280" height="720" fill="url(#hatch-perf)" opacity="0.35"/>
+  <rect x="24" y="24" width="1232" height="672" rx="16" fill="#FFFCF8" stroke="#D9CFC3" stroke-width="1.5" stroke-dasharray="7 6"/>
+  <rect x="24" y="24" width="1232" height="44" rx="16" fill="#EFE6DC"/>
+  <rect x="24" y="52" width="1232" height="16" fill="#EFE6DC"/>
+  <circle cx="52" cy="46" r="5" fill="#D9CFC3"/>
+  <circle cx="70" cy="46" r="5" fill="#D9CFC3"/>
+  <circle cx="88" cy="46" r="5" fill="#9A3F2D" opacity="0.85"/>
+  <text x="640" y="50" text-anchor="middle" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="13" font-weight="600">Visual Editor · how each step performs</text>
+
+  <!-- canvas nodes with metric chips -->
+  <rect x="80" y="160" width="200" height="88" rx="12" fill="#FFFFFF" stroke="#D9CFC3" stroke-width="1.5"/>
+  <text x="180" y="192" text-anchor="middle" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="13" font-weight="600">Trigger</text>
+  <text x="180" y="214" text-anchor="middle" fill="#C4B6A8" font-family="system-ui,sans-serif" font-size="11">Form submitted</text>
+  <rect x="108" y="224" width="144" height="14" rx="7" fill="#EFE6DC"/>
+  <text x="180" y="235" text-anchor="middle" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="9" font-weight="600">1,284 runs</text>
+
+  <path d="M280 204 H340" stroke="#C4B6A8" stroke-width="2" stroke-dasharray="4 4"/>
+
+  <rect x="340" y="160" width="200" height="88" rx="12" fill="#FFFFFF" stroke="#9A3F2D" stroke-width="1.75"/>
+  <text x="440" y="192" text-anchor="middle" fill="#9A3F2D" font-family="system-ui,sans-serif" font-size="13" font-weight="600">Send email</text>
+  <text x="440" y="214" text-anchor="middle" fill="#C4B6A8" font-family="system-ui,sans-serif" font-size="11">Welcome series</text>
+  <rect x="368" y="224" width="144" height="14" rx="7" fill="#F3E4DC"/>
+  <text x="440" y="235" text-anchor="middle" fill="#9A3F2D" font-family="system-ui,sans-serif" font-size="9" font-weight="600">62% open · 18% click</text>
+
+  <path d="M540 204 H600" stroke="#C4B6A8" stroke-width="2" stroke-dasharray="4 4"/>
+
+  <rect x="600" y="160" width="200" height="88" rx="12" fill="#FFFFFF" stroke="#D9CFC3" stroke-width="1.5"/>
+  <text x="700" y="192" text-anchor="middle" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="13" font-weight="600">Send SMS</text>
+  <text x="700" y="214" text-anchor="middle" fill="#C4B6A8" font-family="system-ui,sans-serif" font-size="11">Offer reminder</text>
+  <rect x="628" y="224" width="144" height="14" rx="7" fill="#EFE6DC"/>
+  <text x="700" y="235" text-anchor="middle" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="9" font-weight="600">941 delivered</text>
+
+  <path d="M800 204 H860" stroke="#C4B6A8" stroke-width="2" stroke-dasharray="4 4"/>
+
+  <rect x="860" y="160" width="200" height="88" rx="12" fill="#FFFFFF" stroke="#D9CFC3" stroke-width="1.5"/>
+  <text x="960" y="192" text-anchor="middle" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="13" font-weight="600">Grant offer</text>
+  <text x="960" y="214" text-anchor="middle" fill="#C4B6A8" font-family="system-ui,sans-serif" font-size="11">Freebie unlock</text>
+  <rect x="888" y="224" width="144" height="14" rx="7" fill="#EFE6DC"/>
+  <text x="960" y="235" text-anchor="middle" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="9" font-weight="600">214 conversions</text>
+
+  <!-- side insight panel -->
+  <rect x="80" y="320" width="980" height="240" rx="14" fill="#FFFFFF" stroke="#D9CFC3" stroke-width="1.5"/>
+  <text x="112" y="358" fill="#2C241C" font-family="system-ui,sans-serif" font-size="15" font-weight="700">Step performance</text>
+  <text x="112" y="382" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="12">See how each trigger and action runs — opens, clicks, delivers, conversions</text>
+
+  <rect x="112" y="410" width="200" height="110" rx="10" fill="#F7F2EC"/>
+  <text x="212" y="448" text-anchor="middle" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Entered</text>
+  <text x="212" y="488" text-anchor="middle" fill="#2C241C" font-family="system-ui,sans-serif" font-size="28" font-weight="700">1,284</text>
+
+  <rect x="332" y="410" width="200" height="110" rx="10" fill="#F7F2EC"/>
+  <text x="432" y="448" text-anchor="middle" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Completed</text>
+  <text x="432" y="488" text-anchor="middle" fill="#2C241C" font-family="system-ui,sans-serif" font-size="28" font-weight="700">941</text>
+
+  <rect x="552" y="410" width="200" height="110" rx="10" fill="#F7F2EC"/>
+  <text x="652" y="448" text-anchor="middle" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Open rate</text>
+  <text x="652" y="488" text-anchor="middle" fill="#9A3F2D" font-family="system-ui,sans-serif" font-size="28" font-weight="700">62%</text>
+
+  <rect x="772" y="410" width="200" height="110" rx="10" fill="#F7F2EC"/>
+  <text x="872" y="448" text-anchor="middle" fill="#8A7E72" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Click rate</text>
+  <text x="872" y="488" text-anchor="middle" fill="#2C241C" font-family="system-ui,sans-serif" font-size="28" font-weight="700">18%</text>
+
+  <rect x="400" y="642" width="480" height="36" rx="18" fill="#2C241C" opacity="0.88"/>
+  <text x="640" y="666" text-anchor="middle" fill="#FFFCF8" font-family="system-ui,sans-serif" font-size="13" font-weight="600">Placeholder — drop screenshot as assets/cs3-ve-performance.png</text>
+</svg>

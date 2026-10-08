@@ -1,0 +1,18 @@
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+
+# Local research / source dumps (not needed for the live site)
+_cs2_docs/
+_cs3_docs/
+_cs4_docs/
+_wbr_extract/
+
+# Temp / build artifacts
+assets/_compare/
+assets/_resume*
+assets/_triad*
+assets/_print*
+_print_resume.html
+*.tmp

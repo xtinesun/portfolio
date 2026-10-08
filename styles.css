@@ -1517,6 +1517,21 @@ body.media-modal-open {
   overflow: hidden;
 }
 
+@media (max-width: 720px) {
+  /* Match CS2 mobile hero frame size */
+  body.page-case .case-hero-mockup:has(.hero-scene) {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    aspect-ratio: 2160 / 1350;
+  }
+
+  body.page-case .case-hero-mockup .hero-scene {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+}
+
 /* Sized to match the original 1024×470 reference: window 309×251 */
 .hero-stage {
   position: absolute;

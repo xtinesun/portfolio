@@ -570,9 +570,6 @@ body.page-home main {
     linear-gradient(165deg, transparent 45%, rgba(180, 60, 100, 0.16) 100%);
 }
 
-.project-card:hover .project-visual--02 .project-visual-gif {
-  transform: none;
-}
 .project-visual--03 {
   /* Full PNG behind transparent UI GIF — avoids GIF 256-color banding/streaks */
   background-color: #74d6d2;
@@ -594,7 +591,6 @@ body.page-home main {
   background: transparent;
   /* Match CS1 .hero-window: 0 1.76cqw 3.91cqw rgba(60, 40, 90, 0.22) */
   filter: drop-shadow(0 1.76cqw 3.91cqw rgba(60, 40, 90, 0.22));
-  transition: filter 0.55s var(--ease-out);
 }
 
 /* Soft wash overlay tuned to the cyan→mint gradient */
@@ -605,55 +601,19 @@ body.page-home main {
     linear-gradient(165deg, transparent 45%, rgba(40, 140, 160, 0.12) 100%);
 }
 
-.project-card:hover .project-visual--03 .project-visual-gif {
-  transform: none;
-  filter: drop-shadow(0 1.76cqw 3.91cqw rgba(60, 40, 90, 0.22));
-}
-
-.project-visual--04 {
-  /* Same cyan→mint wash as CS3 */
-  background-color: #74d6d2;
-  background-image: url("./assets/cs3-gradient-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  container-type: inline-size;
-}
-
-.project-visual--04 .project-visual-gif {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-  background: transparent;
-  /* CS1-smooth shadow (GIF can't do soft alpha well) */
-  filter: drop-shadow(0 1.76cqw 3.91cqw rgba(60, 40, 90, 0.22));
-  transition: filter 0.55s var(--ease-out);
-}
-
-/* Soft wash overlay tuned to the cyan→mint gradient (match CS3) */
-.project-visual--04::after {
-  display: block;
-  background:
-    radial-gradient(90% 80% at 50% 40%, rgba(255, 255, 255, 0.18), transparent 62%),
-    linear-gradient(165deg, transparent 45%, rgba(40, 140, 160, 0.12) 100%);
-}
-
-.project-card:hover .project-visual--04 .project-visual-gif {
-  transform: none;
-  filter: drop-shadow(0 2.1cqw 4.4cqw rgba(60, 40, 90, 0.28));
-}
-
 .project-card:hover .project-visual {
   transform: scale(1.03);
 }
 
-/* No hover zoom on CS3 header/preview image */
+/* No hover motion/overlay on CS2 + CS3 header images */
+.project-card:hover .project-visual--02,
 .project-card:hover .project-visual--03 {
   transform: none;
+}
+
+.project-card:hover .project-visual--02::after,
+.project-card:hover .project-visual--03::after {
+  opacity: 1;
 }
 
 .project-visual::after {
@@ -668,6 +628,18 @@ body.page-home main {
 }
 
 .project-card:hover .project-visual::after {
+  opacity: 1;
+}
+
+/* CS2/CS3: keep wash static — no hover fade or zoom on the header image */
+.project-visual.project-visual--02::after,
+.project-visual.project-visual--03::after {
+  opacity: 1;
+  transition: none;
+}
+
+.project-card:hover .project-visual.project-visual--02::after,
+.project-card:hover .project-visual.project-visual--03::after {
   opacity: 1;
 }
 
@@ -1035,26 +1007,18 @@ body.media-modal-open {
 }
 
 .case-exec {
-  position: relative;
   max-width: none;
-  margin-top: clamp(24px, 4vw, 40px);
-  padding: clamp(22px, 3vw, 30px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background:
-    radial-gradient(130% 150% at 100% 0%, var(--accent-bold-glow), transparent 55%),
-    radial-gradient(120% 140% at 0% 100%, var(--accent-glow), transparent 50%),
-    var(--bg-soft);
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
+  margin-top: clamp(20px, 3vw, 28px);
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: none;
+  box-shadow: none;
+  overflow: visible;
 }
 
 .case-exec::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-bold), var(--accent) 90%);
+  content: none;
 }
 
 .case-exec-head {
@@ -1120,11 +1084,91 @@ body.media-modal-open {
   align-items: stretch;
 }
 
-.case-exec-meta {
-  margin-bottom: 12px;
+.case-exec-detail--story {
+  grid-column: 1 / -1;
 }
 
-.case-exec-item,
+.case-exec-detail--story dd {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.case-impact-closure {
+  margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+}
+
+.case-impact-closure-label {
+  margin: 0 0 10px;
+  font-family: var(--font-sans);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent-bold);
+}
+
+.case-impact-closure ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.case-impact-closure li {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.case-impact-closure li strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.case-decision-vignette {
+  margin: 14px 0 0;
+  padding: 14px 16px;
+  border-left: 3px solid var(--accent-bold);
+  background: color-mix(in srgb, var(--accent-bold) 6%, var(--bg-elevated));
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.case-decision-vignette strong {
+  color: var(--text);
+}
+
+.case-exec-meta {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 0.85fr 0.85fr 1.3fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.case-exec-item {
+  position: static;
+  padding: 0 0 0 24px;
+  border: none;
+  border-left: 1px solid var(--border);
+  border-radius: 0;
+  background: none;
+  transition: none;
+}
+
+.case-exec-item:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+
 .case-exec-detail {
   position: relative;
   padding: 14px 16px;
@@ -1137,14 +1181,23 @@ body.media-modal-open {
     box-shadow 0.4s var(--ease-out);
 }
 
-.case-exec-item:hover,
 .case-exec-detail:hover {
   transform: translateY(-3px);
   border-color: var(--accent-bold-border);
   box-shadow: var(--shadow-sm);
 }
 
-.case-exec-item dt,
+.case-exec-item dt {
+  display: block;
+  margin: 0 0 4px;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
 .case-exec-detail dt {
   display: flex;
   align-items: center;
@@ -1158,7 +1211,10 @@ body.media-modal-open {
   color: var(--text-subtle);
 }
 
-.case-exec-item dt::before,
+.case-exec-item dt::before {
+  content: none;
+}
+
 .case-exec-detail dt::before {
   content: "";
   width: 7px;
@@ -1169,7 +1225,6 @@ body.media-modal-open {
   transition: transform 0.4s var(--ease-spring);
 }
 
-.case-exec-item:hover dt::before,
 .case-exec-detail:hover dt::before {
   transform: rotate(135deg);
 }
@@ -1177,9 +1232,9 @@ body.media-modal-open {
 .case-exec-item dd {
   margin: 0;
   font-family: var(--font-sans);
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.4;
+  font-size: 0.92rem;
+  font-weight: 550;
+  line-height: 1.5;
   color: var(--text);
 }
 
@@ -1194,6 +1249,31 @@ body.media-modal-open {
 .case-exec-detail dd strong {
   color: var(--accent-bold);
   font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .case-exec {
+    padding: 14px 0;
+  }
+
+  .case-exec-meta {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .case-exec-item {
+    padding-left: 0;
+    border-left: none;
+    padding-top: 12px;
+    margin-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  .case-exec-item:first-child {
+    padding-top: 0;
+    margin-top: 0;
+    border-top: none;
+  }
 }
 
 .case-exec-list {
@@ -1262,15 +1342,6 @@ body.media-modal-open {
 
 .case-hero-mockup--cs2.reveal.is-visible {
   transform: translateY(0) scale(1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .case-hero-mockup--cs2.is-visible:hover {
-    transform: translateY(-4px);
-    box-shadow:
-      0 18px 40px rgba(40, 20, 35, 0.14),
-      0 4px 12px rgba(40, 20, 35, 0.06);
-  }
 }
 
 .case-hero-mockup.case-hero-mockup--cs2 {
@@ -1499,8 +1570,7 @@ body.media-modal-open {
 
 @media (prefers-reduced-motion: reduce) {
   .case-hero-mockup--cs2.reveal,
-  .case-hero-mockup--cs2.reveal.is-visible,
-  .case-hero-mockup--cs2.is-visible:hover {
+  .case-hero-mockup--cs2.reveal.is-visible {
     transition: none;
     transform: none;
   }
@@ -1665,10 +1735,6 @@ body.media-modal-open {
     transform: translate(-50%, -50%);
   }
 
-  .project-card:hover .project-visual--02 .project-visual-gif {
-    transform: none;
-    filter: none;
-  }
 }
 
 .case-figure {

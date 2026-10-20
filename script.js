@@ -237,41 +237,39 @@ document.querySelectorAll("[data-page-link]").forEach((link) => {
   });
 });
 
-/** Force file download to disk (browsers often open PDFs inline otherwise). */
+/**
+ * Force the resume PDF to save to disk instead of opening inline.
+ * The PDF is prefetched as a blob in the background; on click we swap the
+ * link to the blob URL *synchronously* (no async work after the click, which
+ * Safari can block) and let the native `download` attribute do the saving.
+ * If the blob isn't ready, the same-origin `download` attribute still saves
+ * the file directly — either path ends in a download, never a new tab.
+ */
 document.querySelectorAll("a.resume-download, a[data-download-file]").forEach((link) => {
-  link.addEventListener("click", async (event) => {
-    const href = link.getAttribute("href");
-    if (!href) return;
+  const href = link.getAttribute("href");
+  if (!href) return;
 
-    event.preventDefault();
-    const filename =
-      link.getAttribute("download") ||
-      href.split("/").pop()?.split("?")[0] ||
-      "download";
-
+  let blobUrl = null;
+  const prefetch = async () => {
+    if (blobUrl) return;
     try {
       const response = await fetch(href, { cache: "no-store" });
-      if (!response.ok) throw new Error(`Download failed (${response.status})`);
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
-      const temp = document.createElement("a");
-      temp.href = url;
-      temp.download = filename;
-      temp.style.display = "none";
-      document.body.appendChild(temp);
-      temp.click();
-      temp.remove();
-      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+      if (!response.ok) return;
+      blobUrl = URL.createObjectURL(await response.blob());
     } catch {
-      // Fallback if fetch is blocked (e.g. some file:// contexts)
-      const temp = document.createElement("a");
-      temp.href = href;
-      temp.download = filename;
-      temp.rel = "noopener";
-      document.body.appendChild(temp);
-      temp.click();
-      temp.remove();
+      // file:// and offline contexts: native download attribute still applies.
     }
+  };
+
+  link.addEventListener("pointerenter", prefetch);
+  link.addEventListener("focus", prefetch);
+  window.setTimeout(prefetch, 600);
+  window.addEventListener("pagehide", () => {
+    if (blobUrl) URL.revokeObjectURL(blobUrl);
+  });
+
+  link.addEventListener("click", () => {
+    if (blobUrl) link.href = blobUrl;
   });
 });
 

@@ -591,6 +591,14 @@ body.page-home main {
   background: transparent;
   /* Match CS1 .hero-window: 0 1.76cqw 3.91cqw rgba(60, 40, 90, 0.22) */
   filter: drop-shadow(0 1.76cqw 3.91cqw rgba(60, 40, 90, 0.22));
+  transition: filter 0.55s var(--ease-out);
+}
+
+/* Match CS1 .hero-window hover shadow */
+.project-card:hover .project-visual--03 .project-visual-gif {
+  filter:
+    drop-shadow(0 2.2cqw 4.4cqw rgba(60, 40, 90, 0.28))
+    drop-shadow(0 0.4cqw 1.2cqw rgba(255, 255, 255, 0.35));
 }
 
 /* Soft wash overlay tuned to the cyan→mint gradient */
@@ -605,17 +613,6 @@ body.page-home main {
   transform: scale(1.03);
 }
 
-/* No hover motion/overlay on CS2 + CS3 header images */
-.project-card:hover .project-visual--02,
-.project-card:hover .project-visual--03 {
-  transform: none;
-}
-
-.project-card:hover .project-visual--02::after,
-.project-card:hover .project-visual--03::after {
-  opacity: 1;
-}
-
 .project-visual::after {
   content: "";
   position: absolute;
@@ -628,18 +625,6 @@ body.page-home main {
 }
 
 .project-card:hover .project-visual::after {
-  opacity: 1;
-}
-
-/* CS2/CS3: keep wash static — no hover fade or zoom on the header image */
-.project-visual.project-visual--02::after,
-.project-visual.project-visual--03::after {
-  opacity: 1;
-  transition: none;
-}
-
-.project-card:hover .project-visual.project-visual--02::after,
-.project-card:hover .project-visual.project-visual--03::after {
   opacity: 1;
 }
 
@@ -693,6 +678,7 @@ body.page-home main {
   font-weight: 500;
   line-height: 1.35;
   letter-spacing: -0.02em;
+  text-wrap: balance;
   color: var(--text);
   transition: color 0.25s var(--ease-out);
 }

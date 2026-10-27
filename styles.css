@@ -678,7 +678,7 @@ body.page-home main {
   font-weight: 500;
   line-height: 1.35;
   letter-spacing: -0.02em;
-  text-wrap: balance;
+  text-wrap: pretty;
   color: var(--text);
   transition: color 0.25s var(--ease-out);
 }

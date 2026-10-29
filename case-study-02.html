@@ -105,7 +105,7 @@
             <h2>My role &amp; constraints</h2>
             <p><strong>Lead Product Designer</strong> on Email A/B with 1 designer, 1 PM, and 2 eng.</p>
             <p><strong>Owned:</strong> end-to-end UX, competitive review of 8 email tools, testing and interviews, and A/B patterns later reused for landing pages.</p>
-            <p><strong>Co-led:</strong> scope with PM and eng for <strong>one-off</strong> and <strong>automation</strong> email.</p>
+            <p><strong>Co-led:</strong> scope with PM and eng for <strong>broadcast</strong> and <strong>automation</strong> email.</p>
             <p><strong>Constraint:</strong> ship on the existing editor; a fuller redesign stayed a separate track (<a href="#decision-4">Decision 04</a>).</p>
           </section>
 
@@ -237,47 +237,31 @@
 
           <section class="case-block reveal" id="insights" data-reveal data-delay="1" data-section>
             <h2>Insights</h2>
-            <p>This came from the <strong>Messaging &amp; CRM strategy</strong> I co-authored (including risks we planned for), a <strong>survey about tools creators use outside Kajabi</strong>, <strong>creator interviews</strong>, and a <strong>review of A/B in 8 email tools</strong>.</p>
+            <p>This came from the <strong>Messaging &amp; CRM strategy</strong> I co-authored, a <strong>survey about tools creators use outside Kajabi</strong>, <strong>creator interviews</strong>, and a <strong>review of A/B in 8 email tools</strong>.</p>
 
             <ol class="case-research">
               <li class="case-research-item" id="insight-1">
-                <p class="case-research-meta">01 · Outside-tools survey · Messaging &amp; CRM appendix</p>
-                <h3>Creators expected A/B testing — and Kajabi still didn’t have it</h3>
+                <h3><span class="case-research-num">01</span>Creators expected A/B testing — and Kajabi still didn’t have it</h3>
                 <p class="case-research-finding"><strong>84%</strong> of creators who saw the email category expected A/B testing from Kajabi. <strong>29%</strong> already paid other tools (~<strong>$187/mo</strong>) for stronger email features; only <strong>32%</strong> called A/B their “most important” feature on those tools — so the real gap was catching up inside Kajabi and earning trust, not building a niche power-user feature.</p>
-                <p class="case-research-so"><span>Led to</span> <a href="#decision-2">Decision 02</a> — let creators test subject, preview, or body as a normal feature, not subject-line-only behind a paid add-on.</p>
               </li>
               <li class="case-research-item" id="insight-2">
-                <p class="case-research-meta">02 · Strategy risks · creator interviews</p>
-                <h3>Small lists can’t produce statistically confident winners</h3>
+                <h3><span class="case-research-num">02</span>Small lists can’t produce statistically confident winners</h3>
                 <p class="case-research-finding">Most creators don’t have enough people on their list for a quick, sure winner. Numbers can also disagree (more opens, fewer clicks). Interviews backed a simple job: show what got more engagement — not a stats class.</p>
-                <p class="case-research-so"><span>Led to</span> <a href="#decision-1">Decision 01</a> — creators pick how a winner is chosen, plus a backup if A and B tie. Same honest approach we saw in the Braze review.</p>
               </li>
               <li class="case-research-item" id="insight-3">
-                <p class="case-research-meta">03 · Strategy risks · low trust in analytics</p>
-                <h3>Ambiguous results need creator control, not auto-answers</h3>
+                <h3><span class="case-research-num">03</span>Ambiguous results need creator control, not auto-answers</h3>
                 <p class="case-research-finding">Strategy flagged confusing open-vs-click outcomes and low trust in Kajabi analytics. Short tests also favor people who open early — easy to hide behind a confident “winner” label.</p>
-                <p class="case-research-so"><span>Led to</span> <a href="#decision-3">Decision 03</a> — safe defaults plus planned in-product tips (what the time window measured; don’t overclaim). See <a href="#solution">What we built</a> · Test options.</p>
               </li>
               <li class="case-research-item" id="insight-4">
-                <p class="case-research-meta">04 · Early MVP brief → strategy / competitive review</p>
-                <h3>Creators wanted full tests, not subject-line-only</h3>
+                <h3><span class="case-research-num">04</span>Creators wanted full tests, not subject-line-only</h3>
                 <p class="case-research-finding">The first MVP brief limited v1 to <strong>subject + preheader</strong>, two versions, and manually sending the winner to everyone else. Strategy and the competitive review pushed further: creators already paid elsewhere to test body/preview, and subject-only wouldn’t close the gap people expected.</p>
-                <p class="case-research-so"><span>Led to</span> <a href="#decision-2">Decision 02</a> — v1 can vary subject, preview, <em>or</em> body; holdout + backup stay; auto-scheduling the winner moves to a later phase.</p>
               </li>
               <li class="case-research-item" id="insight-5">
-                <p class="case-research-meta">05 · Eng constraints · strategy timing</p>
-                <h3>Waiting on an editor rebuild would have left the gap open</h3>
+                <h3><span class="case-research-num">05</span>Waiting on an editor rebuild would have left the gap open</h3>
                 <p class="case-research-finding">The email editor was old and fragile, and a redesign looked like a multi-quarter project. Waiting on that rebuild would have left the 84%-expected A/B gap open longer.</p>
-                <p class="case-research-so"><span>Led to</span> <a href="#decision-4">Decision 04</a> — ship A/B on the compose surface we already had; scope the fuller editor redesign as a separate track.</p>
               </li>
             </ol>
 
-            <p class="case-research-bridge">Those findings set the product direction before polished screens — then the experience had to show that honesty in the UI, not only in the doc.</p>
-
-            <div class="case-callout" style="margin-top:1.5rem;padding:1.15rem 1.25rem;border-left:3px solid var(--border, #e4e3de);background:var(--surface-2, rgba(0,0,0,0.03))">
-              <p class="case-impact-label" style="margin:0 0 0.5rem">How v1 scope changed</p>
-              <p style="margin:0"><strong>First brief:</strong> subject + preheader only; creator manually sends the winner to the rest of the list.<br /><strong>What shipped (v1 → v2):</strong> subject, preview, or body; creators set the win rule, duration, and backup; clear compare, no overclaim — then auto-schedule the winner to the rest of the list so creators don’t babysit the report.</p>
-            </div>
           </section>
 
           <section class="case-block case-block--accordion reveal" id="research" data-reveal data-delay="1" data-section>
@@ -295,59 +279,23 @@
               <li><strong>Honesty over a confident wrong answer</strong> — Braze shows when results aren’t decisive and still lets you proceed; creators set metric + fallback (<a href="#decision-1">Decision 01</a>).</li>
             </ul>
 
-            <aside class="case-segments case-segments--page-bg" aria-label="Full teardown notes" style="margin-top:1.25rem">
-              <details class="case-accordion case-segments-accordion">
-                <summary class="case-accordion-summary">
-                  <span class="case-accordion-title">Full teardown notes</span>
-                  <span class="case-accordion-meta">8 email service providers</span>
-                  <span class="case-accordion-icon" aria-hidden="true"></span>
-                </summary>
-                <div class="case-accordion-body">
-            <p>Detail from the teardown — what to borrow, what to avoid, and where Kajabi could win for smaller lists:</p>
-
-            <ol class="case-research">
-              <li class="case-research-item">
-                <p class="case-research-meta">List size &amp; confidence</p>
-                <h3>Most “serious” A/B assumes big lists</h3>
-                <p class="case-research-finding">Help centers push large audiences and short windows — open rates look worse than they are if you don’t explain the window.</p>
-                <p class="case-research-so"><span>Implication</span> Don't gate on list size. Do educate on what the window can prove.</p>
-              </li>
-              <li class="case-research-item">
-                <p class="case-research-meta">What can be tested</p>
-                <h3>Subject-only is table stakes</h3>
-                <p class="case-research-finding">Lower plans often lock to subject-only; deeper tools put body/preview behind paid tiers creators already buy elsewhere (~$187/mo).</p>
-                <p class="case-research-so"><span>Implication</span> Ship subject <em>or</em> preview <em>or</em> body in v1, at no add-on cost.</p>
-              </li>
-              <li class="case-research-item">
-                <p class="case-research-meta">Winner &amp; results UX</p>
-                <h3>Honesty beats a confident wrong answer</h3>
-                <p class="case-research-finding">Braze shows non-significance, lets you proceed, and keeps updating after a “winner” — early leaders can lose later.</p>
-                <p class="case-research-so"><span>Implication</span> Creators set metric + fallback; system applies after the window (see <a href="#decision-1">Decision 01</a>).</p>
-              </li>
-              <li class="case-research-item">
-                <p class="case-research-meta">Backlog from teardown</p>
-                <h3>Explainers and idea prompts</h3>
-                <p class="case-research-finding">Teardown backlog: short-window explainers and later coaching prompts — after the core loop is trusted.</p>
-                <p class="case-research-so"><span>Implication</span> v1 = trustworthy loop; coaching features follow.</p>
-              </li>
-            </ol>
-                </div>
-              </details>
-            </aside>
+            <p class="case-impact-label" style="margin-top:1.5rem">Full teardown notes</p>
+            <ul class="case-constraints">
+              <li><strong>Most “serious” A/B assumes big lists</strong> — help centers push large audiences and short windows, and open rates look worse than they are if you don’t explain the window. Don’t gate on list size; do educate on what the window can prove.</li>
+              <li><strong>Subject-only is table stakes</strong> — lower plans often lock to subject-only; deeper tools put body/preview behind paid tiers creators already buy elsewhere (~$187/mo). Ship subject <em>or</em> preview <em>or</em> body in v1, at no add-on cost.</li>
+              <li><strong>Honesty beats a confident wrong answer</strong> — Braze shows non-significance, lets you proceed, and keeps updating after a “winner” — early leaders can lose later. Creators set metric + fallback; system applies after the window (see <a href="#decision-1">Decision 01</a>).</li>
+              <li><strong>Explainers and idea prompts</strong> — short-window explainers and later coaching prompts, after the core loop is trusted. V1 = trustworthy loop; coaching features follow.</li>
+            </ul>
               </div>
             </details>
           </section>
 
           <section class="case-block case-block--decisions reveal" id="decisions" data-reveal data-section>
             <h2>Decisions</h2>
-            <p class="case-decisions-intro">Four product calls that answer the problem above — without copying how big email tools do A/B.</p>
-
             <div class="case-decisions-list">
               <article class="case-decision" id="decision-1" aria-labelledby="decision-1-title">
                 <header class="case-decision-header">
-                  <p class="case-decision-index"><span class="case-decision-num">01</span><span class="case-decision-phase">Model</span></p>
-                  <h3 id="decision-1-title">Creators define winning. No fake significance.</h3>
-                  <p class="case-decision-meta"><span>Rejected</span> Auto-pick by statistical significance · fixed default metric</p>
+                  <h3 id="decision-1-title"><span class="case-decision-num">01</span>Creators define winning. No fake significance.</h3>
                 </header>
                 <div class="case-decision-body">
                   <p><strong>Call:</strong> Creators set the winning metric (open or click), test duration, and fallback <em>before</em> the test starts. After the window, the higher metric wins and sends to the holdout. If A and B tie, the pre-chosen fallback becomes the winner automatically — same winner UI, no separate “inconclusive” badge.</p>
@@ -358,12 +306,10 @@
 
               <article class="case-decision" id="decision-2" aria-labelledby="decision-2-title">
                 <header class="case-decision-header">
-                  <p class="case-decision-index"><span class="case-decision-num">02</span><span class="case-decision-phase">Wedge</span></p>
-                  <h3 id="decision-2-title">Subject, preview, or body in v1. No add-on tax.</h3>
-                  <p class="case-decision-meta"><span>Rejected</span> Subject-line-only v1 (ConvertKit / Beehiiv-shaped)</p>
+                  <h3 id="decision-2-title"><span class="case-decision-num">02</span>Subject, preview, or body in v1. No add-on tax.</h3>
                 </header>
                 <div class="case-decision-body">
-                  <p><strong>Call:</strong> v1 lets creators vary subject, preview text, or body, plus duration, as standard features. Side-by-side editing keeps body variants understandable.</p>
+                  <p><strong>Call:</strong> v1 lets creators vary <strong>one element per test</strong> — subject, preview text, <em>or</em> body — keeping everything else the same, plus duration, as standard features. Side-by-side editing keeps the difference easy to see, so the result teaches something clear.</p>
                   <p><strong>Why:</strong> Creators asked for a full learning loop, not subject-only table stakes. They already pay ~$187/mo elsewhere for that depth. Shipping flexibility at no add-on cost closes the parity gap the survey flagged. <strong>Scope change:</strong> the first MVP brief limited v1 to subject + preheader; strategy risks and the teardown pulled body into the shipped design direction (see <a href="#insights">Insights</a> · <a href="#insight-1">01</a> &amp; <a href="#insight-4">04</a>).</p>
                   <p class="case-decision-from"><span>From</span> <a href="#insights">Insights</a> · <a href="#insight-1">01</a> · <a href="#insight-4">04</a></p>
                 </div>
@@ -371,9 +317,7 @@
 
               <article class="case-decision" id="decision-3" aria-labelledby="decision-3-title">
                 <header class="case-decision-header">
-                  <p class="case-decision-index"><span class="case-decision-num">03</span><span class="case-decision-phase">Defaults</span></p>
-                  <h3 id="decision-3-title">Defaults that can’t silently stop being a test</h3>
-                  <p class="case-decision-meta"><span>Rejected</span> No minimums (common in competitor products)</p>
+                  <h3 id="decision-3-title"><span class="case-decision-num">03</span>Safe defaults so a small list still runs a real test</h3>
                 </header>
                 <div class="case-decision-body">
                   <p><strong>Call:</strong> Default split 25% / 25% / 50% holdout, with rounding and guards for tiny recipient sets so creators can’t ship 0/0/100 by accident. Planned in-product copy: short windows only reflect early openers; explain what the window measured — don’t overclaim (see <a href="#decision-1">Decision 01</a>). Ties are handled quietly: equal win-metric → the fallback chosen in settings becomes the winner (same winner UI).</p>
@@ -384,12 +328,11 @@
 
               <article class="case-decision" id="decision-4" aria-labelledby="decision-4-title">
                 <header class="case-decision-header">
-                  <p class="case-decision-index"><span class="case-decision-num">04</span><span class="case-decision-phase">Scope</span></p>
-                  <h3 id="decision-4-title">Ship on the editor we had, not the redesign we wanted</h3>
+                  <h3 id="decision-4-title"><span class="case-decision-num">04</span>Ship on the editor we had, not the redesign we wanted</h3>
                   <p class="case-decision-meta"><span>Scoped separately</span> Email editor redesign (newsletter / blog / writing surfaces) · Classic Editor · Automated emails</p>
                 </header>
                 <div class="case-decision-body">
-                  <p><strong>Call:</strong> v1 adds A/B to the <strong>existing</strong> one-off email experience on the modern React editor. The fuller editor redesign — and Classic / automated email coverage — wait as their own track.</p>
+                  <p><strong>Call:</strong> v1 adds A/B to the <strong>existing</strong> broadcast email experience on the modern React editor. The fuller editor redesign — and Classic / automated email coverage — wait as their own track.</p>
                   <p><strong>The tension:</strong> Eng pushed back on touching the email editor — outdated and fragile across Rails vs React, a rewrite looked like a multi-quarter sink. I wanted a redesigned editor with more flexible editing and preview so variants could be first-class; that craft bar was right, but pairing a platform rebuild with a net-new learning product would have delayed the 84%-expected gap.</p>
                   <p><strong>Why this was the right bet:</strong> We separated <em>proving the learning model</em> from <em>rebuilding the writing platform</em>. Email A/B shipped on the compose surface we had. The editor redesign was scoped as a <strong>separate project</strong> so it could be done well — more fluid editing and preview, and reusable beyond email for newsletter, blog, and other text-writing needs across the product. That kept eng risk contained, got creators a trustworthy A/B loop sooner, and still let me define reusable patterns (variants, win metric + fallback, comparative results) that sibling teams used for landing-page A/B.</p>
                   <p class="case-decision-from"><span>From</span> <a href="#insights">Insights</a> · <a href="#insight-5">05</a></p>
@@ -404,21 +347,19 @@
             <article class="case-decision reveal" data-reveal aria-labelledby="experience-title">
               <header class="case-decision-header">
                 <h3 id="experience-title">A learning loop: variants → options → test → winner</h3>
-                <p class="case-decision-meta"><span>Shipped UX · v1–v2, pivot</span> One-off email A/B through schedule-send-to-winner; click report / win-by-link from user interviews — screens may be prototype unless noted</p>
               </header>
               <div class="case-decision-body">
-                <p><strong>Before:</strong> one email, one send. No way to compare subject, preview, or body inside Kajabi before committing the whole list.</p>
+                <p>Side-by-side editing keeps subject, preview, and body differences understandable. Creators set the win rule and fallback (<a href="#decision-1">Decision 01</a>); the system runs the test and shows what worked — without overclaiming.</p>
                 <blockquote class="case-quote" style="margin:1rem 0;padding-left:1rem;border-left:3px solid var(--border, #e4e3de);color:var(--text-muted, #5a5a56)">
                   <p style="margin:0">“I don’t need a stats lecture — I need to know if this subject actually got more people to open.”</p>
                   <footer style="margin-top:0.35rem;font-size:0.875rem">— Creator interview, Messaging &amp; CRM research</footer>
                 </blockquote>
-                <p>Side-by-side editing keeps subject, preview, and body differences understandable. Creators set the win rule and fallback (<a href="#decision-1">Decision 01</a>); the system runs the test and shows what worked — without overclaiming.</p>
 
                 <div class="case-flow" role="img" aria-label="Email A/B testing flow">
                   <div class="case-flow-node">
                     <span class="case-flow-step">01 · Entry</span>
                     <p class="case-flow-label">Start or convert</p>
-                    <p class="case-flow-desc">New A/B, or turn a broadcast draft into an A/B (and back)</p>
+                    <p class="case-flow-desc">New A/B, or turn a broadcast email draft into an A/B (and back)</p>
                   </div>
                   <span class="case-flow-arrow" aria-hidden="true">→</span>
                   <div class="case-flow-node">
@@ -468,9 +409,10 @@
                 <div class="case-feature-list">
                   <div class="case-feature">
                     <div class="case-feature-text">
-                      <h4>01 · Entry: start new, or convert a broadcast</h4>
-                      <p class="case-feature-job">I want to create an A/B test from the start — or convert my email broadcast draft into an email A/B test.</p>
-                      <p><strong>Why:</strong> creators already writing a one-off broadcast shouldn’t abandon it to test. I owned this entry path: convert the draft into an A/B (or start A/B fresh), then write version <strong>A</strong> and a <strong>B</strong> variation. Side-by-side editing keeps subject, preview, and body differences understandable.</p>
+                      <h4><span class="case-research-num">01</span> · Variants</h4>
+                      <p class="case-feature-job">I want to create an A/B test from the start — or convert my broadcast email draft into an A/B test.</p>
+                      <p><strong>Why:</strong> creators already writing a broadcast email shouldn’t abandon it to test. I owned this entry path: convert the draft into an A/B (or start A/B fresh), then write version <strong>A</strong> and a <strong>B</strong> variation. Side-by-side editing keeps subject, preview, and body differences understandable.</p>
+                      <p>Creators pick the one element to test and write its A and B; the rest of the email stays identical across both versions.</p>
                     </div>
                     <div class="case-feature-media-stack">
                       <figure class="case-feature-media">
@@ -481,8 +423,8 @@
                           data-media-type="video"
                           data-media-src="./assets/cs2-convert-to-ab.mp4?v=1"
                           data-media-poster="./assets/cs2-convert-to-ab-poster.png?v=1"
-                          data-media-alt="Converting an email broadcast draft into an email broadcast A/B test"
-                          aria-label="View convert broadcast to A/B full size"
+                          data-media-alt="Converting a broadcast email draft into an A/B test"
+                          aria-label="View convert broadcast email to A/B full size"
                         >
                           <video
                             class="case-media-video"
@@ -515,7 +457,7 @@
 
                   <div class="case-feature">
                     <div class="case-feature-text">
-                      <h4>02 · Test options: creators define winning</h4>
+                      <h4><span class="case-research-num">02</span> · Test options: creators define winning</h4>
                       <p class="case-feature-job">I want to decide how a winner is chosen — and which version wins if A and B tie.</p>
                       <p><strong>Why:</strong> four controls decide how the test runs. Creators also choose when the first test emails go out.</p>
                       <p><strong>A/B test distribution</strong> — set the size of your test group: <strong>25% / 25% / 50% holdout</strong> (default) or <strong>10% / 10% / 90%</strong>.</p>
@@ -541,7 +483,7 @@
 
                   <div class="case-feature">
                     <div class="case-feature-text">
-                      <h4>03 · Results while the test runs</h4>
+                      <h4><span class="case-research-num">03</span> · Results while the test runs</h4>
                       <p class="case-feature-job">I want to see how my A/B test performed.</p>
                       <p><strong>Why:</strong> while the test is in progress, creators compare A and B side-by-side (opens, clicks, and email previews). The UI stays comparative — planned helper text that early open rate can shift as the window fills (see <a href="#decision-1">Decision 01</a>).</p>
                       <p class="case-feature-hint">Scroll the image, or click to view it larger.</p>
@@ -620,7 +562,7 @@
 
                   <div class="case-feature">
                     <div class="case-feature-text">
-                      <h4>04 · Winner sent to the rest</h4>
+                      <h4><span class="case-research-num">04</span> · Winner sent to the rest</h4>
                       <p class="case-feature-job">I want to see how my winning variant performed.</p>
                       <p><strong>Why:</strong> after the window, the winning variant goes to the remaining contacts — including when A and B tied and the pre-chosen fallback was applied as winner (equal metrics; fallback shown as winner, no “inconclusive” label). The report separates the original A/B sample from the winner send so creators can see both what the test measured and how the winner performed at full reach.</p>
                       <p class="case-feature-hint">Scroll the image, or click to view it larger.</p>
@@ -725,7 +667,7 @@
 
                   <div class="case-feature" id="click-report">
                     <div class="case-feature-text">
-                      <h4>05 · Click report &amp; win by link <span class="case-status-pill">Shipped</span></h4>
+                      <h4><span class="case-research-num">05</span> · Click report &amp; win by link</h4>
                       <p class="case-feature-job">I want to see which links got clicks — and pick a winner from a specific CTA, not only total clicks.</p>
                       <p><strong>Why:</strong> total clicks hide which CTA drove action. The pivot added a clearer click report and let creators win by a <strong>specific link</strong> (e.g. “Buy Now”) when that was the goal of the test.</p>
                     </div>
@@ -762,35 +704,19 @@
               <details class="case-accordion case-segments-accordion" id="roadmap">
                 <summary class="case-accordion-summary">
                   <span class="case-accordion-title">What's next</span>
-                  <span class="case-accordion-meta">v1–v2 shipped · v3 separate · v4 pivot</span>
                   <span class="case-accordion-icon" aria-hidden="true"></span>
                 </summary>
                 <div class="case-accordion-body">
-                  <p>From the Messaging &amp; CRM strategy: each version is a discrete capability bet. What we built above is the <strong>shipped one-off email A/B loop through v2</strong>, then a <strong>pivot</strong> (click report / win-by-link) driven by what we heard in user interviews. Sequence email A/B is a separate product track.</p>
+                  <p>Beyond the shipped broadcast email loop, two bets remained on the Messaging &amp; CRM roadmap:</p>
                   <ol class="case-roadmap">
                     <li class="case-roadmap-item">
-                      <h4>v1 · Email foundation <span class="case-status-pill">Shipped</span></h4>
-                      <p>Two variants on <strong>one-off emails only</strong> (React editor). Vary <strong>subject, preview, or body</strong>; creator sets win metric, duration, and fallback; default test split with holdout; after the window, winner (or fallback) sends to the rest.</p>
-                    </li>
-
-                    <li class="case-roadmap-item">
-                      <h4>v2 · Schedule send to winner <span class="case-status-pill">Shipped</span></h4>
-                      <p>Auto-schedule when the <strong>holdout receives the winner</strong> (e.g. after 6 hours) — win metric and fallback stay as set in v1. Closes the learning loop without making creators babysit the report.</p>
-                    </li>
-
-                    <li class="case-roadmap-item">
-                      <h4>v3 · Sequence email A/B <span class="case-status-pill case-status-pill--muted">Separate project</span></h4>
-                      <p>A different product track: A/B on <strong>sequence / automated emails</strong> — triggered series where learning compounds across a flow, not a single one-off send. Same honesty principles; different surface and metrics.</p>
-                    </li>
-
-                    <li class="case-roadmap-item">
-                      <h4>v4 · Win by specific link click <span class="case-status-pill">Shipped · pivot</span></h4>
-                      <p><strong>Pivot from user interviews:</strong> creators asked for a click report and to win on a <strong>specific link</strong> (e.g. “Buy Now”), not only total clicks. We reshaped the roadmap and shipped an updated results/data page so they could see which CTAs drove action.</p>
+                      <h4>Automated email A/B <span class="case-status-pill case-status-pill--muted">Separate project</span></h4>
+                      <p>A different product track: A/B on <strong>automated emails</strong> — triggered series where learning compounds across a flow, not a single broadcast email. Same honesty principles; different surface and metrics.</p>
                     </li>
 
                     <li class="case-roadmap-item">
                       <h4>Sender &amp; multi-variable tests <span class="case-status-pill case-status-pill--muted">Later</span></h4>
-                      <p>Alternate <strong>sender / friendly-from</strong> names, and run tests that vary more than one dimension when the one-off learning loop is trusted.</p>
+                      <p>Alternate <strong>sender / friendly-from</strong> names, and run tests that vary more than one dimension when the broadcast learning loop is trusted.</p>
                     </li>
                   </ol>
                 </div>
@@ -800,11 +726,11 @@
 
           <section class="case-block reveal" id="outcome" data-reveal data-delay="3" data-section>
             <h2>Outcome</h2>
-            <p>One-off email A/B <strong>shipped through v2</strong>. Interviews drove a <strong>pivot</strong> — click report and win-by-specific-link. The A/B pattern was <strong>reused for landing-page A/B</strong>.</p>
+            <p>Broadcast email A/B shipped in two releases (<strong>v1–v2</strong>). After launch, creator interviews changed the roadmap: creators didn’t just want total clicks — they wanted a <strong>click report</strong> and to pick a winner based on <strong>one specific link</strong> (like “Buy Now”). We pivoted and shipped that next. The same A/B pattern was later <strong>reused for landing pages</strong>.</p>
             <ul class="case-constraints">
-              <li><strong>Shipped:</strong> subject, preview, or body tests; auto-send the winner; then click-level wins after the pivot. Strategy approved; a dedicated PM unlocked delivery.</li>
-              <li><strong>In progress separately:</strong> sequence email A/B (different product).</li>
-              <li><strong>Systems:</strong> same compare / win / fallback model on landing pages.</li>
+              <li><strong>Shipped (v1–v2):</strong> test subject, preview text, or body; set how the winner is picked and for how long; the winner auto-sends to the rest of the list. After the pivot: click report and win-by-specific-link.</li>
+              <li><strong>Separate track:</strong> automated email A/B (for triggered email flows, not one-time broadcasts) is in progress as a different product.</li>
+              <li><strong>Reused elsewhere:</strong> landing pages use the same model — compare variants side-by-side, pick a winner, fall back if there’s no clear winner.</li>
             </ul>
 
             <div class="case-systems" style="margin-top:clamp(1.5rem, 3vw, 2rem)">
@@ -833,46 +759,56 @@
                     aria-hidden="true"
                   ></video>
                 </button>
-                <figcaption>Landing page A/B — same set up, compare, and apply pattern as email</figcaption>
               </figure>
             </div>
 
             <p class="case-impact-label" style="margin-top:1.75rem">Why it mattered to the business</p>
-            <p>Aimed at 2024 parity &amp; retention and brand &amp; GMV goals — fund a top expected email gap so creators learn what earns opens and clicks inside Kajabi, not after paying ~$187/mo elsewhere.</p>
+            <p>Email A/B testing was one of the most expected email features — and competitors already had it. Creators were paying about <strong>$187/mo for outside tools</strong> just to run tests. Building it into Kajabi closed that gap, gave creators a reason to stay, and let them learn what earns opens and clicks without leaving Kajabi.</p>
 
-            <details class="case-accordion" style="margin-top:1.25rem">
-              <summary class="case-accordion-summary">
-                <span class="case-accordion-title">Metrics we proposed after ship</span>
-                <span class="case-accordion-meta">Not measured yet · baselines from Messaging &amp; CRM research</span>
-                <span class="case-accordion-icon" aria-hidden="true"></span>
-              </summary>
-              <div class="case-accordion-body">
-                <ul class="case-constraints">
-                  <li>% of creators using Kajabi email; revenue tied to email</li>
-                  <li>Open/click lift on A/B’d vs non-tested emails</li>
-                  <li>High-revenue creators unhappy with email <em>(baseline 41%)</em></li>
-                  <li>Spend on outside email tools <em>(baseline ~$187/mo)</em></li>
-                  <li>Creators gaining at least 1 contact / 30 days <em>(baseline 23%)</em></li>
-                </ul>
-              </div>
-            </details>
+            <p class="case-impact-label" style="margin-top:1.75rem">Metrics we proposed after ship</p>
+            <p>Not measured yet — baselines from Messaging &amp; CRM research:</p>
+            <ul class="case-constraints">
+              <li>% of creators using Kajabi email; revenue tied to email</li>
+              <li>Open/click lift on A/B’d vs non-tested emails</li>
+              <li>High-revenue creators unhappy with email <em>(baseline 41%)</em></li>
+              <li>Spend on outside email tools <em>(baseline ~$187/mo)</em></li>
+              <li>Creators gaining at least 1 contact / 30 days <em>(baseline 23%)</em></li>
+            </ul>
 
             <aside class="case-impact-closure" aria-label="Impact closure">
               <p class="case-impact-closure-label">Impact closure</p>
               <ul>
-                <li><strong>Measured / shipped:</strong> A/B through v2; interview-led pivot (click report).</li>
-                <li><strong>Not claimed:</strong> GMV or retention lift from A/B alone.</li>
-                <li><strong>If I continued:</strong> adoption of tests started, % with a declared win rule, support volume on “which email won,” reuse rate of the pattern on landing pages.</li>
+                <li><strong>Measured:</strong> what we can prove is delivery — broadcast email A/B shipped through v2, and the interview-led pivot (click report and win-by-specific-link) shipped after it. No lift numbers are claimed yet.</li>
+                <li><strong>Not claimed here:</strong> GMV (creator sales) or retention lift caused by A/B alone.</li>
+                <li><strong>Future:</strong> track how many creators start a test, how many set a win rule before sending, support tickets asking “which email won,” and how often landing-page teams reuse the pattern.</li>
               </ul>
             </aside>
           </section>
 
           <section class="case-block case-block--reflection reveal" id="reflection" data-reveal data-delay="4" data-section>
           <h2>Reflection</h2>
-            <p><strong>What worked:</strong> Studying competitors before the plan locked — cutting scope with engineering when the editor rewrite stalled — and pivoting when interviews asked for a click report and win-by-link. Seeing ConvertKit’s subject-only plans next to Braze’s honest “we’re not sure yet” results made the gap clear. Shipping A/B on the compose screen we already had got the learning loop out without rebuilding the whole editor; listening after ship kept the roadmap honest.</p>
-            <p><strong>What I’d change:</strong> Put results explainers in the first prototype, not the backlog. Short test windows can make open rates look worse than they are — that should have been clear in the UI from day one. Pull support-ticket language earlier; churn interviews named the gap, tickets named the words people use.</p>
-            <p><strong>Tradeoff I still sit with:</strong> putting off a fuller editor redesign (and Classic email coverage) so one-off A/B could ship through v2 and the click-report pivot. Right call for risk and speed — other teams still reused the patterns on landing-page A/B — and sequence email A/B is now a separate project where learning can build over time. Side-by-side edit and preview never got the polish I originally wanted.</p>
-            <p><strong>Takeaway:</strong> A/B is a learning tool first (<a href="#decision-1">Decision 01</a>). “Which version wins?” is the wrong default for an 800-person list. “Which metric matters, what happens on a tie, and what did this window actually measure?” is the question worth defending.</p>
+            <p><strong>What worked:</strong></p>
+            <ul class="case-constraints">
+              <li><strong>Studied competitors first.</strong> ConvertKit showed subject-only tests were the bare minimum; Braze showed honest “no clear winner yet” results. That made the gap clear before we locked scope.</li>
+              <li><strong>Cut scope to ship.</strong> When the editor rewrite stalled, we shipped A/B on the existing editor instead of rebuilding it — so creators could start testing sooner.</li>
+              <li><strong>Listened after launch.</strong> Interviews asked for a click report and win-by-specific-link. We changed the roadmap and shipped that next.</li>
+            </ul>
+            <p><strong>What I’d change:</strong></p>
+            <ul class="case-constraints">
+              <li><strong>Explain results from day one,</strong> not later. A short test can make open rates look misleading — the UI should have said so in the first prototype.</li>
+              <li><strong>Use creators’ own words earlier.</strong> Interviews told us the problem; support tickets told us the exact words creators use for it.</li>
+              <li><strong>Measure from week one</strong> — how many creators start a test and set a win rule — instead of proposing metrics after ship.</li>
+            </ul>
+            <p><strong>Tradeoff I still sit with:</strong> we delayed a fuller editor redesign (and Classic email) so broadcast A/B could ship through v2 and the click-report pivot. That was the right call for speed and risk, and other teams still reused the patterns on landing pages. Automated email A/B is now a separate project. Side-by-side editing and preview never got the polish I originally wanted.</p>
+            <p><strong>What I did beyond design:</strong></p>
+            <ul class="case-constraints">
+              <li>Co-wrote the Messaging &amp; CRM strategy</li>
+              <li>Co-led scope with PM and engineering for broadcast and automated email</li>
+              <li>Owned the 8-tool teardown that pushed v1 beyond subject-only tests</li>
+              <li>Turned post-launch interviews into the click-report pivot</li>
+              <li>Defined the A/B pattern — variants, win rule, fallback, side-by-side results — that landing-page teams reused</li>
+            </ul>
+            <p><strong>Takeaway:</strong> A/B is a learning tool first (<a href="#decision-1">Decision 01</a>). For an 800-person list, “which version won?” is the wrong first question. Better questions: what are we measuring, what happens if it’s a tie, and what did this test actually show?</p>
           </section>
 
         </div>

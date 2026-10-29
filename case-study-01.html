@@ -169,6 +169,7 @@
             <li><a href="#outcome" data-nav-link>Outcome</a></li>
             <li><a href="#future" data-nav-link>What's next</a></li>
             <li><a href="#reflection" data-nav-link>Reflection</a></li>
+            <li><a href="#ai-thoughts" data-nav-link>My thoughts on AI</a></li>
           </ul>
         </nav>
 
@@ -181,9 +182,7 @@
                   <li>End-to-end design across pre-beta, beta, and GA</li>
                   <li><strong>Assistive AI — not autonomous AI.</strong> I drove the principle that creators must be able to edit what AI created or highlighted (including transcript highlights), so the model stayed a tool they could work with and tweak — never the ultimate content producer.</li>
                   <li><strong>Creator sessions</strong> — I ran sessions with creators (on top of formal studies with Research). Findings informed the roadmap, including <strong>YouTube import</strong>, because creators' best footage already lived there, not only on their desktop.</li>
-                  <li>The AI input intake — accepts any media file (video, audio, blog, PDF, web page) in one flow, without asking creators to think like prompt engineers</li>
-                  <li>Generation states and feedback patterns (loading, success, error, retry) — now reused across Kajabi's AI surfaces</li>
-                  <li>Editability patterns end-to-end: AI transcript highlights could be added or removed; every generated output stayed editable through light editing and, at GA, Adobe Express</li>
+                  <li><strong>Created Kajabi’s first AI Design System patterns, where none existed for a tool like Creator Studio.</strong> Designed net-new components: <strong>AI intake</strong> — one flow for video, audio, blog, PDF, web page, and YouTube import, without prompt-engineering; <strong>generation states</strong> — loading, progress, success, error, and retry for long-running AI jobs; <strong>async toasts</strong> — “3 of 4 files ready” with a CTA back to the project; <strong>editable AI outputs</strong> — every AI highlight/output can be added, removed, or edited (assistive, not autonomous); and a <strong>media-type picker</strong> — selecting from 37+ generated output types. These patterns were later reused across Kajabi’s AI surfaces.</li>
                   <li>Co-ran 4 research studies and creator interviews with Research, PMM, and PM; co-wrote interview scripts and synthesized findings into design direction</li>
                 </ul>
                 <p><strong>What I co-led with PM:</strong></p>
@@ -225,7 +224,7 @@
 
             <p>Prior Kajabi AI features already moved activation metrics (course success, landing-page engagement, content assistant). The pattern: <strong>creators want help where the learning curve is steepest (marketing)</strong>, but each feature only took a 3–10 word prompt, capping personalization.</p>
 
-            <figure class="case-figure reveal" data-reveal aria-label="Prior Kajabi AI feature YoY momentum">
+            <figure class="case-figure reveal" data-reveal aria-label="How Kajabi's prior AI features already moved Day-7 activation, before Creator Studio">
               <div class="case-momentum-chart">
                 <div class="case-momentum-row">
                   <span class="case-momentum-label">D7 course success</span>
@@ -252,10 +251,13 @@
                   <span class="case-momentum-value">43% → 30%</span>
                 </div>
               </div>
-              <figcaption class="case-figure-caption">Prior AI features weren't just working — the trend was compounding. Creator Studio's bet was on richer inputs to steepen the same curve.</figcaption>
+              <div class="case-momentum-legend" aria-hidden="true">
+                <span class="case-momentum-legend-item"><span class="case-momentum-swatch case-momentum-swatch--prior"></span>Prior year (pre-AI)</span>
+                <span class="case-momentum-legend-item"><span class="case-momentum-swatch case-momentum-swatch--current"></span>Following year (post-AI)</span>
+              </div>
             </figure>
 
-            <p>Creator Studio's answer was richer inputs: start from content creators already have, so the output can sound like them, instead of reading like a generic 3–10 word prompt. An hour of course video is roughly <strong>12,000 words already in their brand voice</strong>; that depth is what prior AI features couldn't reach. That became <strong>Kajabi's first monetized AI-generation surface</strong>: a new NRR line pointed at the contacts and GMV levers behind earn = stay. Demand showed up early: <strong>10.5k</strong> creators joined the waitlist by late 2022, clearing the 10k target before Creator Studio charged for anything.</p>
+            <p>Creator Studio had a built-in advantage: creators weren't starting from scratch. They already had long-form, rich content in their own voice — an hour of course video is roughly <strong>12,000 words of their expertise</strong>. We just needed to build a tool that guided them with one-click prompts to turn that material into new, on-brand content, rather than asking them to squeeze their voice into a generic 3–10 word prompt. That became <strong>Kajabi's first monetized AI-generation surface</strong>: a new NRR line pointed at the contacts and GMV levers behind earn = stay. Demand showed up early: <strong>10.5k</strong> creators joined the waitlist by late 2022, clearing the 10k target before Creator Studio charged for anything.</p>
           </section>
 
           <section class="case-block reveal" id="problem" data-reveal data-delay="1" data-section>
@@ -333,8 +335,8 @@
                   <p class="case-decision-meta"><span>The opening bet</span> Grounded in research with Research, PMM &amp; PM</p>
                 </header>
                 <div class="case-decision-body">
-                <p><strong>The decision:</strong> validate the core thesis, <em>creators will repurpose content they already have</em>, with the smallest possible bet before committing to a full product. I framed and ran this research with the research team (including <a class="case-link" href="https://www.linkedin.com/in/marika-massoglia/" target="_blank" rel="noopener noreferrer">Marika Massoglia</a>), PMM, and PM. It pointed at one format to start: <strong>video</strong>, where creators already had hours of untapped course and coaching footage.</p>
-                <p>To reach validation in weeks rather than quarters, I made a deliberate <strong>build-vs-buy call</strong>: rather than build a video pipeline, we white-labeled <strong>Pictory</strong> and used the <strong>ChatGPT API</strong> for auto text-selection to cut clips to each platform's size — <strong>Instagram, Facebook, TikTok, LinkedIn, and YouTube.</strong> The trade-off was less control over the underlying engine; the payoff was testing the repurposing thesis fast, with scope held deliberately narrow: clips only, no funnel. Four design calls shaped that pre-beta experience:</p>
+                <p><strong>The decision:</strong> validate the core thesis, <em>creators will repurpose content they already have</em>, with the smallest possible bet before committing to a full product. I framed and ran this research with the research team, PMM, and PM. It pointed at one format to start: <strong>video</strong>, where creators already had hours of untapped course and coaching footage.</p>
+                <p>To reach validation in weeks rather than quarters, we made a deliberate <strong>build-vs-buy call</strong>: rather than build a video pipeline, we white-labeled <strong>Pictory</strong> and used the <strong>ChatGPT API</strong> for auto text-selection to cut clips to each platform's size — <strong>Instagram, Facebook, TikTok, LinkedIn, and YouTube.</strong> The trade-off was less control over the underlying engine; the payoff was testing the repurposing thesis fast, with scope held deliberately narrow: clips only, no funnel. Four design calls shaped that pre-beta experience:</p>
 
                 <figure class="case-decision-figure">
                   <button
@@ -440,7 +442,7 @@
                   <div class="case-feature">
                     <div class="case-feature-text">
                       <h4>Syndication</h4>
-                      <p><strong>Why:</strong> every export-and-re-upload step is a drop-off point. Publishing <strong>straight from Creator Studio to Instagram and Facebook</strong> kept creators in the flow from source video to posted clip, closing the loop the whole bet depended on.</p>
+                      <p><strong>Why:</strong> every export-and-re-upload step is a drop-off point. Publishing straight from Creator Studio to social media platforms kept creators in the flow from source video to posted clip, closing the loop the whole bet depended on.</p>
                     </div>
                     <figure class="case-feature-media">
                       <button
@@ -465,8 +467,8 @@
                 </div>
         </article>
 
-                            <aside class="case-feedback reveal" data-reveal id="feedback-1" aria-label="User feedback after Decision 1">
-                <p class="case-feedback-label">Feedback 01 · after Pre-beta</p>
+                            <aside class="case-feedback reveal" data-reveal id="feedback-1" aria-label="User findings after Decision 1">
+                <p class="case-feedback-label">Findings 01 · after Pre-beta</p>
                 <p class="case-feedback-takeaway">Repurposing was validated, but a social clip was too small a slice of the problem.</p>
                 <p class="case-feedback-synthesis">I ran creator sessions after pre-beta. What surfaced next reframed the product:</p>
                 <ul class="case-constraints case-feedback-list">
@@ -483,13 +485,13 @@
                 <header class="case-decision-header">
                   <p class="case-decision-index"><span class="case-decision-num">02</span><span class="case-decision-phase">Beta</span></p>
                   <h3>Expand from one clip to the entire funnel</h3>
-                  <p class="case-decision-meta"><span>In response to Feedback 01</span> Widened the bet from social video to full-funnel assets</p>
+                  <p class="case-decision-meta"><span>In response to Findings 01</span> Widened the bet from social video to full-funnel assets</p>
                 </header>
                 <div class="case-decision-body">
-                <p><strong>The decision:</strong> stop treating Creator Studio as a video tool. Being able to make a clip didn't solve the real problem — creators struggled to <em>market</em>, and marketing is a funnel, not a format. So Beta let creators turn one source video into <strong>37+ additional media types</strong>, meet their footage where it already lived (<strong>YouTube</strong>), make course content easy to find and, for the first time, carry a <strong>pricing and monetization model</strong>. The alternative was to keep deepening the video editor; we chose not to, because a better clip still left creators staring at an empty funnel. The trade-off was scope and complexity; the payoff was aiming the product at the business problem, not only the editing one.</p>
+                <p><strong>The decision:</strong> stop treating Creator Studio as a video tool. Being able to make a clip didn't solve the real problem — creators struggled to <em>market</em>, and marketing is a funnel, not a format. So Beta let creators turn one source video into <strong>37+ additional media types</strong>, meet their footage where it already lived (<strong>YouTube</strong>), make course content easy to find and, for the first time, carry a <strong>pricing and monetization model</strong>. Now that we were offering far more access to AI — 37+ media types from a single video — AI processing increased sharply. Every generation costs money, so pricing was needed to keep Kajabi from losing money at scale, to prove creators’ willingness to pay before GA, and to create a new revenue line for Kajabi. The alternative was to keep deepening the video editor; we chose not to, because a better clip still left creators staring at an empty funnel. The trade-off was scope and complexity; the payoff was aiming the product at the business problem, not only the editing one.</p>
                 <p class="case-decision-vignette"><strong>Disagreement:</strong> Eng and product could have kept deepening the clip editor. I argued a better clip still left creators with nothing to send. We widened to funnel assets instead — more scope, clearer business problem.</p>
 
-                <figure class="case-paths reveal" data-reveal aria-label="Paths considered after Feedback 01">
+                <figure class="case-paths reveal" data-reveal aria-label="Paths considered after Findings 01">
                   <p class="case-paths-label">Paths considered</p>
                   <div class="case-paths-grid">
                     <div class="case-path case-path--rejected">
@@ -500,7 +502,7 @@
                         <li>More social formats &amp; crops</li>
                         <li>Stay in “repurpose for social”</li>
                       </ul>
-                      <p class="case-path-why"><strong>Why not:</strong> Feedback 01 asked for a funnel and YouTube: a better clip still left marketing unsolved.</p>
+                      <p class="case-path-why"><strong>Why not:</strong> Findings 01 asked for a funnel and YouTube: a better clip still left marketing unsolved.</p>
                     </div>
                     <div class="case-path case-path--chosen">
                       <p class="case-path-tag">Shipped</p>
@@ -546,6 +548,7 @@
                     <div class="case-feature-text">
                       <h4>37+ media types from one video</h4>
                       <p><strong>Why:</strong> making a video didn't fix creators' core struggle: marketing. Beta expanded output to <strong>37+ additional media types</strong> generated from a single source video, so creators could assemble the <strong>entire funnel</strong> — landing pages, emails, social, and more — instead of just a clip.</p>
+                      <p class="case-feature-hint">Scroll the image, or click to view it larger.</p>
                     </div>
                     <figure class="case-feature-media case-feature-media--scroll">
                       <button
@@ -576,7 +579,7 @@
                     <figure class="case-feature-media case-feature-media--modal-zoom">
                       <button
                         type="button"
-                        class="case-media-trigger"
+                        class="case-media-trigger case-media-trigger--no-hover"
                         data-media-expand
                         data-media-src="./assets/cs-d2-youtube.svg"
                         data-media-alt="Creator Studio — enter a YouTube link to import video"
@@ -647,13 +650,31 @@
                         ></video>
                       </button>
                     </figure>
+                    <aside class="case-segments case-segments--page-bg case-pricing-segments" aria-label="Pricing model">
+                      <details class="case-accordion case-segments-accordion">
+                        <summary class="case-accordion-summary">
+                          <span class="case-accordion-title">More on pricing model</span>
+                          <span class="case-accordion-icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="case-accordion-body">
+                          <ul class="case-constraints">
+                            <li><strong>Free (included)</strong> — 1 free project per month: unlimited content from <strong>1 video/month</strong>, so creators experience the value before the ask and pricing didn’t kill activation.</li>
+                            <li><strong>Basic — $9/mo</strong> — unlimited content from <strong>4 videos/month</strong>.</li>
+                            <li><strong>Premium — $29/mo</strong> — unlimited content from <strong>30 videos/month</strong>, plus <strong>Adobe Express Premium</strong> included.</li>
+                            <li><strong>Capped access on plans, plus an optional add-on</strong> — creators could unlock more usage without upgrading their whole Kajabi plan.</li>
+                            <li><strong>Framed against tools they already paid for</strong> — Descript, Canva, and CastMagic off-platform, so the add-on read as consolidation, not a new cost.</li>
+                          </ul>
+                          <p>That made Creator Studio <strong>Kajabi’s first monetized AI-generation surface</strong>: a new NRR line pointed at the contacts and GMV levers behind earn = stay — designed as a UX problem (when to ask, how much, what’s free) as much as a finance one.</p>
+                        </div>
+                      </details>
+                    </aside>
                   </div>
                 </div>
                 </div>
         </article>
 
-              <aside class="case-feedback reveal" data-reveal id="feedback-2" aria-label="User feedback after Decision 2">
-                <p class="case-feedback-label">Feedback 02 · after Beta</p>
+              <aside class="case-feedback reveal" data-reveal id="feedback-2" aria-label="User findings after Decision 2">
+                <p class="case-feedback-label">Findings 02 · after Beta</p>
                 <p class="case-feedback-takeaway">Beta expanded what creators could make, but the editing, feedback, and cost model needed work.</p>
                 <blockquote>
                   <p>— <em>“Within 2–3 hours, I created a year's worth of blog posts for my video blog. It was slick, it was professional.”</em></p>
@@ -672,10 +693,10 @@
                 <header class="case-decision-header">
                   <p class="case-decision-index"><span class="case-decision-num">03</span><span class="case-decision-phase">GA</span></p>
                   <h3>Rebuild the stack underneath: new vendors, a real editor</h3>
-                  <p class="case-decision-meta"><span>In response to Feedback 02</span> Fixed editing, status, and vendor economics</p>
+                  <p class="case-decision-meta"><span>In response to Findings 02</span> Fixed editing, status, and vendor economics</p>
                 </header>
                 <div class="case-decision-body">
-                <p><strong>The decision:</strong> before scaling to GA, fix the layer creators and the business were straining against. That meant swapping the vendors powering generation and giving creators a real editor rather than a light one. I moved the video vendor from <strong>Pictory to Picsart</strong> to bring costs down and widen capability, and moved editing to <strong>Adobe</strong>, giving creators access to <strong>Adobe Express</strong>. The alternative, patching the existing integrations, was cheaper short-term but capped how far we could take editing and left the cost problem in place. The trade-off was a heavier migration; the payoff was an editing experience and cost structure GA could actually stand on.</p>
+                <p><strong>The decision:</strong> before scaling to GA, fix the layer creators and the business were straining against. That meant swapping the vendors powering generation and giving creators a real editor rather than a light one. We moved the video vendor from <strong>Pictory to Picsart</strong> to bring costs down and widen capability, and moved editing to <strong>Adobe</strong>, giving creators access to <strong>Adobe Express</strong>. The alternative, patching the existing integrations, was cheaper short-term but capped how far we could take editing and left the cost problem in place. The trade-off was a heavier migration; the payoff was an editing experience and cost structure GA could actually stand on.</p>
 
                 <div class="case-feature-list">
                   <div class="case-feature">
@@ -776,8 +797,8 @@
                 </div>
         </article>
 
-                            <aside class="case-feedback reveal" data-reveal id="feedback-3" aria-label="User feedback after Decision 3">
-                <p class="case-feedback-label">Feedback 03 · after GA</p>
+                            <aside class="case-feedback reveal" data-reveal id="feedback-3" aria-label="User findings after Decision 3">
+                <p class="case-feedback-label">Findings 03 · after GA</p>
                 <p class="case-feedback-takeaway">By GA, creators could turn one video into a full, editable funnel — end to end, inside Creator Studio.</p>
                 <p class="case-feedback-synthesis">Open question at handoff: once creators can <strong>make</strong> the funnel, how do we make it distribute and prove itself automatically? (See roadmap below.)</p>
               </aside>
@@ -818,7 +839,7 @@
               <ul>
                 <li><strong>Measured:</strong> paid add-on adoption, assets generated, outside-tool replacement in beta. Aimed at a <strong>$650k</strong> annualized NRR target.</li>
                 <li><strong>Not claimed here:</strong> creator churn, contacts created, or GMV lift attributable only to Creator Studio. Company retention and NPS metrics also moved in this era alongside other growth and retention work.</li>
-                <li><strong>If I continued:</strong> instrument funnel completion → contact → purchase, and tie NRR to usage rather than add-on attach alone.</li>
+                <li><strong>Future:</strong> set up tracking to prove the full chain — a creator finishes a funnel → that funnel captures a contact → that contact buys something — and I’d judge revenue by whether creators actually use Creator Studio, not just whether they bought the add-on.</li>
               </ul>
             </aside>
           </section>
@@ -835,34 +856,28 @@
 
                 <ul class="case-roadmap">
                   <li class="case-roadmap-item">
-                    <h4>Auto-syndication &amp; scheduling</h4>
+                    <h4>Auto-syndication &amp; scheduling (Activation + NRR)</h4>
                     <p>Publish and schedule generated posts to a creator's social channels from Creator Studio, using the <strong>Adobe SDK</strong> for scheduling.</p>
-                    <p class="case-roadmap-value">→ Strategic value: Activation + NRR</p>
                   </li>
                   <li class="case-roadmap-item">
-                    <h4>Performance analytics</h4>
+                    <h4>Performance analytics (Retention + GMV)</h4>
                     <p>Show which repurposed assets actually convert, closing the loop from generation to GMV.</p>
-                    <p class="case-roadmap-value">→ Strategic value: Retention + GMV</p>
                   </li>
                   <li class="case-roadmap-item">
-                    <h4>Multi-language repurposing</h4>
+                    <h4>Multi-language repurposing (NRR)</h4>
                     <p>Turn one asset into funnels in multiple languages without new filming.</p>
-                    <p class="case-roadmap-value">→ Strategic value: NRR</p>
                   </li>
                   <li class="case-roadmap-item">
-                    <h4>Remove filler words</h4>
+                    <h4>Remove filler words (NRR)</h4>
                     <p>Auto-strip ums, uhs, and dead air so clips feel polished without manual cleanup.</p>
-                    <p class="case-roadmap-value">→ Strategic value: NRR</p>
                   </li>
                   <li class="case-roadmap-item">
-                    <h4>Bulk create projects</h4>
+                    <h4>Bulk create projects (NRR)</h4>
                     <p>Select multiple source videos (e.g. 10 lessons) and create 10 projects at once.</p>
-                    <p class="case-roadmap-value">→ Strategic value: NRR</p>
                   </li>
                   <li class="case-roadmap-item">
-                    <h4>Video to audio — podcast episodes</h4>
+                    <h4>Video to audio — podcast episodes (NRR)</h4>
                     <p>Turn course or coaching video into podcast-ready audio from the same source.</p>
-                    <p class="case-roadmap-value">→ Strategic value: NRR</p>
                   </li>
                 </ul>
               </div>
@@ -871,15 +886,28 @@
 
           <section class="case-block case-block--reflection reveal" id="reflection" data-reveal data-delay="4" data-section>
           <h2>Reflection</h2>
-            <p><strong>What worked:</strong> Research conviction on rich inputs; creator sessions after pre-beta (YouTube import, faster funnel pivot); pricing and vendor economics treated as design problems so GA could scale.</p>
+            <p><strong>What worked:</strong> Trusting the research bet on rich inputs (creators already had the content); listening after pre-beta (YouTube import and the pivot from clip to full funnel); and treating pricing and vendor economics as design problems, so GA could scale. Buying and partnering instead of building (Pictory first, Adobe Express at GA) let us validate fast and still ship professional-level editing.</p>
             <p><strong>What I'd do differently:</strong></p>
             <ul class="case-constraints">
               <li>Validate the <em>funnel</em> bet earlier, which would have saved a release cycle.</li>
-              <li>Push DS contributions onto a parallel track sooner.</li>
-              <li>Stand up leading-indicator dashboards in week 1, not at launch.</li>
+              <li>Test how much editing control creators really need earlier — we had to replace the light editor with Adobe Express at GA.</li>
+              <li>Build dashboards for early success signals (activation, completion, repeat use) from week one — don’t wait until launch to start measuring.</li>
             </ul>
-            <p><strong>Beyond design:</strong> co-authored strategy and pricing/NRR with PM/PMM; co-ran formal research; shaped reusable AI patterns: intake, generation, editable outputs, source transparency.</p>
-            <p><strong>On AI products:</strong> anything the model wrote or highlighted had to stay editable — AI as a tool creators tweak, never the ultimate content producer. Source transparency and unit cost are part of that trust equation.</p>
+            <p><strong>What I did beyond design:</strong> co-authored strategy and pricing/NRR with PM/PMM; co-ran formal research; created Kajabi’s first AI Design System patterns, later reused across its AI surfaces; influenced roadmap calls through disagreement — widening from a clip tool to the full funnel — and helped hold alignment through a mid-flight scope pivot.</p>
+          </section>
+
+          <section class="case-block reveal" id="ai-thoughts" data-reveal data-delay="4" data-section>
+            <h2>My thoughts on AI</h2>
+            <ul class="case-constraints">
+              <li><strong>A tool, not a replacement.</strong> AI is a great tool — and it should stay a tool, not a replacement for the human brain. Anything the model wrote or highlighted had to stay editable, because AI was never meant to be the final content producer. The person stays the author and makes the final call.</li>
+              <li><strong>Best for getting started.</strong> AI is most helpful when it helps you do something you don’t know how to do yet — getting information, exploring ideas, and getting a first draft started.</li>
+              <li><strong>Strong at language tasks.</strong> It’s genuinely useful for writing text, summarizing context, capturing the main idea, and analyzing data.</li>
+              <li><strong>Weaker at complex, detail-heavy work.</strong> It’s less helpful on complex tasks that require many details.</li>
+              <li><strong>Words are the friction.</strong> AI has to be instructed with words, but sometimes an action is much faster than putting it into words — and clarifying what to do, and what <em>not</em> to do, can take a lot of extra words. Good AI products shouldn’t force people to become prompt writers: they should use the context people already have, offer guided choices, and let people edit directly.</li>
+              <li><strong>It can be confidently wrong.</strong> AI can sound right and still be wrong, so a human has to verify what’s true.</li>
+              <li><strong>Only as good as its input.</strong> A generic prompt in gets generic output out; a creator’s own long-form content in gets output in their voice.</li>
+              <li><strong>AI drafts, humans judge.</strong> AI can offer drafts, options, and speed — but it doesn’t know your audience, your business, or your taste. The human still brings the judgment, the voice, and the responsibility for what ships.</li>
+            </ul>
           </section>
         </div>
       </div>

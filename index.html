@@ -237,6 +237,12 @@
           </li>
         </ul>
       </section>
+
+      <section class="ai-stance container reveal" data-reveal aria-labelledby="ai-stance-heading">
+        <h2 id="ai-stance-heading">How I work with AI</h2>
+        <p>I lean in — prototyping and shipping with AI to learn it as it moves. AI raises the starting line; human taste, context, and judgment decide what ships.</p>
+        <a class="ai-stance-link" href="./case-study-01.html#ai-thoughts" data-page-link>More in the Creator Studio case study <span aria-hidden="true">→</span></a>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -249,6 +255,22 @@
       </div>
     </footer>
 
+    <div class="gesture-ui">
+      <button type="button" class="gesture-toggle" data-gesture-toggle aria-pressed="false">✋ Gesture mode</button>
+      <div class="gesture-panel" data-gesture-panel hidden>
+        <video class="gesture-video" data-gesture-video autoplay muted playsinline aria-label="Camera preview for hand gestures"></video>
+        <p class="gesture-status" data-gesture-status>Starting…</p>
+        <ul class="gesture-legend">
+          <li>☝️ Point — move cursor</li>
+          <li>🤏 Pinch — click</li>
+          <li>✋ Open palm, move — scroll</li>
+        </ul>
+        <p class="gesture-note">Video is processed on your device and never uploaded.</p>
+      </div>
+      <div class="gesture-cursor" data-gesture-cursor hidden aria-hidden="true"><span class="gesture-cursor-label" data-gesture-cursor-label></span></div>
+    </div>
+
     <script src="./script.js?v=copyemail1"></script>
+    <script type="module" src="./gestures.js?v=1"></script>
   </body>
 </html>

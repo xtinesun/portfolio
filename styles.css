@@ -424,6 +424,147 @@ body.page-home main {
   max-width: 28ch;
 }
 
+/* ── AI stance (homepage) ── */
+
+.ai-stance {
+  padding-bottom: clamp(72px, 12vw, 140px);
+}
+
+.ai-stance h2 {
+  margin: 0 0 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-bold);
+}
+
+.ai-stance p {
+  margin: 0 0 16px;
+  max-width: 62ch;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.ai-stance-link {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--accent-bold);
+  text-decoration: none;
+}
+
+.ai-stance-link:hover {
+  color: var(--accent-bold-hover);
+  text-decoration: underline;
+}
+
+/* ── Gesture mode (homepage prototype) ── */
+
+.gesture-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 10000;
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--text);
+  color: var(--bg);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
+}
+
+.gesture-toggle:hover {
+  background: var(--accent-bold);
+}
+
+.gesture-panel {
+  position: fixed;
+  right: 20px;
+  bottom: 72px;
+  z-index: 10000;
+  width: 208px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--bg);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.22);
+  pointer-events: none;
+}
+
+.gesture-video {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  background: #111;
+  transform: scaleX(-1);
+}
+
+.gesture-status {
+  margin: 10px 0 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.gesture-legend {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.gesture-note {
+  margin: 0;
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.gesture-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10001;
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--accent-bold);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent-bold) 12%, transparent);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.gesture-cursor--pinch {
+  background: var(--accent-bold);
+}
+
+.gesture-cursor-label {
+  position: absolute;
+  top: 42px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--text);
+  color: var(--bg);
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 .project-grid {
   list-style: none;
   margin: 0;

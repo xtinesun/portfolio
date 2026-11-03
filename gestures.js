@@ -7,6 +7,8 @@
 
 const toggleBtn = document.querySelector("[data-gesture-toggle]");
 const panel = document.querySelector("[data-gesture-panel]");
+const liveWrap = document.querySelector("[data-gesture-live]");
+const closeBtn = document.querySelector("[data-gesture-close]");
 const video = document.querySelector("[data-gesture-video]");
 const statusEl = document.querySelector("[data-gesture-status]");
 const cursorEl = document.querySelector("[data-gesture-cursor]");
@@ -64,6 +66,7 @@ async function startGestures() {
   toggleBtn.setAttribute("aria-pressed", "true");
   toggleBtn.textContent = "✋ Stop gesture mode";
   panel.hidden = false;
+  if (liveWrap) liveWrap.hidden = false;
   cursorEl.hidden = false;
   setStatus("Requesting camera…");
 
@@ -83,7 +86,7 @@ async function startGestures() {
   try {
     setStatus("Loading hand tracking…");
     const mp = await import(
-      "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/dist/vision_bundle.mjs"
+      "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/vision_bundle.mjs"
     );
     landmarker = await createLandmarker(mp);
   } catch {
@@ -101,7 +104,8 @@ function stopGestures() {
   active = false;
   toggleBtn.setAttribute("aria-pressed", "false");
   toggleBtn.textContent = "✋ Gesture mode";
-  panel.hidden = true;
+  if (liveWrap) liveWrap.hidden = true;
+  panel.hidden = legendClosed;
   cursorEl.hidden = true;
   palmPrevY = null;
   pinchDown = false;
@@ -196,6 +200,24 @@ function loop() {
     cursorLabel.textContent = indexExt && !middleExt ? "Point" : "Pinch to click";
     pinchDown = false;
   }
+}
+
+/* Legend stays open unless the user closes it (remembered across visits) */
+let legendClosed = false;
+try {
+  legendClosed = localStorage.getItem("gesture-legend-closed") === "1";
+} catch { /* private mode */ }
+if (panel && legendClosed) panel.hidden = true;
+
+if (closeBtn) {
+  closeBtn.addEventListener("click", () => {
+    legendClosed = true;
+    try {
+      localStorage.setItem("gesture-legend-closed", "1");
+    } catch { /* private mode */ }
+    if (active) stopGestures();
+    panel.hidden = true;
+  });
 }
 
 if (toggleBtn) {

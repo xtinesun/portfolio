@@ -83,7 +83,7 @@
             <li><a href="#insights" data-nav-link>Insights</a></li>
             <li><a href="#decisions" data-nav-link>Decisions</a></li>
             <li><a href="#solution" data-nav-link>What we built</a></li>
-            <li><a href="#outcomes" data-nav-link>Outcome</a></li>
+            <li><a href="#outcome" data-nav-link>Outcome</a></li>
             <li><a href="#reflection" data-nav-link>Reflection</a></li>
           </ul>
         </nav>
@@ -119,15 +119,15 @@
               <figcaption class="case-figure-caption">Audience lives on social and in other tools — Kajabi needed native capture and deeper automation to own the journey.</figcaption>
             </figure>
 
-            <p>Aimed at <strong>Hobbyists</strong> and <strong>Builders</strong>. Two steps:</p>
+            <p>Aimed at <span class="term-tip" tabindex="0" data-tip="Earlier-stage creators building on the side — smaller audiences and revenue, still validating their offer."><strong>Hobbyists</strong></span> and <span class="term-tip" tabindex="0" data-tip="Established creators who have figured out their business and are refining it — growing revenue, possibly first hires, and more time on admin."><strong>Builders</strong></span>. Two versions:</p>
             <div class="roadmap-strip roadmap-strip--steps">
               <div class="roadmap-frame roadmap-frame--current">
-                <span class="roadmap-version">Step 1</span>
+                <span class="roadmap-version">v1</span>
                 <p class="roadmap-title">Comment to DM</p>
                 <p class="roadmap-desc">Instagram → DM in today’s Automations.</p>
               </div>
               <div class="roadmap-frame">
-                <span class="roadmap-version">Step 2</span>
+                <span class="roadmap-version">v2</span>
                 <p class="roadmap-title">Visual Editor</p>
                 <p class="roadmap-desc">Canvas for multi-trigger flows — up to 50 actions.</p>
               </div>
@@ -145,22 +145,16 @@
 
             <ol class="case-research">
               <li class="case-research-item" id="insight-1">
-                <p class="case-research-meta">01 · Interviews · automation trees outside Kajabi</p>
-                <h3>Creators couldn’t see how automations connected</h3>
+                <h3><span class="case-research-num">01</span>Creators couldn’t see how automations connected</h3>
                 <p class="case-research-finding">Biggest pain: only isolated this→that pairs. Creators walked me through deep, wide trees in ManyChat, GoHighLevel, and Zapier. They wanted that sophistication in Kajabi — one view, and room to build elaborate journeys.</p>
-                <p class="case-research-so"><span>So</span> Design a Visual Editor canvas — multi-trigger, branching, up to 50 stacked actions — so creators can see and edit strategy in one glance. <a href="#decision-4">Decision 04</a>.</p>
               </li>
               <li class="case-research-item" id="insight-2">
-                <p class="case-research-meta">02 · Survey + discovery · social → contacts</p>
-                <h3>Instagram viewers weren’t becoming Kajabi contacts</h3>
+                <h3><span class="case-research-num">02</span>Instagram viewers weren’t becoming Kajabi contacts</h3>
                 <p class="case-research-finding">Creators reach audiences on <strong>email, Facebook, and Instagram</strong> (71% use Instagram DMs; 63% Messenger). Social is visibility; email is nurture. Viewers aren’t contacts yet — so they can’t convert inside Kajabi. <strong>50%</strong> of contacts are still imported from outside (85% via bulk upload).</p>
-                <p class="case-research-so"><span>So</span> Comment to DM bridges Instagram in; the Visual Editor carries the rest — text, email, and future social platforms — so contacts turn into customers inside Kajabi. <a href="#solution">What we built</a>.</p>
               </li>
               <li class="case-research-item" id="insight-3">
-                <p class="case-research-meta">03 · Usability · 7 sessions · Dec 2024</p>
-                <h3>Native capture needed safety defaults</h3>
-                <p class="case-research-finding">Creators wanted native Comment to DM to drop ManyChat (“too many tools… under one umbrella”). They asked for delay guidance so Instagram wouldn’t flag them — and picked <strong>5–10 seconds</strong>. Setup UI split by context: for Step 1 Comment to DM we tested a step-by-step drawer vs. a one-page modal (most preferred seeing the full setup at once); for Step 2’s Visual Editor, one-step config that stays tied to the canvas favored a drawer.</p>
-                <p class="case-research-so"><span>So</span> Delay by default. Ship Step 1 in a modal with accordion sections; use a Visual Editor drawer when detail work has to stay connected to the canvas. <a href="#decision-1">Decision 01</a> · <a href="#decision-ui">UI</a>.</p>
+                <h3><span class="case-research-num">03</span>Native capture needed safety defaults</h3>
+                <p class="case-research-finding">Creators wanted native Comment to DM to drop ManyChat (“too many tools… under one umbrella”). They asked for delay guidance so Instagram wouldn’t flag them — and picked <strong>5–10 seconds</strong>. Setup UI split by context: for v1 Comment to DM we tested a step-by-step drawer vs. a one-page modal (most preferred seeing the full setup at once); for v2’s Visual Editor, one-step config that stays tied to the canvas favored a drawer.</p>
               </li>
             </ol>
 
@@ -182,7 +176,7 @@
             <div class="case-section-box case-decisions-box">
               <header class="case-decisions-head">
                 <h2 class="case-decisions-heading">Decisions</h2>
-                <p class="case-decisions-lede">Calls that shaped Comment to DM and Automations 2.0 — product rules first, then the setup UI for Step 1 vs. Step 2.</p>
+                <p class="case-decisions-lede">Calls that shaped Comment to DM and Automations 2.0 — product rules first, then the setup UI for v1 vs. v2.</p>
               </header>
 
               <div class="case-decisions-group">
@@ -190,8 +184,7 @@
                 <div class="case-decisions-stack">
                   <article class="case-decision-item case-decision-item--media" id="decision-1">
                     <div class="case-decision-copy">
-                      <p class="case-decision-item-index" aria-hidden="true">01</p>
-                      <h4 class="case-decision-item-title">Delay DMs by default — don’t get creators flagged</h4>
+                      <h4 class="case-decision-item-title"><span class="case-decision-num">01</span>Delay DMs by default — don’t get creators flagged</h4>
                       <p class="case-decision-item-body">Core responsibility: Automations 2.0 must not get creators flagged as spam or bots on Instagram (and later other social). <strong>Chose:</strong> configurable delay (0s–5min), up to 10 varied replies, auto-like. Creators picked <strong>5–10s</strong> in testing. <em>Business:</em> safe native capture vs. ManyChat. <em>Design:</em> human-feeling defaults, not buried settings.</p>
                     </div>
                     <figure class="case-decision-figure case-figure--media">
@@ -200,7 +193,7 @@
                         class="case-media-trigger"
                         data-media-expand
                         data-media-hires
-                        data-media-src="./assets/cs3-delay.png?v=3"
+                        data-media-src="./assets/cs3-delay@2x.png?v=1"
                         data-media-alt="Delay automation control set to 5 seconds, with automatically like replies and Save automation"
                         aria-label="View the delay controls larger"
                       >
@@ -218,8 +211,7 @@
 
                   <article class="case-decision-item case-decision-item--media" id="decision-2">
                     <div class="case-decision-copy">
-                      <p class="case-decision-item-index" aria-hidden="true">02</p>
-                      <h4 class="case-decision-item-title">Keywords by default; all-comments optional</h4>
+                      <h4 class="case-decision-item-title"><span class="case-decision-num">02</span>Keywords by default; all-comments optional</h4>
                       <p class="case-decision-item-body">Most creators want “comment HELPER for the freebie” — not a DM to every comment. Keywords first (max 5); all-comments stays for boost posts.</p>
                     </div>
                     <figure class="case-decision-figure case-figure--media">
@@ -228,7 +220,7 @@
                         class="case-media-trigger"
                         data-media-expand
                         data-media-hires
-                        data-media-src="./assets/cs3-keywords.png?v=2"
+                        data-media-src="./assets/cs3-keywords@2x.png?v=1"
                         data-media-alt="Keyword trigger selected by default — Specific key word with Helper entered; Any comment optional"
                         aria-label="View the keyword trigger controls larger"
                       >
@@ -245,14 +237,12 @@
                   </article>
 
                   <article class="case-decision-item" id="decision-3">
-                    <p class="case-decision-item-index" aria-hidden="true">03</p>
-                    <h4 class="case-decision-item-title">Capture permissions now; don't penalize early adopters</h4>
-                    <p class="case-decision-item-body">Capture Hub-ready DM permissions in Step 1, but don’t count Instagram handles against plan limits until Conversation Hub can support two-way messaging — so creators can view and reply to Automations 2.0 conversations in one place inside Kajabi. Avoids punishing early adopters and re-consenting later.</p>
+                      <h4 class="case-decision-item-title"><span class="case-decision-num">03</span>Capture permissions now; don't penalize early adopters</h4>
+                    <p class="case-decision-item-body">Capture Hub-ready DM permissions in v1, but don’t count Instagram handles against plan limits until Conversation Hub can support two-way messaging — so creators can view and reply to Automations 2.0 conversations in one place inside Kajabi. Avoids punishing early adopters and re-consenting later.</p>
                   </article>
 
                   <article class="case-decision-item" id="decision-4">
-                    <p class="case-decision-item-index" aria-hidden="true">04</p>
-                    <h4 class="case-decision-item-title">New Visual Editor canvas — don’t stretch the old UI</h4>
+                      <h4 class="case-decision-item-title"><span class="case-decision-num">04</span>New Visual Editor canvas — don’t stretch the old UI</h4>
                     <p class="case-decision-item-body">I designed the initial Automations 2.0 Visual Editor. Extending Rails-era one-to-one UI for long chains would make it unusable — and Comment to DM is only one recipe on a much bigger canvas. <strong>Chose:</strong> a new canvas (pan/zoom) with multi-trigger, branching, and stacked actions across <strong>text, email, and (later) more social platforms</strong> — <strong>up to 50 actions per flow</strong>, not unlimited — plus <strong>per-step performance</strong> on the journey, and a <strong>drawer</strong> for detail config so creators keep the canvas in view. <em>Business:</em> deep multi-channel trees stay in Kajabi. <em>Design:</em> clear journey view with data on what works; intricate one-step edits (SMS copy, etc.) open beside the flow, not over it.</p>
                     <div class="case-ve-flows" aria-label="Visual Editor design flows">
                       <figure class="case-ve-flow">
@@ -311,8 +301,8 @@
               <div class="case-decisions-group case-decisions-group--ui" id="decision-ui">
                 <h3 class="case-decisions-group-title">UI</h3>
                 <div class="case-decision-ui">
-                  <h4 class="case-decision-ui-title">Step 1 — Comment to DM setup</h4>
-                  <p class="case-decision-ui-body">In Dec 2024 usability sessions we tested both patterns for Comment to DM. Most creators — especially Builders — preferred seeing the full setup at once over a forced Next → Next path. They called the one-page version clearer and “better to visualize”; the step-by-step drawer split decisions across screens.</p>
+                  <h4 class="case-decision-ui-title">v1 — Comment to DM setup</h4>
+                  <p class="case-decision-ui-body">In Dec 2024 usability sessions we tested both patterns for Comment to DM. Most creators — especially <span class="term-tip" tabindex="0" data-tip="Established creators who have figured out their business and are refining it — growing revenue, possibly first hires, and more time on admin.">Builders</span> — preferred seeing the full setup at once over a forced Next → Next path. They called the one-page version clearer and “better to visualize”; the step-by-step drawer split decisions across screens.</p>
                   <div class="case-paths-grid">
                     <div class="case-path case-path--rejected">
                       <p class="case-path-tag">Explored</p>
@@ -370,7 +360,7 @@
                 </div>
 
                 <div class="case-decision-ui">
-                  <h4 class="case-decision-ui-title">Step 2 — Visual Editor config</h4>
+                  <h4 class="case-decision-ui-title">v2 — Visual Editor config</h4>
                   <p class="case-decision-ui-body">On the Visual Editor canvas, the call flipped. Many option layers are already chosen on the nodes themselves; the panel only needs to open for denser, one-step work — writing SMS copy, longer message fields, and similar detail. A modal would cover the canvas those controls still need to stay tied to. Creators preferred a drawer here: one step, beside the flow, interacting with what’s already selected on the Visual Editor.</p>
                   <div class="case-paths-grid">
                     <div class="case-path case-path--rejected">
@@ -384,6 +374,25 @@
                       <p class="case-path-why">Opens when options get intricate (SMS text, etc.); stays connected to the selected node. Preferred for one-step config in the Visual Editor experience.</p>
                     </div>
                   </div>
+                  <figure class="case-decision-figure case-figure--media" style="margin-top:1rem">
+                    <button
+                      type="button"
+                      class="case-media-trigger"
+                      data-media-expand
+                      data-media-src="./assets/cs3-ve-drawer.svg?v=1"
+                      data-media-alt="Visual Editor with the configuration drawer open beside the canvas, editing a selected step"
+                      aria-label="View the Visual Editor drawer larger"
+                    >
+                      <img
+                        src="./assets/cs3-ve-drawer.svg?v=1"
+                        alt="Visual Editor canvas with a configuration drawer open beside it"
+                        width="1400"
+                        height="900"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </button>
+                  </figure>
                 </div>
               </div>
             </div>
@@ -392,7 +401,7 @@
           <section class="case-block reveal" id="solution" data-reveal data-section>
             <h2>What we built</h2>
 
-            <p class="case-impact-label">Step 1 — Comment to DM</p>
+            <p class="case-impact-label">v1 — Comment to DM</p>
             <p>Shipped into Marketing → Automations (next to Email and Funnels): connect Instagram, pick a post, keywords or all-comments, delay + auto-like, DM with Kajabi link, results (delivered / opened / clicked). Lead capture without waiting on the new canvas.</p>
 
             <div class="case-flow" role="img" aria-label="Comment to DM flow">
@@ -449,15 +458,23 @@
                 ></video>
               </button>
             </figure>
+          </section>
 
-            <aside class="case-feedback reveal" data-reveal id="feedback-ctd" aria-label="Feedback after Comment to DM">
-              <p class="case-feedback-label">Feedback · after Step 1</p>
-              <p class="case-feedback-takeaway">Creators wanted native capture — and a way to see the rest of the journey, not only the Instagram DM.</p>
-              <p class="case-feedback-synthesis">Usability confirmed delay defaults and a one-page setup. Interviews still pointed at the missing piece: deep, multi-channel trees they already ran in ManyChat. That unlocked Step 2.</p>
-            </aside>
+          <section class="case-feedback reveal" data-reveal id="feedback-ctd" aria-label="Findings after Comment to DM">
+          <p class="case-feedback-label">Findings · after v1</p>
+          <p class="case-feedback-takeaway">Creators wanted native capture — and a way to see the rest of the journey, not only the Instagram DM.</p>
+          <p class="case-feedback-synthesis">What we heard after v1 shaped what came next:</p>
+          <ul class="case-constraints case-feedback-list">
+          <li><strong>Delay defaults held up</strong> — creators kept the human-feeling delay rather than asking for instant sends.</li>
+          <li><strong>One-page setup won</strong> — creators preferred seeing the full setup at once over a step-by-step path.</li>
+          <li><strong>The DM wasn’t the whole journey</strong> — deep, multi-channel trees still lived in ManyChat. That unlocked v2, the Visual Editor.</li>
+          </ul>
+          </section>
 
-            <p class="case-impact-label" style="margin-top:1.75rem">Step 2 — Visual Editor</p>
-            <p>A canvas far beyond Comment to DM: creators compose journeys across <strong>text, email, and — later — more social platforms</strong>, with multi-trigger, branching, and stacked actions — <strong>up to 50 per flow</strong> (vs. 1 trigger + 1 action today). Detail config opens in a <strong>drawer</strong> beside the canvas — not a modal — so node options stay tied to the flow (SMS copy and other one-step, text-heavy edits). Performance sits on the journey too — creators can see <strong>how each step runs</strong>, not just that the tree exists. Comment to DM is one recipe on that canvas. Every Step 1 field was shaped so it doesn’t need a redesign when it lands there.</p>
+          <section class="case-block reveal" id="visual-editor" data-reveal data-section>
+            <h2>What we built</h2>
+            <p class="case-impact-label">v2 — Visual Editor</p>
+            <p>A canvas far beyond Comment to DM: creators compose journeys across <strong>text, email, and — later — more social platforms</strong>, with multi-trigger, branching, and stacked actions — <strong>up to 50 per flow</strong> (vs. 1 trigger + 1 action today). Detail config opens in a <strong>drawer</strong> beside the canvas — not a modal — so node options stay tied to the flow (SMS copy and other one-step, text-heavy edits). Performance sits on the journey too — creators can see <strong>how each step runs</strong>, not just that the tree exists. Comment to DM is one recipe on that canvas. Every v1 field was shaped so it doesn’t need a redesign when it lands there.</p>
             <ul class="case-constraints">
               <li>Up to <strong>50</strong> actions in one flow (not unlimited)</li>
               <li>Channels beyond Instagram DMs — text, email, expandable to more social</li>
@@ -495,7 +512,7 @@
             </figure>
 
             <div class="case-ve-performance reveal" id="ve-performance" data-reveal>
-              <p class="case-impact-label">Performance on the canvas</p>
+              <h4 class="case-ve-performance-title">Performance on the canvas</h4>
               <p>Building the journey is only half the job. Toggle performance on the canvas to see how each step runs — sends, opens, clicks, unsubscribes — without leaving the flow. Creators can spot what’s working and tune what isn’t on the same tree they built.</p>
               <figure class="case-decision-figure case-figure--media">
                 <button
@@ -534,67 +551,66 @@
             </div>
           </section>
 
-          <section class="case-block reveal" id="outcomes" data-reveal data-section>
+          <section class="case-block reveal" id="outcome" data-reveal data-section>
             <h2>Outcome</h2>
-            <p>Designed and tested both steps through eng-ready handoff. Another designer took build and launch when I went on maternity leave.</p>
+            <p>Designed and tested both versions through eng-ready handoff. Another designer took build and launch when I went on maternity leave.</p>
 
             <p class="case-impact-label" style="margin-top:1.25rem">Delivered</p>
             <ul class="case-constraints">
-              <li><strong>Comment to DM shipped</strong> — platform-safe Instagram capture (delayed DMs, varied replies, auto-like) in today’s Automations</li>
-              <li><strong>Visual Editor eng-ready</strong> — multi-channel canvas (text, email, future social); multi-trigger, branching, up to 50 actions, per-step performance; interaction model validated before eng</li>
-              <li>Sequenced delivery + Conversation Hub–ready permission / contact model documented</li>
-            </ul>
-
-            <p class="case-impact-label" style="margin-top:1.25rem">Targets <span style="font-weight:400;text-transform:none;letter-spacing:0">(post-handoff — not measured in this case)</span></p>
-            <ul class="case-constraints">
-              <li>Recapture ManyChat-style spend and contacts (30% use ManyChat for lead capture; ~$42/mo avg chatbot spend)</li>
-              <li>Social viewers → owned contacts → customers (50% of contacts still imported; 3.5% convert to paid)</li>
-              <li>+20% monthly Comment to DM contacts; Hobbyist + Builder adoption; less 3P lead-capture spend; deeper multi-step use post-rollout</li>
+              <li><strong>Comment to DM — shipped.</strong> Live in today’s Automations, with delayed DMs, varied replies, and auto-like so Instagram doesn’t flag creators.</li>
+              <li><strong>Visual Editor — designed, tested, and ready for engineering.</strong> A multi-channel canvas (text, email, future social) with multiple triggers, branching, up to 50 actions, and per-step performance. We tested how creators build on it before handoff.</li>
+              <li><strong>Documented for what comes next:</strong> the order to ship in, plus permissions and contact handling designed so the future Conversation Hub can use them — without asking creators to re-connect or re-approve.</li>
             </ul>
 
             <aside class="case-impact-closure" aria-label="Impact closure">
               <p class="case-impact-closure-label">Impact closure</p>
               <ul>
-                <li><strong>Shipped under my ownership:</strong> Comment to DM.</li>
-                <li><strong>Handoff:</strong> Visual Editor eng-ready before leave.</li>
-                <li><strong>Not claimed:</strong> VE launch metrics.</li>
-                <li><strong>Evidence of craft:</strong> delay defaults + drawer vs modal decisions; specs and prototype testing before handoff.</li>
+                <li><strong>Measured:</strong> what we can prove is delivery — Comment to DM shipped in today’s Automations, and the Visual Editor was designed, tested, and eng-ready before my leave. No launch numbers are claimed yet.</li>
+                <li><strong>Not claimed here:</strong> Visual Editor launch metrics, or any contact, GMV, or retention lift after my handoff.</li>
+                <li><strong>Future:</strong> judge success by +20% monthly Comment to DM contacts, <span class="term-tip" tabindex="0" data-tip="Earlier-stage creators building on the side — smaller audiences and revenue, still validating their offer.">Hobbyist</span> + <span class="term-tip" tabindex="0" data-tip="Established creators who have figured out their business and are refining it — growing revenue, possibly first hires, and more time on admin.">Builder</span> adoption, less third-party lead-capture spend, and deeper multi-step use after rollout.</li>
               </ul>
             </aside>
           </section>
 
           <section class="case-block case-block--reflection reveal" id="reflection" data-reveal data-section>
             <h2>Reflection</h2>
-            <p><strong>What worked:</strong> Comment to DM in today’s Automations first — Instagram capture before the Visual Editor existed — with delay defaults and varied replies so accounts weren’t flagged. Interviews made the Visual Editor job clear: creators couldn’t see how automations connected, and they’d already built deep trees outside Kajabi. Designing and testing that canvas before handoff gave eng a real interaction model, not just frames.</p>
-            <p><strong>What I’d change:</strong> Flag contacts / social-handle engineering earlier. Comment to DM looked quick until that rearchitecture slowed it vs. the Visual Editor.</p>
-            <p><strong>On the handoff:</strong> Maternity leave meant stopping after design + testing. Docs for the two-step plan, safety defaults, and Conversation Hub–ready permissions let another designer own build without reopening those calls.</p>
-            <p><strong>Lesson:</strong> On social automation, speed is the wrong default. Delayed, human-feeling replies make native capture viable — and one Visual Editor makes text, email, and future social marketing livable inside Kajabi, not just Comment to DM.</p>
+            <p><strong>What worked:</strong></p>
+            <ul class="case-constraints">
+              <li><strong>Shipped Comment to DM first,</strong> inside the Automations creators already used — before the Visual Editor existed. Built-in delays and varied replies meant Instagram didn’t flag their accounts.</li>
+              <li><strong>Interviews made the Visual Editor’s job clear.</strong> Creators couldn’t see how their automations connected, and they’d already built complex flows in tools like ManyChat. They wanted that view inside Kajabi.</li>
+              <li><strong>Tested the canvas before handoff,</strong> so engineering got a proven way to interact with it — not just pictures of screens.</li>
+            </ul>
+            <p><strong>What I’d change:</strong> ask engineering earlier what Comment to DM needed under the hood. It looked like a quick feature, but rebuilding how contacts and Instagram handles are stored slowed it down more than the Visual Editor.</p>
+            <p><strong>On the handoff:</strong> I went on maternity leave after design and testing. I documented the v1 and v2 plan, the safety defaults, and the permissions (designed so the future Conversation Hub could use them) — so another designer could own the build without re-deciding those things.</p>
+            <p><strong>What I did beyond design:</strong> created new Design System components for the Visual Editor. Kajabi didn’t have an endless (infinite-canvas) editor, so the building blocks were net-new: canvas nodes for triggers and actions, connectors and branching, drawer-based step config, and per-step performance states — patterns other teams could reuse instead of starting from zero.</p>
+            <p><strong>Lesson:</strong> on social, fast replies look like a bot and get accounts flagged. A short delay that feels human is what makes native capture safe. And one Visual Editor puts text, email, and future social in one place — instead of stopping at the DM.</p>
+          </section>
 
-            <aside class="case-segments case-segments--page-bg" aria-label="What's next" style="margin-top: clamp(28px, 4vw, 40px)">
-              <details class="case-accordion case-segments-accordion">
-                <summary class="case-accordion-summary">
-                  <span class="case-accordion-title">What's next</span>
-                  <span class="case-accordion-icon" aria-hidden="true"></span>
-                </summary>
-                <div class="case-accordion-body">
-                  <p>AI that drafts and suggests on the Visual Editor and Comment to DM — creators still control send.</p>
-                  <ol class="case-roadmap">
-                    <li class="case-roadmap-item">
-                      <h4>Visual Editor</h4>
-                      <p>Kick off a customized tree from goals questions; suggest valid next steps; explain or debug a journey in plain language; review for missed opportunities or stronger configs; migrate ManyChat / Zapier trees into Kajabi. <strong>Why:</strong> faster time-to-first-flow and deeper multi-step use in-product; reclaim off-platform automation spend; higher conversion from contacts already owned.</p>
-                    </li>
-                    <li class="case-roadmap-item">
-                      <h4>Comment to DM</h4>
-                      <p>Draft and vary human-feeling DM replies; coach keywords and delay ranges from the post; warn when instant reply risks spam flags; triage comments (buy intent vs. spam vs. FAQ) before the automation fires. <strong>Why:</strong> more completed native setups; fewer flagged accounts; better-qualified leads into nurture — keep social capture inside Kajabi.</p>
-                    </li>
-                    <li class="case-roadmap-item">
-                      <h4>Adoption</h4>
-                      <p>Goal → recipe wizard (starter flow + copy), then open in the editor to tweak, plus short inline “why this delay / why this branch” tips. <strong>Why:</strong> activate Hobbyists and Builders who stall on a blank canvas; cut time-to-value without extra support cost.</p>
-                    </li>
-                  </ol>
-                </div>
-              </details>
-            </aside>
+          <section class="case-block case-block--accordion reveal" id="future" data-reveal data-section>
+            <details class="case-accordion">
+              <summary class="case-accordion-summary">
+                <span class="case-accordion-title">What's next</span>
+                <span class="case-accordion-meta">3 roadmap bets</span>
+                <span class="case-accordion-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="case-accordion-body">
+                <p>AI that drafts and suggests on the Visual Editor and Comment to DM — creators still control send.</p>
+                <ul class="case-roadmap">
+          <li class="case-roadmap-item">
+          <h4>Visual Editor</h4>
+          <p>Kick off a customized tree from goals questions; suggest valid next steps; explain or debug a journey in plain language; review for missed opportunities or stronger configs; migrate ManyChat / Zapier trees into Kajabi. <strong>Why:</strong> faster time-to-first-flow and deeper multi-step use in-product; reclaim off-platform automation spend; higher conversion from contacts already owned.</p>
+          </li>
+          <li class="case-roadmap-item">
+          <h4>Comment to DM</h4>
+          <p>Draft and vary human-feeling DM replies; coach keywords and delay ranges from the post; warn when instant reply risks spam flags; triage comments (buy intent vs. spam vs. FAQ) before the automation fires. <strong>Why:</strong> more completed native setups; fewer flagged accounts; better-qualified leads into nurture — keep social capture inside Kajabi.</p>
+          </li>
+          <li class="case-roadmap-item">
+          <h4>Adoption</h4>
+          <p>Goal → recipe wizard (starter flow + copy), then open in the editor to tweak, plus short inline “why this delay / why this branch” tips. <strong>Why:</strong> activate <span class="term-tip" tabindex="0" data-tip="Earlier-stage creators building on the side — smaller audiences and revenue, still validating their offer.">Hobbyists</span> and <span class="term-tip" tabindex="0" data-tip="Established creators who have figured out their business and are refining it — growing revenue, possibly first hires, and more time on admin.">Builders</span> who stall on a blank canvas; cut time-to-value without extra support cost.</p>
+          </li>
+                </ul>
+              </div>
+            </details>
           </section>
         </div>
       </div>

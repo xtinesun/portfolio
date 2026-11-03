@@ -257,20 +257,23 @@
 
     <div class="gesture-ui">
       <button type="button" class="gesture-toggle" data-gesture-toggle aria-pressed="false">✋ Gesture mode</button>
-      <div class="gesture-panel" data-gesture-panel hidden>
-        <video class="gesture-video" data-gesture-video autoplay muted playsinline aria-label="Camera preview for hand gestures"></video>
-        <p class="gesture-status" data-gesture-status>Starting…</p>
+      <div class="gesture-panel" data-gesture-panel>
+        <button type="button" class="gesture-panel-close" data-gesture-close aria-label="Close gesture legend">×</button>
+        <div data-gesture-live hidden>
+          <video class="gesture-video" data-gesture-video autoplay muted playsinline aria-label="Camera preview for hand gestures"></video>
+          <p class="gesture-status" data-gesture-status>Starting…</p>
+        </div>
         <ul class="gesture-legend">
           <li>☝️ Point — move cursor</li>
           <li>🤏 Pinch — click</li>
           <li>✋ Open palm, move — scroll</li>
         </ul>
-        <p class="gesture-note">Video is processed on your device and never uploaded.</p>
+        <p class="gesture-note">Tap <strong>Gesture mode</strong> to start. Video is processed on your device and never uploaded.</p>
       </div>
       <div class="gesture-cursor" data-gesture-cursor hidden aria-hidden="true"><span class="gesture-cursor-label" data-gesture-cursor-label></span></div>
     </div>
 
     <script src="./script.js?v=copyemail1"></script>
-    <script type="module" src="./gestures.js?v=1"></script>
+    <script type="module" src="./gestures.js?v=2"></script>
   </body>
 </html>

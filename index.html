@@ -21,7 +21,7 @@
       href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=headingwrap1" />
+    <link rel="stylesheet" href="./styles.css?v=nogesture1" />
     <link rel="stylesheet" href="./mockups.css?v=nozoom1" />
   </head>
   <body class="page-home">
@@ -256,8 +256,8 @@
     </footer>
 
     <div class="gesture-ui" hidden>
-      <button type="button" class="gesture-toggle" data-gesture-toggle aria-pressed="false">✋ Gesture mode</button>
-      <div class="gesture-panel" data-gesture-panel>
+      <button type="button" class="gesture-toggle" data-gesture-toggle aria-pressed="false" hidden>✋ Gesture mode</button>
+      <div class="gesture-panel" data-gesture-panel hidden>
         <button type="button" class="gesture-panel-close" data-gesture-close aria-label="Close gesture legend">×</button>
         <div data-gesture-live hidden>
           <video class="gesture-video" data-gesture-video autoplay muted playsinline aria-label="Camera preview for hand gestures"></video>

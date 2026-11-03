@@ -504,6 +504,13 @@ body.page-home main {
 }
 
 /* ── Gesture mode (homepage prototype) ── */
+/* Off for now. Restore by removing this block and the hidden attrs in index.html. */
+.gesture-ui,
+.gesture-toggle,
+.gesture-panel,
+.gesture-cursor {
+  display: none !important;
+}
 
 .gesture-toggle {
   position: fixed;

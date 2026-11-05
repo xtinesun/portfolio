@@ -6500,6 +6500,33 @@ body.deck-notes-on .deck-stage {
   width: 100%;
 }
 
+/* Pg 6: frame width tracks media aspect instead of stretching to the column */
+.deck-slide[aria-label="Slide 6 · Pre-beta experience"] .deck-carousel {
+  width: fit-content;
+  max-width: 100%;
+  justify-self: start;
+}
+
+.deck-slide[aria-label="Slide 6 · Pre-beta experience"] .deck-carousel-frame,
+.deck-slide[aria-label="Slide 6 · Pre-beta experience"] .deck-carousel-stage {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.deck-slide[aria-label="Slide 6 · Pre-beta experience"] .deck-carousel-stage {
+  height: auto;
+  max-height: min(42vh, 420px);
+}
+
+.deck-slide[aria-label="Slide 6 · Pre-beta experience"] .deck-carousel-stage video,
+.deck-slide[aria-label="Slide 6 · Pre-beta experience"] .deck-carousel-stage img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: min(42vh, 420px);
+  object-fit: contain;
+}
+
 .deck-carousel-thumbs {
   display: flex;
   flex-wrap: nowrap;

@@ -6227,6 +6227,10 @@ body.deck-notes-on .deck-stage {
   text-wrap: balance;
 }
 
+.deck-h1--accent {
+  color: var(--accent-bold);
+}
+
 .deck-h2 {
   margin: 0 0 14px;
   font-family: var(--font-serif);
@@ -6322,6 +6326,24 @@ body.deck-notes-on .deck-stage {
   height: 6px;
   border-radius: 50%;
   background: var(--accent-bold);
+}
+
+.deck-bullets .deck-bullets {
+  margin-top: 10px;
+  margin-left: 0.15rem;
+  max-width: none;
+  gap: 8px;
+}
+
+.deck-bullets .deck-bullets li {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+}
+
+.deck-bullets .deck-bullets li::before {
+  width: 5px;
+  height: 5px;
+  background: var(--text-subtle);
 }
 
 .deck-bullets--lg li {
@@ -6500,26 +6522,26 @@ body.deck-notes-on .deck-stage {
   width: 100%;
 }
 
-/* Pg 6: frame width tracks media aspect instead of stretching to the column */
-.deck-slide[aria-label="Slide 6 · Pre-beta experience"] .deck-carousel {
+/* Pre-beta experience: frame width tracks media aspect instead of stretching to the column */
+.deck-slide[aria-label="Slide 7 · Pre-beta experience"] .deck-carousel {
   width: fit-content;
   max-width: 100%;
   justify-self: start;
 }
 
-.deck-slide[aria-label="Slide 6 · Pre-beta experience"] .deck-carousel-frame,
-.deck-slide[aria-label="Slide 6 · Pre-beta experience"] .deck-carousel-stage {
+.deck-slide[aria-label="Slide 7 · Pre-beta experience"] .deck-carousel-frame,
+.deck-slide[aria-label="Slide 7 · Pre-beta experience"] .deck-carousel-stage {
   width: fit-content;
   max-width: 100%;
 }
 
-.deck-slide[aria-label="Slide 6 · Pre-beta experience"] .deck-carousel-stage {
+.deck-slide[aria-label="Slide 7 · Pre-beta experience"] .deck-carousel-stage {
   height: auto;
   max-height: min(42vh, 420px);
 }
 
-.deck-slide[aria-label="Slide 6 · Pre-beta experience"] .deck-carousel-stage video,
-.deck-slide[aria-label="Slide 6 · Pre-beta experience"] .deck-carousel-stage img {
+.deck-slide[aria-label="Slide 7 · Pre-beta experience"] .deck-carousel-stage video,
+.deck-slide[aria-label="Slide 7 · Pre-beta experience"] .deck-carousel-stage img {
   width: auto;
   height: auto;
   max-width: 100%;

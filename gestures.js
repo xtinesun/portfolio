@@ -5,7 +5,17 @@
    - Open palm, move up/down: scroll
    Mouse / touch / keyboard keep working at all times. */
 
-const toggleBtn = document.querySelector("[data-gesture-toggle]");
+const toggles = [...document.querySelectorAll("[data-gesture-toggle]")];
+
+function setToggles(on) {
+  toggles.forEach((btn) => {
+    btn.setAttribute("aria-pressed", on ? "true" : "false");
+    const label = btn.querySelector("[data-gesture-toggle-label]") || btn;
+    label.textContent = on
+      ? btn.dataset.labelOn || "✋ Stop gesture mode"
+      : btn.dataset.labelOff || "✋ Gesture mode";
+  });
+}
 const panel = document.querySelector("[data-gesture-panel]");
 const liveWrap = document.querySelector("[data-gesture-live]");
 const closeBtn = document.querySelector("[data-gesture-close]");
@@ -63,8 +73,7 @@ async function startGestures() {
     return;
   }
   active = true;
-  toggleBtn.setAttribute("aria-pressed", "true");
-  toggleBtn.textContent = "✋ Stop gesture mode";
+  setToggles(true);
   panel.hidden = false;
   if (liveWrap) liveWrap.hidden = false;
   cursorEl.hidden = false;
@@ -102,10 +111,9 @@ async function startGestures() {
 
 function stopGestures() {
   active = false;
-  toggleBtn.setAttribute("aria-pressed", "false");
-  toggleBtn.textContent = "✋ Gesture mode";
+  setToggles(false);
   if (liveWrap) liveWrap.hidden = true;
-  panel.hidden = legendClosed;
+  panel.hidden = true;
   cursorEl.hidden = true;
   palmPrevY = null;
   pinchDown = false;
@@ -220,10 +228,12 @@ if (closeBtn) {
   });
 }
 
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", () => {
-    if (active) stopGestures();
-    else startGestures();
-  });
+if (toggles.length) {
+  toggles.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      if (active) stopGestures();
+      else startGestures();
+    })
+  );
   window.addEventListener("beforeunload", stopGestures);
 }

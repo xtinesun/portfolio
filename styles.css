@@ -504,11 +504,10 @@ body.page-home main {
 }
 
 /* ── Gesture mode (homepage prototype) ── */
-/* Off for now. Restore by removing this block and the hidden attrs in index.html. */
-.gesture-ui,
+/* Started from the Gesture mode card in the Lab section. The floating toggle stays off. */
 .gesture-toggle,
-.gesture-panel,
-.gesture-cursor {
+.gesture-panel[hidden],
+.gesture-cursor[hidden] {
   display: none !important;
 }
 
@@ -536,7 +535,7 @@ body.page-home main {
 .gesture-panel {
   position: fixed;
   right: 20px;
-  bottom: 72px;
+  bottom: 20px;
   z-index: 10000;
   width: 208px;
   padding: 12px;
@@ -7318,4 +7317,87 @@ body.page-deck .deck-hero .hero-scene {
 
 @media (max-width: 600px) {
   .nav-link--section { display: none; }
+}
+
+/* ── Case study: "If I built this today" ── */
+.case-today {
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+  padding: 20px 22px;
+  border: 1px solid var(--accent-bold-border);
+  border-radius: var(--radius-lg);
+  background: var(--accent-bold-soft);
+}
+.case-today-label {
+  margin: 0 0 8px;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent-bold);
+}
+.case-today p:last-child {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+/* Gesture mode toggle on the Lab card */
+.now-actions {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.now-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px 10px 10px;
+  border: 1px solid var(--accent-bold-border);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+}
+.now-toggle:hover { border-color: var(--accent-bold); }
+.now-toggle:focus-visible { outline: 2px solid var(--accent-bold); outline-offset: 3px; }
+.now-toggle-switch {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--border);
+  transition: background 0.2s var(--ease-out);
+}
+.now-toggle-switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s var(--ease-out);
+}
+.now-toggle[aria-pressed="true"] { background: var(--accent-bold-soft); border-color: var(--accent-bold); }
+.now-toggle[aria-pressed="true"] .now-toggle-switch { background: var(--accent-bold); }
+.now-toggle[aria-pressed="true"] .now-toggle-switch::after { transform: translateX(16px); }
+.now-privacy {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+@media (prefers-reduced-motion: reduce) {
+  .now-toggle-switch, .now-toggle-switch::after { transition: none; }
 }

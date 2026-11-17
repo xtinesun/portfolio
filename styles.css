@@ -7401,3 +7401,65 @@ body.page-deck .deck-hero .hero-scene {
 @media (prefers-reduced-motion: reduce) {
   .now-toggle-switch, .now-toggle-switch::after { transition: none; }
 }
+
+/* ── Case study: presentation button + AI design system spotlight ── */
+.btn--deck {
+  padding: 9px 16px;
+  border: 1px solid var(--accent-bold-border);
+  border-radius: 999px;
+  color: var(--accent-bold);
+  background: var(--bg-elevated);
+}
+.btn--deck:hover { background: var(--accent-bold); border-color: var(--accent-bold); color: #fff; }
+.btn--deck:focus-visible { outline: 2px solid var(--accent-bold); outline-offset: 3px; }
+
+.case-spotlight {
+  margin: clamp(20px, 3vw, 28px) 0 clamp(36px, 5vw, 56px);
+  padding: clamp(20px, 3vw, 28px);
+  border: 1px solid var(--accent-bold-border);
+  border-radius: var(--radius-lg);
+  background: var(--accent-bold-soft);
+}
+.case-spotlight-label {
+  margin: 0 0 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent-bold);
+}
+.case-spotlight-title {
+  margin: 0;
+  max-width: 34ch;
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.case-spotlight-chips {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.case-spotlight-chips li {
+  padding: 6px 12px;
+  border: 1px solid var(--accent-bold-border);
+  border-radius: 999px;
+  background: var(--bg-elevated);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.case-spotlight-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--accent-bold);
+  text-decoration: none;
+}
+.case-spotlight-link:hover { text-decoration: underline; }

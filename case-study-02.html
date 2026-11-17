@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=cs3-metaclean1" />
+    <link rel="stylesheet" href="./styles.css?v=media1-metaclean1" />
     <link rel="stylesheet" href="./mockups.css?v=cs2mobile2" />
   </head>
   <body class="page-case">
@@ -39,14 +39,20 @@
       <a class="back-link reveal is-visible" href="./index.html#projects" data-page-link>← Back to projects</a>
 
       <figure class="case-hero-mockup case-hero-mockup--cs2 reveal" data-reveal aria-label="Hero product visual">
-        <img
+        <video
           class="case-media-img case-media-img--hero"
-          src="./assets/cs2-hero-card.gif?v=hires1"
-          alt="Email A/B variants side by side — B dims as A is highlighted"
-          width="2160"
-          height="1350"
-          decoding="async"
-        />
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="./assets/cs2-hero-card-poster.jpg?v=1"
+          width="1600"
+          height="1000"
+          aria-label="Email A/B variants side by side — B dims as A is highlighted"
+        >
+          <source src="./assets/cs2-hero-card.webm?v=1" type="video/webm" />
+          <source src="./assets/cs2-hero-card.mp4?v=1" type="video/mp4" />
+        </video>
       </figure>
 
       <header class="case-header reveal" data-reveal>
@@ -381,6 +387,7 @@
                   </div>
                 </div>
 
+                <div class="case-chapters" data-chapters>
                 <figure class="case-decision-figure">
                   <button
                     type="button"
@@ -394,17 +401,24 @@
                   >
                     <video
                       class="case-media-video"
-                      src="./assets/cs2-full-flow.mp4?v=1"
-                      poster="./assets/cs2-full-flow-poster.png?v=1"
-                      autoplay
+                      poster="./assets/cs2-flow-1-poster.jpg?v=1"
                       muted
-                      loop
                       playsinline
                       preload="metadata"
                       aria-hidden="true"
-                    ></video>
+                    >
+                      <source src="./assets/cs2-flow-1.webm?v=1" type="video/webm" />
+                      <source src="./assets/cs2-flow-1.mp4?v=1" type="video/mp4" />
+                    </video>
                   </button>
                 </figure>
+                <div class="case-chapter-tabs" role="group" aria-label="Full flow chapters (2× speed)">
+                  <button type="button" data-chapter aria-pressed="true" data-mp4="./assets/cs2-flow-1.mp4?v=1" data-webm="./assets/cs2-flow-1.webm?v=1" data-poster="./assets/cs2-flow-1-poster.jpg?v=1"><span>01</span> Start the test</button>
+                  <button type="button" data-chapter aria-pressed="false" data-mp4="./assets/cs2-flow-2.mp4?v=1" data-webm="./assets/cs2-flow-2.webm?v=1" data-poster="./assets/cs2-flow-2-poster.jpg?v=1"><span>02</span> Write A and B</button>
+                  <button type="button" data-chapter aria-pressed="false" data-mp4="./assets/cs2-flow-3.mp4?v=1" data-webm="./assets/cs2-flow-3.webm?v=1" data-poster="./assets/cs2-flow-3-poster.jpg?v=1"><span>03</span> Set the win rule</button>
+                  <button type="button" data-chapter aria-pressed="false" data-mp4="./assets/cs2-flow-4.mp4?v=1" data-webm="./assets/cs2-flow-4.webm?v=1" data-poster="./assets/cs2-flow-4-poster.jpg?v=1"><span>04</span> Schedule</button>
+                </div>
+                </div>
 
                 <div class="case-feature-list">
                   <div class="case-feature">
@@ -863,5 +877,6 @@
     </div>
 
     <script src="./script.js?v=copyemail1"></script>
+      <script src="./media.js?v=1"></script>
   </body>
 </html>

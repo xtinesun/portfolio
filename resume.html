@@ -569,7 +569,42 @@
       }
 
       /* Degrees on one line: give Education more room and let the degree run under the dates */
-      .resume .triad { grid-template-columns: 1.3fr 1fr 1fr; }
+      .resume .bottom-wide {
+        display: grid;
+        grid-template-columns: 1.55fr 1fr;
+        column-gap: 0.3in;
+        margin-top: 0.26in;
+      }
+      .resume .bottom-col .section-label { margin-bottom: 0.08in; }
+      .resume .award-row {
+        margin: 0 0 0.04in;
+        font-size: 8.1pt;
+        line-height: 1.35;
+        color: var(--ink-soft);
+      }
+      .resume .award-row strong { font-weight: 600; color: var(--ink); margin-right: 0.25em; }
+      @media (max-width: 720px) {
+        .resume .bottom-wide { grid-template-columns: 1fr; row-gap: 0.28in; }
+        .resume .skill-row { grid-template-columns: 1fr; }
+      }
+      .resume .skills-wide { margin-top: 0.3in; }
+      .resume .skill-row {
+        display: grid;
+        grid-template-columns: 1.15in minmax(0, 1fr);
+        column-gap: 0.12in;
+        margin: 0 0 0.04in;
+        font-size: 8.1pt;
+        line-height: 1.35;
+        color: var(--ink-soft);
+      }
+      .resume .skill-row strong {
+        font-size: 7pt;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--quiet);
+        padding-top: 0.1em;
+      }
       .resume .edu-main { display: contents; }
       .resume .edu-item strong { grid-column: 1; grid-row: 1; }
       .resume .edu-item .job-dates { grid-column: 2; grid-row: 1; }
@@ -1046,106 +1081,49 @@
         </div>
       </div>
 
-      <div class="triad">
-        <div class="triad-col">
-          <div class="section-label">
-            <img class="section-icon section-icon--education" src="assets/resume-icons/education.svg?v=oct6-latest" alt="" width="256" height="256" />
-            <h2>Education</h2>
-          </div>
-          <div class="edu-item">
-            <div class="edu-main">
-              <strong>The New School for Social Research</strong>
-              <span class="edu-degree">Cognitive Psychology, toward&nbsp;M.S.</span>
-            </div>
-            <p class="job-dates">2019<span class="ndash">–</span>20</p>
-          </div>
-          <div class="edu-item">
-            <div class="edu-main">
-              <strong>Pratt Institute</strong>
-              <span class="edu-degree">M.S., Information Experience&nbsp;Design</span>
-            </div>
-            <p class="job-dates">2017<span class="ndash">–</span>19</p>
-          </div>
-          <div class="edu-item">
-            <div class="edu-main">
-              <strong>Parsons School of Design</strong>
-              <span class="edu-degree">M.A., Strategic Design and&nbsp;Management</span>
-            </div>
-            <p class="job-dates">2014<span class="ndash">–</span>16</p>
-          </div>
-          <div class="edu-item">
-            <div class="edu-main">
-              <strong>Rhode Island School of Design</strong>
-              <span class="edu-degree">B.F.A., Graphic&nbsp;Design</span>
-            </div>
-            <p class="job-dates">2009<span class="ndash">–</span>13</p>
-          </div>
+      <div class="skills-wide">
+        <div class="section-label">
+          <img class="section-icon section-icon--skills" src="assets/resume-icons/skills.svg?v=oct6-latest" alt="" width="256" height="256" />
+          <h2>Skills</h2>
         </div>
+        <p class="skill-row"><strong>AI</strong> Human-in-the-loop design · AI trust &amp; failure states · Voice &amp; conversational UI · Prototyping in code: Claude, Codex, Cursor · Front-end: HTML, CSS, JS · Figma MCP</p>
+        <p class="skill-row"><strong>Product</strong> Product strategy · 0→1 · Experimentation &amp; A/B testing · Pricing &amp; monetization · Design systems · Interaction design</p>
+        <p class="skill-row"><strong>Craft &amp; leadership</strong> Brand &amp; visual design · Creative direction · Stakeholder alignment · Mentorship · User research · English / Korean</p>
+        <p class="skill-row"><strong>Exploring</strong> Agentic UX · Evals · Memory &amp; personalization UX</p>
+      </div>
 
-        <div class="triad-col">
-          <div class="section-label">
-            <img class="section-icon section-icon--skills" src="assets/resume-icons/skills.svg?v=oct6-latest" alt="" width="256" height="256" />
-            <h2>Skills</h2>
-          </div>
-          <ul class="skills">
-            <li>
-              <strong>AI</strong>
-              <span class="skill-list">
-                <span class="skill">AI UX patterns</span>
-                <span class="skill">Editable AI outputs</span>
-                <span class="skill">Claude · Codex · Cursor</span>
-                <span class="skill">Figma MCP</span>
-              </span>
-            </li>
-            <li>
-              <strong>Practice</strong>
-              <span class="skill-list">
-                <span class="skill">Product strategy</span>
-                <span class="skill">0→1</span>
-                <span class="skill">Interaction design</span>
-                <span class="skill">Design systems</span>
-                <span class="skill">Prototyping</span>
-              </span>
-            </li>
-            <li>
-              <strong>Research &amp; team</strong>
-              <span class="skill-list">
-                <span class="skill">Interviews</span>
-                <span class="skill">Usability testing</span>
-                <span class="skill">Workshops</span>
-                <span class="skill">English / Korean</span>
-              </span>
-            </li>
-          </ul>
+      <div class="bottom-wide">
+        <div class="bottom-col">
+        <div class="section-label">
+          <img class="section-icon section-icon--education" src="assets/resume-icons/education.svg?v=oct6-latest" alt="" width="256" height="256" />
+          <h2>Education</h2>
         </div>
-
-        <div class="triad-col">
-          <div class="section-label">
-            <img class="section-icon" src="assets/resume-icons/awards.svg?v=oct6-latest" alt="" width="256" height="256" />
-            <h2>Awards</h2>
-          </div>
-          <ul class="awards">
-            <li>
-              <span class="award-org">D&amp;AD Impact</span>
-              <span class="award-detail"
-                >Wood Pencil · <strong>62 Million&nbsp;Girls</strong><br /><span class="award-paren">(Michelle&nbsp;Obama / White&nbsp;House)</span></span
-              >
-            </li>
-            <li>
-              <span class="award-org">The One&nbsp;Show</span>
-              <span class="award-detail"
-                >Merit · Non-Profit Branded&nbsp;Social</span
-              >
-            </li>
-            <li>
-              <span class="award-org">Shorty&nbsp;Awards</span>
-              <span class="award-detail">Best in Non-Profit · Best Use of&nbsp;Hashtag</span>
-            </li>
-            <li>
-              <span class="award-org">Pratt&nbsp;Institute</span>
-              <span class="award-detail">Pratt Circle&nbsp;Award</span>
-            </li>
-          </ul>
+        <div class="early-item">
+          <p class="early-main"><strong>The New School</strong> <span class="company">Cognitive Psychology, toward&nbsp;M.S.</span></p>
+          <p class="job-dates">2019<span class="ndash">–</span>20</p>
+        </div>
+        <div class="early-item">
+          <p class="early-main"><strong>Pratt Institute</strong> <span class="company">M.S., Information Experience&nbsp;Design</span></p>
+          <p class="job-dates">2017<span class="ndash">–</span>19</p>
+        </div>
+        <div class="early-item">
+          <p class="early-main"><strong>Parsons School of Design</strong> <span class="company">M.A., Strategic Design and&nbsp;Management</span></p>
+          <p class="job-dates">2014<span class="ndash">–</span>16</p>
+        </div>
+        <div class="early-item">
+          <p class="early-main"><strong>Rhode Island School of Design</strong> <span class="company">B.F.A., Graphic&nbsp;Design</span></p>
+          <p class="job-dates">2009<span class="ndash">–</span>13</p>
+        </div>
+        </div>
+        <div class="bottom-col">
+        <div class="section-label">
+          <img class="section-icon " src="assets/resume-icons/awards.svg?v=oct6-latest" alt="" width="256" height="256" />
+          <h2>Awards</h2>
+        </div>
+        <p class="award-row"><strong>D&amp;AD Impact</strong> Wood Pencil, <strong>62 Million&nbsp;Girls</strong> (Michelle&nbsp;Obama / White&nbsp;House)</p>
+        <p class="award-row"><strong>The One Show</strong> Merit, Non-Profit Branded&nbsp;Social</p>
+        <p class="award-row"><strong>Shorty Awards</strong> Best in Non-Profit; Best Use of&nbsp;Hashtag</p>
+        <p class="award-row"><strong>Pratt Institute</strong> Pratt Circle&nbsp;Award</p>
         </div>
       </div>
     </article>

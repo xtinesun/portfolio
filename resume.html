@@ -223,6 +223,37 @@
       }
       .resume .job-subrole strong { font-weight: 600; color: var(--ink); }
 
+      .resume .early {
+        margin-top: 0.11in;
+        padding-top: 0.11in;
+        border-top: var(--dash) solid var(--rule);
+      }
+      .resume .early-label {
+        margin: 0 0 0.05in;
+        font-size: 7.5pt;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--quiet);
+      }
+      .resume .early-item {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        column-gap: 0.2in;
+        align-items: baseline;
+        margin-bottom: 0.035in;
+      }
+      .resume .early-main {
+        margin: 0;
+        font-size: 8.35pt;
+        line-height: 1.32;
+        color: var(--ink-soft);
+      }
+      .resume .early-main strong { font-weight: 600; color: var(--ink); }
+      .resume .early-main .company { font-family: var(--serif); font-style: italic; color: var(--ink-soft); margin: 0 0.3em 0 0.25em; }
+      .resume .summary { max-width: 74ch; }
+      .resume .early-desc { color: var(--ink-soft); }
+
       /* —— Experience —— */
       .resume .experience {
         margin-top: 0.24in;
@@ -722,6 +753,12 @@
           line-height: 1.35;
         }
 
+        .resume .job-subrole {
+          order: 3;
+          margin: 0 0 0.08in;
+          font-size: 8.75pt;
+        }
+
         .resume .job-main ul {
           order: 4;
         }
@@ -925,14 +962,13 @@
           <li class="loc">OC · LA · Remote</li>
         </ul>
         <p class="summary">
-          Gen AI and 0<span class="arrow">→</span>1 product designer.
-          I led Kajabi’s first paid AI product from concept to GA and built its reusable AI design patterns.
-          Now I design and build with Figma, Claude, and Codex, starting from real user&nbsp;problems.
+          Senior product designer taking Gen AI products from ambiguity to launch. As sole designer, led Kajabi’s first paid AI product
+          to GA and created its reusable AI design patterns. Now building hands-on with Figma, Claude, and&nbsp;Codex.
         </p>
         <ul class="impact">
           <li><strong>Kajabi’s first</strong> paid AI&nbsp;product</li>
           <li><strong>109%</strong> of launch&nbsp;goal</li>
-          <li><strong>2×</strong> usage after the pivot I&nbsp;pushed</li>
+          <li><strong>2×</strong> usage after my&nbsp;pivot</li>
           <li><strong>Sole designer</strong>, 11-person&nbsp;team</li>
         </ul>
       </header>
@@ -946,14 +982,10 @@
         <div class="job">
           <div class="job-main">
             <p class="job-role">Independent <span class="company">Product Design &amp; AI&nbsp;Prototyping</span></p>
-            <p class="job-meta">Remote · Own practice · Figma, Claude, Codex, Cursor</p>
+            <p class="job-meta">Remote · Figma, Claude, Codex, Cursor</p>
             <ul>
-              <li>
-                <strong>Musear:</strong> building a proof of concept with Codex and Claude for an iPhone app that connects your voice to Muse with no extra hardware. Building it surfaced a missing “listening” state&nbsp;early.
-              </li>
-              <li>
-                <strong>christinenoh.com:</strong> designed and built with Cursor and Claude, including <strong>Gesture mode</strong> (in progress), on-device hand tracking to browse with your&nbsp;hands.
-              </li>
+              <li><strong>Musear:</strong> Building a proof of concept for an iPhone voice app that connects users to Muse without extra hardware. Prototyping in code surfaced a missing “listening” state before user&nbsp;testing.</li>
+              <li><strong>christinenoh.com:</strong> Designed and built my portfolio with Cursor and Claude, including <strong>Gesture mode</strong> (in progress), on-device hand-tracking&nbsp;navigation.</li>
             </ul>
           </div>
           <p class="job-dates">Sep&nbsp;2026 <span class="ndash">–</span> Present</p>
@@ -962,84 +994,48 @@
         <div class="job">
           <div class="job-main">
             <p class="job-role">Career break <span class="company">Parental leave and family care</span></p>
-            <p class="job-subrole"><strong>Creative Director, Church of&nbsp;Southland</strong> · Part-time volunteer · Sep 2025 <span class="ndash">–</span> Feb&nbsp;2026</p>
+            <p class="job-subrole"><strong>Creative Director (volunteer), Church of&nbsp;Southland</strong> · Sep 2025 <span class="ndash">–</span> Feb&nbsp;2026</p>
             <ul>
-              <li>
-                <strong>25th anniversary event:</strong> led the event brand and overall look and feel. Ran a leadership workshop to define words for the church’s past, present,
-                and future; had each creative team member explore one direction; aligned leadership on a single vision; guided designers on marketing and day-of assets,
-                an event logo, and a walk-through experience&nbsp;space.
-              </li>
-              <li>
-                <strong>Brand &amp; environments:</strong> updated the church logo and partnered with the interior architect on signage for the remodeled&nbsp;café.
-              </li>
-              <li>
-                <strong>Design team operations:</strong> the team lead was burning out with no visibility into the work. Introduced a kanban board, workload sizing, and weekly
-                standups to surface blockers; mentored designers and helped the lead share&nbsp;responsibilities.
-              </li>
+              <li><strong>25th anniversary:</strong> Directed brand and experience for the church’s milestone event. Facilitated a leadership workshop to define the vision, aligned leaders on one creative direction, and guided the team from event identity to the on-site&nbsp;experience.</li>
+              <li><strong>Team &amp; brand:</strong> Introduced a kanban board, workload sizing, and weekly standups to relieve an overloaded team lead; refreshed the church logo and café&nbsp;signage.</li>
             </ul>
           </div>
-          <p class="job-dates">Jul 2025 <span class="ndash">–</span> Sep&nbsp;2026</p>
+          <p class="job-dates">Jul&nbsp;2025 <span class="ndash">–</span> Sep&nbsp;2026</p>
         </div>
 
         <div class="job">
           <div class="job-main">
             <p class="job-role">Senior Product&nbsp;Designer <span class="company">Kajabi</span></p>
-            <p class="job-meta">Irvine, CA · Remote · Design lead, consolidated Marketing Tools&nbsp;team</p>
+            <p class="job-meta">Irvine, CA · Remote · Design lead, Marketing Tools</p>
             <ul>
-              <li>
-                <strong>Design lead:</strong> grew from email and marketing automation into CRM and analytics, then led the consolidated
-                Marketing Tools team with Product and Engineering from discovery through launch, including leadership&nbsp;reviews.
-              </li>
-              <li>
-                <strong>Creator&nbsp;Studio, 0<span class="arrow">→</span>1 Gen AI:</strong> as sole designer on an 11-person team, led Kajabi’s first paid AI product
-                from concept to GA, launched with <strong>Adobe</strong>. <strong>131 paid in ~2&nbsp;weeks (109% of goal)</strong>. Pushed the pivot from clip maker to
-                full-funnel content, which <strong>doubled monthly usage</strong>; <strong>43% of surveyed beta users</strong> replaced 1+ outside tools.
-                Created Kajabi’s first AI design system patterns, later reused across its AI&nbsp;features.
-              </li>
-              <li>
-                <strong>Messaging &amp; CRM:</strong> shipped <strong>email A/B testing</strong> (v1<span class="ndash">–</span>v2), a feature <strong>84% of creators</strong> expected,
-                and many paid ~$187/mo for elsewhere; plus <strong>resend-to-unopened</strong> (expected by 74%), contact profiles, and event&nbsp;analytics.
-              </li>
-              <li>
-                <strong>Automations &amp; growth:</strong> shipped <strong>Comment to DM</strong> to bring Instagram leads into Kajabi (30% of creators used
-                ManyChat for this) and designed the first <strong>Visual Editor</strong> (up to 50 actions per flow). Partnered with <strong>Adobe</strong> on
-                Adobe Express, and replaced a manual custom-domain setup behind <strong>~14K support tickets a year</strong> with 1-click&nbsp;setup.
-              </li>
+              <li><strong>Creator Studio (Gen AI, 0<span class="arrow">→</span>1):</strong> As sole designer on an 11-person team, led Kajabi’s first paid AI product from concept to GA, launched with <strong>Adobe</strong>. Reached <strong>109% of launch goal</strong> with 131 paid customers in about two&nbsp;weeks.</li>
+              <li><strong>Product direction:</strong> Pushed the pivot from clip maker to full-funnel content, which <strong>doubled monthly usage</strong>; 43% of surveyed beta users replaced outside tools. Created Kajabi’s first AI design system patterns, reused across its AI&nbsp;features.</li>
+              <li><strong>Messaging &amp; CRM:</strong> Shipped email A/B testing, a gap <strong>84% of creators</strong> expected Kajabi to fill, plus resend-to-unopened, contact profiles, and event&nbsp;analytics.</li>
+              <li><strong>Automations &amp; growth:</strong> Shipped Comment to DM for Instagram lead capture, designed the first Visual Editor (up to 50 actions per flow), and replaced a manual domain setup behind <strong>~14K support tickets a year</strong> with 1-click&nbsp;setup.</li>
+              <li><strong>Design leadership:</strong> Grew from email and automation into CRM and analytics, then led design for the consolidated Marketing Tools team from discovery through&nbsp;launch.</li>
             </ul>
           </div>
-          <p class="job-dates">Apr 2020 <span class="ndash">–</span> Jul&nbsp;2025</p>
+          <p class="job-dates">Apr&nbsp;2020 <span class="ndash">–</span> Jul&nbsp;2025</p>
         </div>
 
-        <div class="job">
-          <div class="job-main">
-            <p class="job-role">Product Design&nbsp;Consultant <span class="company">Gig&nbsp;Finance</span></p>
-            <p class="job-line"><strong>0<span class="arrow">→</span>1 fintech:</strong> set product direction and site architecture with the co-founder; designed planning and savings tools. <span class="job-loc">Freelance, alongside Kajabi · Remote</span></p>
+        <div class="early">
+          <p class="early-label">Earlier</p>
+          <div class="early-item">
+            <p class="early-main"><strong>Product Design Consultant</strong> <span class="company">Gig Finance</span> <span class="early-desc">Freelance, alongside Kajabi. 0→1 fintech product direction and&nbsp;IA.</span></p>
+            <p class="job-dates">2020 <span class="ndash">–</span> 2021</p>
           </div>
-          <p class="job-dates">Jul 2020 <span class="ndash">–</span> Aug&nbsp;2021</p>
-        </div>
-
-        <div class="job">
-          <div class="job-main">
-            <p class="job-role">Product&nbsp;Designer <span class="company">JaneTech</span></p>
-            <p class="job-line"><strong>Client work:</strong> web and mobile experiences for healthcare and fashion clients, B2B and B2C. <span class="job-loc">New York</span></p>
+          <div class="early-item">
+            <p class="early-main"><strong>Product Designer</strong> <span class="company">JaneTech</span> <span class="early-desc">Web and mobile products for healthcare and fashion&nbsp;clients.</span></p>
+            <p class="job-dates">2019 <span class="ndash">–</span> 2020</p>
           </div>
-          <p class="job-dates">Aug 2019 <span class="ndash">–</span> Apr&nbsp;2020</p>
-        </div>
-
-        <div class="job">
-          <div class="job-main">
-            <p class="job-role">Product&nbsp;Designer <span class="company">Moda&nbsp;Operandi</span></p>
-            <p class="job-line"><strong>Personalization &amp; IA:</strong> led navigation and personalization for luxury shopping, from research through usability testing. <span class="job-loc">New York</span></p>
+          <div class="early-item">
+            <p class="early-main"><strong>Product Designer</strong> <span class="company">Moda Operandi</span> <span class="early-desc">Led navigation, personalization, and IA for luxury&nbsp;e-commerce.</span></p>
+            <p class="job-dates">2018 <span class="ndash">–</span> 2019</p>
           </div>
-          <p class="job-dates">Jan 2018 <span class="ndash">–</span> May&nbsp;2019</p>
-        </div>
-
-        <div class="job">
-          <div class="job-main">
-            <p class="job-role">Intern <span class="arrow">→</span> Associate&nbsp;Designer <span class="company">Edelman</span></p>
-            <p class="job-line"><strong>Campaigns:</strong> art direction for Samsung, eBay, Citi and more, including award-winning <strong>62 Million&nbsp;Girls</strong> for Michelle&nbsp;Obama and the White&nbsp;House. <span class="job-loc">New York</span></p>
+          <div class="early-item">
+            <p class="early-main"><strong>Associate Designer</strong> <span class="company">Edelman</span> <span class="early-desc">Campaigns for Samsung, eBay, and Citi; D&amp;AD-winning <strong>62 Million&nbsp;Girls</strong>.</span></p>
+            <p class="job-dates">2013 <span class="ndash">–</span> 2017</p>
           </div>
-          <p class="job-dates">Jul 2013 <span class="ndash">–</span> Jul&nbsp;2017</p>
         </div>
       </div>
 
@@ -1048,13 +1044,6 @@
           <div class="section-label">
             <img class="section-icon section-icon--education" src="assets/resume-icons/education.svg?v=oct6-latest" alt="" width="256" height="256" />
             <h2>Education</h2>
-          </div>
-          <div class="edu-item">
-            <div class="edu-main">
-              <strong>The New School for Social Research</strong>
-              <span class="edu-degree">Cognitive Psychology, coursework toward&nbsp;M.S.</span>
-            </div>
-            <p class="job-dates">2019<span class="ndash">–</span>20</p>
           </div>
           <div class="edu-item">
             <div class="edu-main">
@@ -1100,23 +1089,16 @@
                 <span class="skill">Product strategy</span>
                 <span class="skill">0→1</span>
                 <span class="skill">Interaction design</span>
+                <span class="skill">Design systems</span>
                 <span class="skill">Prototyping</span>
               </span>
             </li>
             <li>
-              <strong>Research</strong>
+              <strong>Research &amp; team</strong>
               <span class="skill-list">
                 <span class="skill">Interviews</span>
                 <span class="skill">Usability testing</span>
-                <span class="skill">Synthesis</span>
-              </span>
-            </li>
-            <li>
-              <strong>Domain & team</strong>
-              <span class="skill-list">
-                <span class="skill">Creator platforms</span>
-                <span class="skill">Email / CRM</span>
-                <span class="skill">PM · Eng · PMM</span>
+                <span class="skill">Workshops</span>
                 <span class="skill">English / Korean</span>
               </span>
             </li>

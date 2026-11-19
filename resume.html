@@ -568,6 +568,13 @@
         text-wrap: pretty;
       }
 
+      /* Degrees on one line: give Education more room and let the degree run under the dates */
+      .resume .triad { grid-template-columns: 1.3fr 1fr 1fr; }
+      .resume .edu-main { display: contents; }
+      .resume .edu-item strong { grid-column: 1; grid-row: 1; }
+      .resume .edu-item .job-dates { grid-column: 2; grid-row: 1; }
+      .resume .edu-degree { grid-column: 1 / -1; grid-row: 2; white-space: nowrap; }
+
       .resume .skills,
       .resume .awards {
         margin: 0;
@@ -1048,7 +1055,7 @@
           <div class="edu-item">
             <div class="edu-main">
               <strong>The New School for Social Research</strong>
-              <span class="edu-degree">Cognitive Psychology, coursework toward&nbsp;M.S.</span>
+              <span class="edu-degree">Cognitive Psychology, toward&nbsp;M.S.</span>
             </div>
             <p class="job-dates">2019<span class="ndash">–</span>20</p>
           </div>
@@ -1069,7 +1076,7 @@
           <div class="edu-item">
             <div class="edu-main">
               <strong>Rhode Island School of Design</strong>
-              <span class="edu-degree">RISD · B.F.A., Graphic&nbsp;Design</span>
+              <span class="edu-degree">B.F.A., Graphic&nbsp;Design</span>
             </div>
             <p class="job-dates">2009<span class="ndash">–</span>13</p>
           </div>

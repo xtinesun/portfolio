@@ -15,7 +15,7 @@
 
 ## Lab (independent, 2025–present)
 - Musear: proof of concept for an iPhone app that connects your voice to Muse with no extra hardware, built with Codex and Claude. Next: connect Claude to Figma through MCP to design the UX.
-- Gesture mode: on-device hand tracking to browse christinenoh.com with your hands.
+- Gesture mode (in progress): on-device hand tracking to browse christinenoh.com with your hands.
 
 ## Skills
 AI UX patterns (generation states, editable AI outputs, AI intake), product strategy, 0→1, interaction design, prototyping, user research and usability testing, email/CRM, marketing automation, creator platforms. Tools: Figma, Claude, Codex, Cursor, Figma MCP. Languages: English, Korean.

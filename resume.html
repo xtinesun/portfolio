@@ -251,7 +251,7 @@
       }
       .resume .early-main strong { font-weight: 600; color: var(--ink); }
       .resume .early-main .company { font-family: var(--serif); font-style: italic; color: var(--ink-soft); margin: 0 0.3em 0 0.25em; }
-      .resume .summary { max-width: 74ch; }
+      .resume .summary { max-width: none; }
       .resume .early-desc { color: var(--ink-soft); }
 
       /* —— Experience —— */
@@ -588,6 +588,21 @@
         .resume .skill-row { grid-template-columns: 1fr; }
       }
       .resume .skills-wide { margin-top: 0.3in; }
+      .resume .bottom-two {
+        display: grid;
+        grid-template-columns: 1.35fr 1fr;
+        column-gap: 0.4in;
+        align-items: start;
+        margin-top: 0.3in;
+      }
+      .resume .bottom-two .skills-wide,
+      .resume .bottom-two .bottom-wide { margin-top: 0; }
+      .resume .bottom-two .early-item { margin-bottom: 0.07in; }
+      .resume .bottom-two .early-main { display: contents; }
+      .resume .bottom-two .early-main strong { grid-column: 1; grid-row: 1; }
+      .resume .bottom-two .early-item .job-dates { grid-column: 2; grid-row: 1; }
+      .resume .bottom-two .early-main .company { grid-column: 1 / -1; grid-row: 2; margin: 0.02in 0 0; font-size: 8.1pt; white-space: nowrap; }
+      @media (max-width: 720px) { .resume .bottom-two { grid-template-columns: 1fr; row-gap: 0.28in; } }
       .resume .skills-list { margin: 0; padding: 0; list-style: none; }
       .resume a.cs-link,
       .resume a.cs-link:visited {
@@ -1012,16 +1027,16 @@
           <li>
             <a href="https://christinenoh.com" target="_blank" rel="noopener noreferrer">christinenoh.com</a>
           </li>
-          <li class="loc">OC · LA · Remote</li>
+          <li class="loc">Irvine, CA · Open to remote</li>
         </ul>
         <p class="summary">
-          Senior product designer taking Gen AI products from ambiguity to launch. Leading design on an 11-person cross-functional team, I took
-          Kajabi’s first paid AI product to GA and created its reusable AI design patterns. Now building hands-on with Figma, Claude, and&nbsp;Codex.
+          Senior product designer taking Gen AI products from ambiguity to launch, then turning what works into reusable patterns.
+          Now designing and building hands-on with Figma, Claude, and&nbsp;Codex.
         </p>
         <ul class="impact">
-          <li><strong>Kajabi’s first</strong> paid AI&nbsp;product</li>
+          <li><strong>First</strong> paid AI&nbsp;product</li>
           <li><strong>109%</strong> of launch&nbsp;goal</li>
-          <li><strong>2×</strong> usage after my&nbsp;pivot</li>
+          <li><strong>2×</strong> usage after the&nbsp;pivot</li>
           <li><strong>Led design</strong>, 11-person XFN&nbsp;team</li>
         </ul>
       </header>
@@ -1037,8 +1052,8 @@
             <p class="job-role">Independent <span class="company">Product Design &amp; AI&nbsp;Prototyping</span></p>
             <p class="job-meta">Remote · Figma, Claude, Codex, Cursor</p>
             <ul>
-              <li><strong>Musear:</strong> Building a proof of concept for an iPhone app that gives Muse, an AI assistant, an ear and a voice, with no extra hardware. Prototyping in code surfaced a missing “listening” state before user&nbsp;testing.</li>
-              <li><strong>christinenoh.com:</strong> Designed and built my portfolio with Cursor and Claude, including <strong>Gesture mode</strong> (in progress), on-device hand-tracking&nbsp;navigation.</li>
+              <li><strong>Musear:</strong> Building a proof of concept for an iOS app that gives Muse, an AI assistant, an ear and a voice, with no extra hardware. Prototyping in code surfaced a missing “listening” state before user&nbsp;testing.</li>
+              <li><strong>christinenoh.com:</strong> Designed and built this portfolio with Cursor and Claude, including in-progress, on-device hand-tracking&nbsp;navigation.</li>
             </ul>
           </div>
           <p class="job-dates">Sep&nbsp;2026 <span class="ndash">–</span> Present</p>
@@ -1049,7 +1064,7 @@
             <p class="job-role">Career break <span class="company">Parental leave and family care</span></p>
             <p class="job-subrole"><strong>Creative Director (volunteer), Church of&nbsp;Southland</strong> · Sep 2025 <span class="ndash">–</span> Feb&nbsp;2026</p>
             <ul>
-              <li><strong>25th anniversary, 2,000 attendees:</strong> Directed brand and experience. Ran a leadership workshop to define the vision, aligned leaders on one direction, and guided the team through every touchpoint, down to logo hats and cookies for each&nbsp;guest.</li>
+              <li><strong>25th anniversary, 2,000 attendees:</strong> Directed brand and experience. Ran a leadership workshop to define the vision, aligned leaders on one direction, and guided the team through every touchpoint, down to logo hats and cookies for&nbsp;guests.</li>
               <li><strong>Team operations:</strong> Relieved an overloaded team lead by introducing a kanban board, workload sizing, and weekly standups; also refreshed the church logo and café&nbsp;signage.</li>
             </ul>
           </div>
@@ -1061,11 +1076,11 @@
             <p class="job-role">Senior Product&nbsp;Designer <span class="company">Kajabi</span></p>
             <p class="job-meta">Irvine, CA · Remote · Design lead, Marketing Tools</p>
             <ul>
-              <li><strong>Creator Studio (Gen AI, 0<span class="arrow">→</span>1):</strong> As the only designer on an 11-person cross-functional team (PM, PMM, research, eng), led Kajabi’s first paid AI product from concept to GA, launched with <strong>Adobe</strong>. Reached <strong>109% of launch goal</strong> with 131 paid customers in ~2&nbsp;weeks. <a class="cs-link" href="https://christinenoh.com/case-study-01.html">Case study&nbsp;→</a></li>
+              <li><strong>Creator Studio (Gen AI, 0<span class="arrow">→</span>1):</strong> As the only designer on an 11-person cross-functional team (PM, PMM, research, eng), took Kajabi’s first paid AI product to GA with <strong>Adobe</strong>: 131 paid customers in ~2&nbsp;weeks, <strong>109% of launch&nbsp;goal</strong>.</li>
               <li><strong>Product direction:</strong> Pushed the pivot from clip maker to full-funnel content, which <strong>doubled monthly usage</strong>; 43% of surveyed beta users replaced outside tools. Created Kajabi’s first AI design system patterns, reused across its AI&nbsp;features.</li>
-              <li><strong>Messaging &amp; CRM:</strong> Shipped email A/B testing, a gap <strong>84% of creators</strong> expected Kajabi to fill, plus resend-to-unopened, contact profiles, and event&nbsp;analytics. <a class="cs-link" href="https://christinenoh.com/case-study-02.html">Case study&nbsp;→</a></li>
-              <li><strong>Automations &amp; growth:</strong> Shipped Comment to DM for Instagram lead capture, designed the first Visual Editor (up to 50 actions per flow), and replaced a manual domain setup behind <strong>~14K support tickets a year</strong> with 1-click&nbsp;setup. <a class="cs-link" href="https://christinenoh.com/case-study-03.html">Case study&nbsp;→</a></li>
-              <li><strong>Design leadership:</strong> Grew from email and automation into CRM and analytics, then led design for the consolidated Marketing Tools team from discovery through&nbsp;launch.</li>
+              <li><strong>Messaging &amp; CRM:</strong> Shipped email A/B testing, a gap <strong>84% of creators</strong> expected Kajabi to fill, plus resend-to-unopened, contact profiles, and event&nbsp;analytics.</li>
+              <li><strong>Automations &amp; growth:</strong> Shipped Comment to DM for Instagram lead capture, designed the first Visual Editor (up to 50 actions per flow), and replaced a manual domain setup behind <strong>~14K support tickets a year</strong> with 1-click&nbsp;setup.</li>
+              <li><strong>Design leadership:</strong> Grew from email and automation into CRM and analytics, then led design for Marketing&nbsp;Tools.</li>
             </ul>
           </div>
           <p class="job-dates">Apr&nbsp;2020 <span class="ndash">–</span> Jul&nbsp;2025</p>
@@ -1086,12 +1101,13 @@
             <p class="job-dates">2018 <span class="ndash">–</span> 2019</p>
           </div>
           <div class="early-item">
-            <p class="early-main"><strong>Associate Designer</strong> <span class="company">Edelman</span> <span class="early-desc">Campaigns for Samsung, eBay, and Citi; D&amp;AD Wood Pencil and One Show Merit for <strong>62 Million&nbsp;Girls</strong> (Michelle&nbsp;Obama).</span></p>
+            <p class="early-main"><strong>Associate Designer</strong> <span class="company">Edelman</span> <span class="early-desc">Samsung, eBay, and Citi campaigns; D&amp;AD and One Show winner, <strong>62 Million&nbsp;Girls</strong>.</span></p>
             <p class="job-dates">2013 <span class="ndash">–</span> 2017</p>
           </div>
         </div>
       </div>
 
+      <div class="bottom-two">
       <div class="skills-wide">
         <div class="section-label">
           <img class="section-icon section-icon--skills" src="assets/resume-icons/skills.svg?v=oct6-latest" alt="" width="256" height="256" />
@@ -1100,7 +1116,7 @@
         <div class="job-main"><ul class="skills-list">
           <li><strong>AI:</strong> Human-in-the-loop design, AI trust and failure states, voice and conversational UI, prototyping in code with Claude, Codex, and Cursor, front-end (HTML, CSS, JS), Figma&nbsp;MCP.</li>
           <li><strong>Product:</strong> Product strategy, 0→1, experimentation and A/B testing, pricing and monetization, design systems, interaction&nbsp;design.</li>
-          <li><strong>Craft &amp; leadership:</strong> Brand and visual design, creative direction, stakeholder alignment, mentorship, user research; English and&nbsp;Korean.</li>
+          <li><strong>Craft &amp; leadership:</strong> Brand and visual design, creative direction, facilitation, mentorship, user research, English and&nbsp;Korean.</li>
           <li><strong>Exploring:</strong> Agentic UX, evals, memory and personalization&nbsp;UX.</li>
         </ul></div>
       </div>
@@ -1113,21 +1129,22 @@
         </div>
         <div class="early-item">
           <p class="early-main"><strong>The New School</strong> <span class="company">Cognitive Psychology, toward&nbsp;M.S.</span></p>
-          <p class="job-dates">2019<span class="ndash">–</span>20</p>
+          <p class="job-dates">2019 <span class="ndash">–</span> 2020</p>
         </div>
         <div class="early-item">
           <p class="early-main"><strong>Pratt Institute</strong> <span class="company">M.S., Information Experience&nbsp;Design</span></p>
-          <p class="job-dates">2017<span class="ndash">–</span>19</p>
+          <p class="job-dates">2017 <span class="ndash">–</span> 2019</p>
         </div>
         <div class="early-item">
           <p class="early-main"><strong>Parsons School of Design</strong> <span class="company">M.A., Strategic Design and&nbsp;Management</span></p>
-          <p class="job-dates">2014<span class="ndash">–</span>16</p>
+          <p class="job-dates">2014 <span class="ndash">–</span> 2016</p>
         </div>
         <div class="early-item">
           <p class="early-main"><strong>Rhode Island School of Design</strong> <span class="company">B.F.A., Graphic&nbsp;Design</span></p>
-          <p class="job-dates">2009<span class="ndash">–</span>13</p>
+          <p class="job-dates">2009 <span class="ndash">–</span> 2013</p>
         </div>
         </div>
+      </div>
       </div>
     </article>
     </main>

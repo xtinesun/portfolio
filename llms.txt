@@ -9,7 +9,7 @@
 - Resume (web): https://christinenoh.com/resume.html
 
 ## Shipped (Kajabi, 2020–2025, Senior Product Designer)
-- [Creator Studio — Gen AI, 0→1](https://christinenoh.com/case-study-01.html): Kajabi's first paid AI product. Turns one existing piece of content into an editable marketing funnel. 131 paid in ~2 weeks (109% of goal), 17.2k assets generated, 43% of beta users replaced outside tools.
+- [Creator Studio — Gen AI, 0→1](https://christinenoh.com/case-study-01.html): Kajabi's first paid AI product. Turns one existing piece of content into an editable marketing funnel. 131 paid in ~2 weeks (109% of goal), 17.2k assets generated, 43% of surveyed beta users replaced 1+ outside tools. Monthly usage doubled after the pivot from clip maker to full-funnel content, which she pushed for. Sole designer on an 11-person team; launched with Adobe.
 - [Email A/B testing — experimentation](https://christinenoh.com/case-study-02.html): A/B testing for small email lists; creators set the win rule and fallback. Closed a gap 84% of surveyed creators expected.
 - [Comment to DM and Visual Editor — automation](https://christinenoh.com/case-study-03.html): Instagram comment capture that turns engagement into contacts, plus the design of Kajabi's first Visual Editor for multi-channel flows.
 

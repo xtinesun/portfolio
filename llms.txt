@@ -1,6 +1,6 @@
 # Christine Noh — Senior Product Designer, Gen AI and 0→1
 
-> Product designer focused on Gen AI and 0→1 products. Led Kajabi's first paid AI product (Creator Studio) from concept to GA, and created Kajabi's first AI design system patterns. Since September 2026, designing and building independently with Figma, Claude, Codex, and Cursor. Based in Irvine, CA; open to remote. Open to new roles.
+> Product designer focused on Gen AI and 0→1 products. Led Kajabi's first paid AI product (Creator Studio) from concept to GA, and created Kajabi's first AI design system patterns. Since September 2026, designing and building independently with Figma, Claude, Xcode, and Cursor. Based in Irvine, CA; open to remote. Open to new roles.
 
 ## Contact
 - Email: hi@christinenoh.com
@@ -17,11 +17,11 @@ During a career break for parental leave and family care (Jul 2025 – Sep 2026)
 - [Comment to DM and Visual Editor — automation](https://christinenoh.com/case-study-03.html): Instagram comment capture that turns engagement into contacts, plus the design of Kajabi's first Visual Editor for multi-channel flows.
 
 ## Lab (independent, Sep 2026–present)
-- Musear: proof of concept for an iPhone app that gives Muse, an AI assistant, an ear and a voice, straight from the phone with no extra hardware. Built with Codex and Claude. Next: connect Claude to Figma through MCP to design the UX.
+- Musear: proof of concept for an iPhone app that gives Muse, an AI assistant, an ear and a voice, straight from the phone with no extra hardware. Built in Xcode with Claude. Next: connect Claude to Figma through MCP to design the UX.
 - Gesture mode (in progress): on-device hand tracking to browse christinenoh.com with your hands.
 
 ## Skills
-AI UX patterns (generation states, editable AI outputs, AI intake), product strategy, 0→1, interaction design, prototyping, user research and usability testing, email/CRM, marketing automation, creator platforms. Tools: Figma, Claude, Codex, Cursor, Figma MCP. Languages: English, Korean.
+AI UX patterns (generation states, editable AI outputs, AI intake), product strategy, 0→1, interaction design, prototyping, user research and usability testing, email/CRM, marketing automation, creator platforms. Tools: Figma, Claude, Xcode, Cursor, Figma MCP. Languages: English, Korean.
 
 ## Education
 Pratt Institute (M.S., Information Experience Design); Parsons School of Design (M.A., Strategic Design and Management); Rhode Island School of Design, RISD (B.F.A., Graphic Design).

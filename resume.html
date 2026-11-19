@@ -286,8 +286,8 @@
       /* In-text dashes: hairlines only — cannot inherit bold */
       .resume .mdash,
       .resume .ndash {
-        position: relative;
         display: inline-block;
+        background: linear-gradient(#c4bbb0, #c4bbb0) center / 100% 0.55px no-repeat;
         margin: 0 0.18em;
         font-size: 0.55em;
         line-height: 1;
@@ -295,16 +295,7 @@
         color: transparent;
         vertical-align: 0.45em;
       }
-      .resume .mdash::after,
-      .resume .ndash::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 50%;
-        height: 0.55px;
-        background: #c4bbb0;
-      }
+
 
       .resume .mdash::before {
         content: none;
@@ -811,6 +802,41 @@
         margin: 0.35in 0.4in 0.35in 0.35in;
       }
     
+
+      /* Machine-readable PDF: keep text in reading order and real word spaces
+         so applicant tracking systems and AI tools parse it cleanly. */
+      @media print {
+        .resume li,
+        .resume .job-main li { position: static; }
+        .resume li::before,
+        .resume .job-main li::before {
+          position: static;
+          display: inline-block;
+          width: 0.11in;
+          margin: 0 0.11in 0 -0.22in;
+          vertical-align: middle;
+          transform: none;
+        }
+        .resume,
+        .resume * { letter-spacing: 0 !important; word-spacing: 0.03em; }
+        .resume .role,
+        .resume .section-label h2,
+        .resume .awards .award-org,
+        .resume .skills strong { letter-spacing: 0.05em !important; }
+        .resume, .resume * { font-variant-ligatures: none; font-feature-settings: "liga" 0, "clig" 0; }
+        .resume .job-dates .ndash {
+          width: auto;
+          height: auto;
+          overflow: visible;
+          position: static;
+          margin: 0 0.15em;
+          font-size: inherit;
+          color: var(--quiet);
+          background: none;
+          vertical-align: baseline;
+        }
+        .resume .job-dates .ndash::after { display: none; }
+      }
     </style>
   </head>
   <body class="page-case page-resume">
@@ -865,12 +891,12 @@
         </ul>
         <p class="summary">
           Gen AI and 0<span class="arrow">→</span>1 product designer.
-          I led Kajabi’s first AI product from concept to GA and built its reusable AI design patterns.
+          I led Kajabi’s first paid AI product from concept to GA and built its reusable AI design patterns.
           Now I design and build with Figma, Claude, and Codex, starting from real user&nbsp;problems.
         </p>
         <ul class="impact">
           <li><strong>131 paid</strong> in ~2&nbsp;weeks</li>
-          <li><strong>Kajabi’s first</strong> AI&nbsp;product</li>
+          <li><strong>Kajabi’s first</strong> paid AI&nbsp;product</li>
           <li><strong>First AI design</strong> system&nbsp;patterns</li>
           <li><strong>Building</strong> with Claude + Codex</li>
         </ul>
@@ -908,7 +934,7 @@
                 Marketing Tools team with Product and Engineering from discovery through launch, including leadership&nbsp;reviews.
               </li>
               <li>
-                <strong>Creator&nbsp;Studio, 0<span class="arrow">→</span>1 Gen AI</strong> <span class="mdash">—</span> led Kajabi’s first monetized AI product from concept to GA:
+                <strong>Creator&nbsp;Studio, 0<span class="arrow">→</span>1 Gen AI</strong> <span class="mdash">—</span> led Kajabi’s first paid AI product from concept to GA:
                 <strong>131 paid in ~2&nbsp;weeks (109% of goal), 17.2k assets generated, 43% of beta</strong> replaced outside tools.
                 Created Kajabi’s first AI design system patterns, later reused across its AI&nbsp;features.
               </li>

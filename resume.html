@@ -172,6 +172,22 @@
         text-wrap: pretty;
       }
 
+      .resume .impact {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.06in 0.22in;
+        margin: 0.12in 0 0;
+        padding: 0;
+        list-style: none;
+        font-size: 8pt;
+        color: var(--ink-soft);
+      }
+      .resume .impact strong {
+        color: var(--accent);
+        font-weight: 700;
+      }
+
       /* —— Experience —— */
       .resume .experience {
         margin-top: 0.24in;
@@ -268,15 +284,26 @@
       }
 
       /* In-text dashes: hairlines only — cannot inherit bold */
-      .resume .mdash {
+      .resume .mdash,
+      .resume .ndash {
+        position: relative;
         display: inline-block;
-        width: 0.5em;
+        margin: 0 0.18em;
+        font-size: 0.55em;
+        line-height: 1;
+        font-weight: 400;
+        color: transparent;
+        vertical-align: 0.45em;
+      }
+      .resume .mdash::after,
+      .resume .ndash::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
         height: 0.55px;
-        margin: 0 0.2em 0.14em;
         background: #c4bbb0;
-        vertical-align: middle;
-        font-size: 0;
-        line-height: 0;
       }
 
       .resume .mdash::before {
@@ -293,18 +320,7 @@
         letter-spacing: 0;
       }
 
-      .resume .ndash {
-        display: inline-block;
-        width: 0.42em;
-        height: 0.55px;
-        margin: 0 0.12em 0.12em;
-        background: #c4bbb0;
-        vertical-align: middle;
-        font-size: 0;
-        line-height: 0;
-        overflow: hidden;
-        color: transparent;
-      }
+      /* (ndash styles merged with .mdash above) */
 
       /* Job date ranges: dash centered to full text (cap height), not x-height */
       .resume .job-dates .ndash {
@@ -779,7 +795,7 @@
           width: 100%;
           min-height: auto;
           margin: 0;
-          padding: 0.42in 0.5in 0.36in;
+          padding: 0.1in 0.15in 0.05in;
           background: white;
           box-shadow: none;
         }
@@ -833,7 +849,7 @@
       <header class="masthead">
         <div class="identity">
           <h1>Christine Noh</h1>
-          <p class="role">Senior Product Designer</p>
+          <p class="role">Lead Product Designer · Gen AI · 0→1</p>
         </div>
         <ul class="contact">
           <li>
@@ -852,6 +868,12 @@
           I led Kajabi’s first AI product from concept to GA and built its reusable AI design patterns.
           Now I design and build with Figma, Claude, and Codex, starting from real user&nbsp;problems.
         </p>
+        <ul class="impact">
+          <li><strong>131 paid</strong> in ~2&nbsp;weeks</li>
+          <li><strong>Kajabi’s first</strong> AI&nbsp;product</li>
+          <li><strong>First AI design</strong> system&nbsp;patterns</li>
+          <li><strong>Building</strong> with Claude + Codex</li>
+        </ul>
       </header>
 
       <div class="experience">
@@ -866,10 +888,10 @@
             <p class="job-meta">Remote · Own practice · Figma, Claude, Codex, Cursor</p>
             <ul>
               <li>
-                <strong>Musear</strong> <span class="mdash" aria-hidden="true"></span> building a proof of concept with Codex and Claude: an iPhone app that connects your voice to Muse with no extra hardware. Building it surfaced a missing “listening” state&nbsp;early.
+                <strong>Musear</strong> <span class="mdash">—</span> building a proof of concept with Codex and Claude: an iPhone app that connects your voice to Muse with no extra hardware. Building it surfaced a missing “listening” state&nbsp;early.
               </li>
               <li>
-                <strong>christinenoh.com</strong> <span class="mdash" aria-hidden="true"></span> designed and built with Cursor and Claude, including <strong>Gesture mode</strong>, on-device hand tracking to browse with your&nbsp;hands.
+                <strong>christinenoh.com</strong> <span class="mdash">—</span> designed and built with Cursor and Claude, including <strong>Gesture mode</strong>, on-device hand tracking to browse with your&nbsp;hands.
               </li>
             </ul>
           </div>
@@ -878,26 +900,26 @@
 
         <div class="job">
           <div class="job-main">
-            <p class="job-role">Senior Product&nbsp;Designer <span class="company">Kajabi</span></p>
-            <p class="job-meta">Irvine, CA · Remote · Lead designer, consolidated Marketing Tools&nbsp;team</p>
+            <p class="job-role">Lead Product&nbsp;Designer <span class="company">Kajabi</span></p>
+            <p class="job-meta">Irvine, CA · Remote · Promoted from Senior · Led the consolidated Marketing Tools&nbsp;team</p>
             <ul>
               <li>
-                <strong>Promoted into design lead</strong> <span class="mdash" aria-hidden="true"></span> after progressing from email and marketing automation into CRM
-                and analytics; led the consolidated Marketing Tools team with Product and Engineering from discovery through
-                launch, including leadership reviews and creator-facing&nbsp;webinars.
+                <strong>Design lead</strong> <span class="mdash">—</span> grew from email and marketing automation into CRM and analytics, then led the consolidated
+                Marketing Tools team with Product and Engineering from discovery through launch, including leadership&nbsp;reviews.
               </li>
               <li>
-                Led <strong>Creator&nbsp;Studio</strong> 0<span class="arrow">→</span>1 <span class="mdash" aria-hidden="true"></span> AI-powered content repurposing from concept through&nbsp;GA:
-                <strong>131 paid in ~2&nbsp;weeks, 17.2k assets generated, 43% of&nbsp;beta</strong> replacing external&nbsp;tools.
+                <strong>Creator&nbsp;Studio, 0<span class="arrow">→</span>1 Gen AI</strong> <span class="mdash">—</span> led Kajabi’s first monetized AI product from concept to GA:
+                <strong>131 paid in ~2&nbsp;weeks (109% of goal), 17.2k assets generated, 43% of beta</strong> replaced outside tools.
+                Created Kajabi’s first AI design system patterns, later reused across its AI&nbsp;features.
               </li>
               <li>
-                <strong>Messaging &amp; CRM</strong> <span class="mdash" aria-hidden="true"></span> <strong>Email&nbsp;A/B</strong> (v1<span class="ndash">–</span>v2),
-                <strong>contact&nbsp;profiles</strong>, event analytics, email organization, and resend-to-unopened
-                <span class="mdash" aria-hidden="true"></span> helping creators understand customer behavior, track performance, and manage relationships; established patterns adopted across the&nbsp;platform.
+                <strong>Messaging &amp; CRM</strong> <span class="mdash">—</span> shipped <strong>email A/B testing</strong> (v1<span class="ndash">–</span>v2), a feature <strong>84% of creators</strong> expected
+                and many paid ~$187/mo elsewhere for; plus <strong>resend-to-unopened</strong> (expected by 74%), contact profiles, and event&nbsp;analytics.
               </li>
               <li>
-                <strong>Automations &amp; workflows</strong> <span class="mdash" aria-hidden="true"></span> delivered Kajabi’s first <strong>Automations 2.0 Visual&nbsp;Editor</strong> and <strong>Comment to&nbsp;DM</strong>, simplifying complex marketing&nbsp;workflows;
-                integrated <strong>Adobe&nbsp;Express</strong> into Creator Studio and other builder experiences, in partnership with <strong>Adobe</strong>; <strong>custom&nbsp;domain</strong> setup with&nbsp;Entri.
+                <strong>Automations &amp; growth</strong> <span class="mdash">—</span> shipped <strong>Comment to DM</strong> to bring Instagram leads into Kajabi (30% of creators used
+                ManyChat for this) and designed the first <strong>Visual Editor</strong> (up to 50 actions per flow). Partnered with <strong>Adobe</strong> on
+                Adobe Express, and replaced a manual custom-domain setup behind <strong>~14K support tickets a year</strong> with 1-click&nbsp;setup.
               </li>
             </ul>
           </div>
@@ -910,9 +932,7 @@
             <p class="job-meta">Remote · Own practice · Client engagement · Fintech</p>
             <ul>
               <li>
-                <strong>0<span class="arrow">→</span>1 fintech product</strong> <span class="mdash" aria-hidden="true"></span> partnered directly with the co-founder to set product direction and
-                define site architecture; designed customer-facing planning and savings tools to be approachable and easy to
-                navigate, and mentored a designer through design&nbsp;reviews.
+                <strong>0<span class="arrow">→</span>1 fintech</strong> <span class="mdash">—</span> set product direction and site architecture with the co-founder; designed planning and savings&nbsp;tools.
               </li>
             </ul>
           </div>
@@ -925,8 +945,7 @@
             <p class="job-meta">New York, NY · Health and fashion clients (B2B&nbsp;/&nbsp;B2C)</p>
             <ul>
               <li>
-                <strong>B2B &amp; B2C client work</strong> <span class="mdash" aria-hidden="true"></span> translated distinct customer needs and business requirements into
-                intuitive web and mobile experiences for healthcare and fashion, adapting the approach to each product and&nbsp;industry.
+                <strong>Client work</strong> <span class="mdash">—</span> web and mobile experiences for healthcare and fashion clients, B2B and&nbsp;B2C.
               </li>
             </ul>
           </div>
@@ -939,13 +958,7 @@
             <p class="job-meta">New York, NY · Purchase &amp; Homepage squads · Web, mobile,&nbsp;app</p>
             <ul>
               <li>
-                <strong>Personalization &amp; IA</strong> <span class="mdash" aria-hidden="true"></span> led personalization, navigation, and information architecture to
-                improve how customers discover, explore, and shop across purchase and homepage&nbsp;experiences.
-              </li>
-              <li>
-                <strong>Research to usability</strong> <span class="mdash" aria-hidden="true"></span> led design from research and interviews through wireframes and
-                prototypes to usability testing; facilitated design sprints with cross-functional partners, balancing customer
-                needs, business goals, and luxury brand&nbsp;standards.
+                <strong>Personalization &amp; IA</strong> <span class="mdash">—</span> led navigation and personalization for luxury shopping, from research through usability&nbsp;testing.
               </li>
             </ul>
           </div>
@@ -958,9 +971,7 @@
             <p class="job-meta">New York, NY · Art direction, graphic design, brand&nbsp;campaigns</p>
             <ul>
               <li>
-                <strong>Integrated campaign foundation</strong> <span class="mdash" aria-hidden="true"></span> delivered creative strategy and art direction from concept through
-                execution across brand identity, digital, social, and content for Samsung, eBay, Comcast/Xfinity, iRobot, CVS,
-                Citi, Unilever, and NBCUniversal; included award-winning <strong>62 Million&nbsp;Girls</strong> for Michelle&nbsp;Obama and the White&nbsp;House.
+                <strong>Campaigns</strong> <span class="mdash">—</span> art direction for Samsung, eBay, Citi and more; award-winning <strong>62 Million&nbsp;Girls</strong> for Michelle&nbsp;Obama and the White&nbsp;House.
               </li>
             </ul>
           </div>
@@ -977,7 +988,7 @@
           <div class="edu-item">
             <div class="edu-main">
               <strong>The New School for Social Research</strong>
-              <span class="edu-degree">Cognitive Psychology <span class="mdash" aria-hidden="true"></span> coursework toward&nbsp;M.S.</span>
+              <span class="edu-degree">Cognitive Psychology <span class="mdash">—</span> coursework toward&nbsp;M.S.</span>
             </div>
             <p class="job-dates">2019<span class="ndash">–</span>20</p>
           </div>
@@ -1011,39 +1022,38 @@
           </div>
           <ul class="skills">
             <li>
+              <strong>AI</strong>
+              <span class="skill-list">
+                <span class="skill">AI UX patterns</span>
+                <span class="skill">Editable AI outputs</span>
+                <span class="skill">Claude · Codex · Cursor</span>
+                <span class="skill">Figma MCP</span>
+              </span>
+            </li>
+            <li>
               <strong>Practice</strong>
               <span class="skill-list">
                 <span class="skill">Product strategy</span>
                 <span class="skill">0→1</span>
                 <span class="skill">Interaction design</span>
-                <span class="skill">Systems thinking</span>
                 <span class="skill">Prototyping</span>
               </span>
             </li>
             <li>
               <strong>Research</strong>
               <span class="skill-list">
-                <span class="skill">Customer interviews</span>
+                <span class="skill">Interviews</span>
                 <span class="skill">Usability testing</span>
-                <span class="skill">Research synthesis</span>
-                <span class="skill">Design sprints</span>
+                <span class="skill">Synthesis</span>
               </span>
             </li>
             <li>
-              <strong>Domain</strong>
+              <strong>Domain & team</strong>
               <span class="skill-list">
-                <span class="skill">AI products</span>
                 <span class="skill">Creator platforms</span>
                 <span class="skill">Email / CRM</span>
-                <span class="skill">Marketing automation</span>
-              </span>
-            </li>
-            <li>
-              <strong>Collaboration</strong>
-              <span class="skill-list">
-                <span class="skill">PM · Engineering · Research · PMM</span>
-                <span class="skill">Mentorship</span>
-                <span class="skill">Design QA · English / Korean</span>
+                <span class="skill">PM · Eng · PMM</span>
+                <span class="skill">English / Korean</span>
               </span>
             </li>
           </ul>
@@ -1058,13 +1068,13 @@
             <li>
               <span class="award-org">D&amp;AD Impact</span>
               <span class="award-detail"
-                >Wood Pencil <span class="mdash" aria-hidden="true"></span> <strong>62 Million&nbsp;Girls</strong><br /><span class="award-paren">(Michelle&nbsp;Obama / White&nbsp;House)</span></span
+                >Wood Pencil <span class="mdash">—</span> <strong>62 Million&nbsp;Girls</strong><br /><span class="award-paren">(Michelle&nbsp;Obama / White&nbsp;House)</span></span
               >
             </li>
             <li>
               <span class="award-org">The One&nbsp;Show</span>
               <span class="award-detail"
-                >Merit <span class="mdash" aria-hidden="true"></span> Non-Profit Branded&nbsp;Social</span
+                >Merit <span class="mdash">—</span> Non-Profit Branded&nbsp;Social</span
               >
             </li>
             <li>

@@ -17,7 +17,7 @@ During a career break for parental leave and family care (Jul 2025 – Sep 2026)
 - [Comment to DM and Visual Editor — automation](https://christinenoh.com/case-study-03.html): Instagram comment capture that turns engagement into contacts, plus the design of Kajabi's first Visual Editor for multi-channel flows.
 
 ## Lab (independent, Sep 2026–present)
-- Musear: proof of concept for an iPhone app that connects your voice to Muse with no extra hardware, built with Codex and Claude. Next: connect Claude to Figma through MCP to design the UX.
+- Musear: proof of concept for an iPhone app that gives Muse, an AI assistant, an ear and a voice, straight from the phone with no extra hardware. Built with Codex and Claude. Next: connect Claude to Figma through MCP to design the UX.
 - Gesture mode (in progress): on-device hand tracking to browse christinenoh.com with your hands.
 
 ## Skills

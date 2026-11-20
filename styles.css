@@ -7953,3 +7953,10 @@ body.page-deck .deck-hero .hero-scene {
 @media (min-width: 761px) { .about-photos .about-photo--dog img { object-position: 50% 27%; } }
 @media (min-width: 761px) { .about-photos .about-photo--dog img { object-position: 50% 33%; } }
 @media (min-width: 761px) { .about-photos .about-photo--dog img { object-position: 50% 37%; } }
+/* About photos: both shown uncropped at full width (portrait, then the goldendoodle photo as shared) */
+@media (min-width: 761px) {
+  .about-photos { align-self: start; }
+  .about-photos .about-photo, .about-photos .about-photo--dog { flex: none; }
+  .about-photos .about-photo img { height: auto; aspect-ratio: 900 / 1099; }
+  .about-photos .about-photo--dog img { height: auto; aspect-ratio: 900 / 1200; object-position: 50% 50%; }
+}

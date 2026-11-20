@@ -272,10 +272,48 @@
           <li class="reveal" data-reveal data-delay="3">
             <a class="project-card" href="./case-study-03.html" data-page-link>
               <div class="project-visual project-visual--03">
-                <div class="cs3-scene" role="img" aria-label="An Instagram post where a follower comments GUIDE, triggering an automatic DM with a free guide, then a welcome email and SMS">
-                  <img class="cs3-layer cs3-layer--post" src="./assets/cs3-layer-post.webp?v=3" alt="" loading="lazy" decoding="async" style="left:16.667%;top:0.0%;width:42.361%;height:74.167%" />
-                  <img class="cs3-layer cs3-layer--dm" src="./assets/cs3-layer-dm.webp?v=3" alt="" loading="lazy" decoding="async" style="left:40.972%;top:37.556%;width:42.361%;height:52.889%" />
-                  <img class="cs3-layer cs3-layer--flow" src="./assets/cs3-layer-flow.webp?v=3" alt="" loading="lazy" decoding="async" style="left:25.0%;top:68.444%;width:48.622%;height:27.333%" />
+                <div class="c3" role="img" aria-label="An automation builds itself: an Instagram comment trigger, a Send DM step, then branches to a welcome email and SMS. A follower comments GUIDE and instantly receives the DM with a free guide.">
+                  <div class="c3-win">
+                    <div class="c3-win-head">New automation</div>
+                    <div class="c3-canvas">
+                      <div class="c3-node c3-node--trig">
+                        <span class="c3-ic c3-ic--ig"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="#fff"/></svg></span>
+                        <span class="c3-txt"><small>Trigger</small><b>Comment contains “GUIDE”</b></span>
+                      </div>
+                      <i class="c3-line c3-line--1"></i>
+                      <div class="c3-node c3-node--dm">
+                        <span class="c3-ic c3-ic--dm"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.4 8.4 0 1 1 21 11.5z"/></svg></span>
+                        <span class="c3-txt"><small>Action</small><b>Send DM with guide</b></span>
+                      </div>
+                      <i class="c3-line c3-line--2"></i>
+                      <i class="c3-bar"></i>
+                      <i class="c3-line c3-line--3a"></i>
+                      <i class="c3-line c3-line--3b"></i>
+                      <div class="c3-node c3-node--sm c3-node--email">
+                        <span class="c3-ic c3-ic--email"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                        <span class="c3-txt"><b>Welcome email</b></span>
+                        <span class="c3-check c3-check--1"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                      </div>
+                      <div class="c3-node c3-node--sm c3-node--sms">
+                        <span class="c3-ic c3-ic--sms"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18h2"/></svg></span>
+                        <span class="c3-txt"><b>SMS follow-up</b></span>
+                        <span class="c3-check c3-check--2"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="c3-modal">
+                    <div class="c3-modal-head">Comments</div>
+                    <div class="c3-row c3-row--static"><span class="c3-av c3-av--a"></span><span><b>maya.r</b> this is exactly what I needed</span></div>
+                    <div class="c3-row c3-row--new"><span class="c3-av c3-av--b"></span><span><b>sam.k</b> <mark>GUIDE</mark> 🙌</span></div>
+                    <div class="c3-input">Add a comment…</div>
+                  </div>
+
+                  <div class="c3-dmcard">
+                    <div class="c3-dm-head"><span class="c3-av c3-av--c"></span><b>yourcreator</b><small>Auto-reply</small></div>
+                    <div class="c3-bubble">Hey Sam! Here’s your free guide 👇</div>
+                    <div class="c3-link"><span class="c3-link-img"></span><span class="c3-link-txt"><b>5-Day Launch Plan</b><small>Enter your email to get it</small></span></div>
+                  </div>
                 </div>
                 <span class="project-index" aria-hidden="true">03</span>
               </div>

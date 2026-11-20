@@ -7981,3 +7981,18 @@ body.page-deck .deck-hero .hero-scene {
   .about-photos .about-photo--dog img { height: auto; aspect-ratio: 900 / 805; object-position: 50% 50%; }
 }
 .now-cta { background: #f7f5f1; }
+/* About photos: both uncropped, same width, and together never taller than the text column.
+   Heights are shared in proportion to each photo's shape, so the widths come out equal. */
+@media (min-width: 761px) {
+  .about-photos { align-self: stretch; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; min-height: 0; }
+  .about-photos .about-photo,
+  .about-photos .about-photo--dog { flex: 1099 1 0; min-height: 0; height: auto; width: auto; max-width: 100%; aspect-ratio: 900 / 1099; }
+  .about-photos .about-photo--dog { flex-grow: 805; aspect-ratio: 900 / 805; }
+  .about-photos .about-photo img,
+  .about-photos .about-photo--dog img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; }
+}
+@media (min-width: 761px) {
+  .about-grid .about-photos > .about-photo:not(.about-photo--dog) { flex: 1099 1 0; aspect-ratio: 900 / 1099; height: auto; }
+  .about-grid .about-photos > .about-photo.about-photo--dog { flex: 805 1 0; aspect-ratio: 900 / 805; height: auto; }
+  .about-grid .about-photos > .about-photo > img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; object-position: 50% 50%; }
+}

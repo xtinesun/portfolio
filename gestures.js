@@ -227,10 +227,13 @@ function loop() {
 
   // Thumb out (either hand): thumb sideways, on the far side of the index knuckle
   // from the pinky. Works for left and right hands because it's relative to the hand.
-  const outward = Math.sign(lm[5].x - lm[17].x) || 1;
-  const thumbSideways = Math.abs(lm[4].x - lm[2].x) > Math.abs(lm[4].y - lm[2].y) * 1.3;
-  const tipOutSide = (lm[4].x - lm[5].x) * outward > handSize * 0.3;
-  const thumbLeft = !isHome && fingersCurled && thumbSideways && tipOutSide && tipAwayFromFingers;
+  // Measured from the palm's center, so it works whichever way the hand is turned
+  // (a "hitchhiker" fist stacks the knuckles vertically, so left/right of the
+  // index knuckle isn't reliable) and whichever side the thumb points.
+  const palmX = (lm[0].x + lm[5].x + lm[9].x + lm[13].x + lm[17].x) / 5;
+  const thumbSideways = Math.abs(lm[4].x - lm[2].x) > Math.abs(lm[4].y - lm[2].y) * 1.1;
+  const thumbFarOut = Math.abs(lm[4].x - palmX) > handSize * 0.65;
+  const thumbLeft = !isHome && fingersCurled && thumbSideways && thumbFarOut && tipAwayFromFingers;
 
   // Only the pointing index finger (or an open palm, for scrolling) moves the cursor.
   // Thumbs up freezes it, so changing hand shape doesn't knock it off target.

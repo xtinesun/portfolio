@@ -4,14 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Email A/B Testing · Christine Noh</title>
-    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./assets/favicon.svg?v=c1" type="image/svg+xml" />
+    <link rel="icon" href="./assets/favicon-32.png?v=c1" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png?v=c1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=metaclean1" />
+    <link rel="stylesheet" href="./styles.css?v=nav1-metaclean1" />
     <link rel="stylesheet" href="./mockups.css?v=cs2mobile2" />
   </head>
   <body class="page-case">
@@ -22,13 +24,17 @@
       <div class="container header-inner">
         <a class="brand" href="./index.html" data-page-link>Christine Noh</a>
         <nav class="header-nav" aria-label="Primary">
+          <a class="nav-link nav-link--section" href="./index.html#shipped" data-page-link>Shipped</a>
+          <a class="nav-link nav-link--section" href="./index.html#lab" data-page-link>Lab</a>
+          <a class="nav-link nav-link--section" href="./index.html#about-me" data-page-link>About</a>
+          <span class="nav-divider" aria-hidden="true"></span>
           <a class="nav-link" href="./resume.html" data-page-link>
             Resume
           </a>
           <a class="nav-link" href="https://www.linkedin.com/in/xtinesun" target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>
-          <a class="nav-link nav-link--accent" href="mailto:xtineysun@gmail.com">
+          <a class="nav-link nav-link--accent" href="mailto:hi@christinenoh.com">
             Email
           </a>
         </nav>
@@ -39,22 +45,29 @@
       <a class="back-link reveal is-visible" href="./index.html#projects" data-page-link>← Back to projects</a>
 
       <figure class="case-hero-mockup case-hero-mockup--cs2 reveal" data-reveal aria-label="Hero product visual">
-        <img
+        <video
           class="case-media-img case-media-img--hero"
-          src="./assets/cs2-hero-card.gif?v=hires1"
-          alt="Email A/B variants side by side — B dims as A is highlighted"
-          width="2160"
-          height="1350"
-          decoding="async"
-        />
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="./assets/cs2-hero-card-v3-poster.jpg?v=1"
+          width="1840"
+          height="844"
+          aria-label="Email A/B variants side by side — B dims as A is highlighted"
+        >
+          <source src="./assets/cs2-hero-card-v3.webm?v=1" type="video/webm" />
+          <source src="./assets/cs2-hero-card-v3.mp4?v=1" type="video/mp4" />
+        </video>
+        <div class="c2-ov" aria-hidden="true"><span class="c2-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Winner</span></div>
       </figure>
 
       <header class="case-header reveal" data-reveal>
         <span class="project-tag">Email A/B Testing · Kajabi</span>
         <h1>Email A/B testing as a learning loop for small lists</h1>
-        <p class="case-subtitle">Kajabi’s most-requested email gap: vary subject, preview, or body; set the win metric and fallback; apply the winner — without overclaiming what a small list can prove.</p>
+        <p class="case-subtitle">Kajabi’s most-requested email feature. Creators test a subject line, preview, or body, choose what counts as a win, and send the winner, without pretending a small list proves more than it can.</p>
         <div class="case-meta-row">
-          <span class="case-read-time">14 min read</span>
+          <span class="case-read-time">8 min read · more detail in each “Go deeper”</span>
         </div>
       </header>
 
@@ -62,7 +75,7 @@
         <dl class="case-exec-meta">
           <div class="case-exec-item">
             <dt>Role</dt>
-            <dd>Lead Product Designer</dd>
+            <dd>Senior Product Designer · Design lead</dd>
           </div>
           <div class="case-exec-item">
             <dt>Timeline</dt>
@@ -103,8 +116,8 @@
         <div class="case-content">
           <section class="case-block reveal" id="role" data-reveal data-delay="1" data-section>
             <h2>My role &amp; constraints</h2>
-            <p><strong>Lead Product Designer</strong> on Email A/B with 1 designer, 1 PM, and 2 eng.</p>
-            <p><strong>Owned:</strong> end-to-end UX, competitive review of 8 email tools, testing and interviews, and A/B patterns later reused for landing pages.</p>
+            <p><strong>Senior Product Designer, design lead</strong> on Email A/B with 1 designer, 1 PM, and 2 eng.</p>
+            <p><strong>Owned:</strong> end-to-end UX, competitive review of 8 email and landing-page tools, testing and interviews, and A/B patterns later reused for landing pages.</p>
             <p><strong>Co-led:</strong> scope with PM and eng for <strong>broadcast</strong> and <strong>automation</strong> email.</p>
             <p><strong>Constraint:</strong> ship on the existing editor; a fuller redesign stayed a separate track (<a href="#decision-4">Decision 04</a>).</p>
           </section>
@@ -237,8 +250,15 @@
 
           <section class="case-block reveal" id="insights" data-reveal data-delay="1" data-section>
             <h2>Insights</h2>
-            <p>This came from the <strong>Messaging &amp; CRM strategy</strong> I co-authored, a <strong>survey about tools creators use outside Kajabi</strong>, <strong>creator interviews</strong>, and a <strong>review of A/B in 8 email tools</strong>.</p>
+            <p>This came from the <strong>Messaging &amp; CRM strategy</strong> I co-authored, a <strong>survey about tools creators use outside Kajabi</strong>, <strong>creator interviews</strong>, and a <strong>review of A/B in 8 email and landing-page tools</strong>.</p>
 
+            <details class="case-accordion case-deeper">
+              <summary class="case-accordion-summary">
+                <span class="case-accordion-title">Go deeper: the 5 insights behind these calls</span>
+                <span class="case-accordion-meta">Expectations · small lists · trust · scope · editor</span>
+                <span class="case-accordion-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="case-accordion-body">
             <ol class="case-research">
               <li class="case-research-item" id="insight-1">
                 <h3><span class="case-research-num">01</span>Creators expected A/B testing — and Kajabi still didn’t have it</h3>
@@ -261,6 +281,8 @@
                 <p class="case-research-finding">The email editor was old and fragile, and a redesign looked like a multi-quarter project. Waiting on that rebuild would have left the 84%-expected A/B gap open longer.</p>
               </li>
             </ol>
+              </div>
+            </details>
 
           </section>
 
@@ -268,7 +290,7 @@
             <details class="case-accordion">
               <summary class="case-accordion-summary">
                 <span class="case-accordion-title">Competitive research</span>
-                <span class="case-accordion-meta">8 email service providers</span>
+                <span class="case-accordion-meta">7 email platforms + 1 landing-page tool</span>
                 <span class="case-accordion-icon" aria-hidden="true"></span>
               </summary>
               <div class="case-accordion-body">
@@ -310,7 +332,7 @@
                 </header>
                 <div class="case-decision-body">
                   <p><strong>Call:</strong> v1 lets creators vary <strong>one element per test</strong> — subject, preview text, <em>or</em> body — keeping everything else the same, plus duration, as standard features. Side-by-side editing keeps the difference easy to see, so the result teaches something clear.</p>
-                  <p><strong>Why:</strong> Creators asked for a full learning loop, not subject-only table stakes. They already pay ~$187/mo elsewhere for that depth. Shipping flexibility at no add-on cost closes the parity gap the survey flagged. <strong>Scope change:</strong> the first MVP brief limited v1 to subject + preheader; strategy risks and the teardown pulled body into the shipped design direction (see <a href="#insights">Insights</a> · <a href="#insight-1">01</a> &amp; <a href="#insight-4">04</a>).</p>
+                  <p><strong>Why:</strong> Creators wanted a full learning loop, not subject-line-only tests, and many already paid ~$187/mo elsewhere for it. Including body tests at no add-on cost closed that gap. The first MVP brief stopped at subject + preheader; research and the teardown pulled body into v1 (see Insights · 01 &amp; 04).</p>
                   <p class="case-decision-from"><span>From</span> <a href="#insights">Insights</a> · <a href="#insight-1">01</a> · <a href="#insight-4">04</a></p>
                 </div>
         </article>
@@ -320,7 +342,7 @@
                   <h3 id="decision-3-title"><span class="case-decision-num">03</span>Safe defaults so a small list still runs a real test</h3>
                 </header>
                 <div class="case-decision-body">
-                  <p><strong>Call:</strong> Default split 25% / 25% / 50% holdout, with rounding and guards for tiny recipient sets so creators can’t ship 0/0/100 by accident. Planned in-product copy: short windows only reflect early openers; explain what the window measured — don’t overclaim (see <a href="#decision-1">Decision 01</a>). Ties are handled quietly: equal win-metric → the fallback chosen in settings becomes the winner (same winner UI).</p>
+                  <p><strong>Call:</strong> Default split of <strong>25% / 25% / 50% holdout</strong>, with guards so a tiny list can’t send 0/0/100 by accident. If A and B tie, the fallback chosen in settings wins, using the same winner screen.</p>
                   <p><strong>Why:</strong> Small lists need a real test by default. Ambiguous open-vs-click outcomes and low analytics trust were explicit strategy risks. Explainers belong next to duration and results — not only in a help article.</p>
                   <p class="case-decision-from"><span>From</span> <a href="#insights">Insights</a> · <a href="#insight-3">03</a></p>
                 </div>
@@ -333,8 +355,8 @@
                 </header>
                 <div class="case-decision-body">
                   <p><strong>Call:</strong> v1 adds A/B to the <strong>existing</strong> broadcast email experience on the modern React editor. The fuller editor redesign — and Classic / automated email coverage — wait as their own track.</p>
-                  <p><strong>The tension:</strong> Eng pushed back on touching the email editor — outdated and fragile across Rails vs React, a rewrite looked like a multi-quarter sink. I wanted a redesigned editor with more flexible editing and preview so variants could be first-class; that craft bar was right, but pairing a platform rebuild with a net-new learning product would have delayed the 84%-expected gap.</p>
-                  <p><strong>Why this was the right bet:</strong> We separated <em>proving the learning model</em> from <em>rebuilding the writing platform</em>. Email A/B shipped on the compose surface we had. The editor redesign was scoped as a <strong>separate project</strong> so it could be done well — more fluid editing and preview, and reusable beyond email for newsletter, blog, and other text-writing needs across the product. That kept eng risk contained, got creators a trustworthy A/B loop sooner, and still let me define reusable patterns (variants, win metric + fallback, comparative results) that sibling teams used for landing-page A/B.</p>
+                  <p><strong>The tension:</strong> Eng pushed back on touching the old, fragile email editor; a rewrite looked like a multi-quarter project. I wanted a better editor so variants felt first-class, but pairing a rebuild with a brand-new feature would have delayed what 84% of creators expected.</p>
+                  <p><strong>Why this was the right bet:</strong> we separated <em>proving the learning model</em> from <em>rebuilding the editor</em>. A/B shipped on the editor we had, and the redesign became its own project. Creators got a trustworthy A/B loop sooner, and the pattern I defined was reused for landing-page A/B.</p>
                   <p class="case-decision-from"><span>From</span> <a href="#insights">Insights</a> · <a href="#insight-5">05</a></p>
                 </div>
         </article>
@@ -349,7 +371,7 @@
                 <h3 id="experience-title">A learning loop: variants → options → test → winner</h3>
               </header>
               <div class="case-decision-body">
-                <p>Side-by-side editing keeps subject, preview, and body differences understandable. Creators set the win rule and fallback (<a href="#decision-1">Decision 01</a>); the system runs the test and shows what worked — without overclaiming.</p>
+                <p>Side-by-side editing keeps subject, preview, and body differences understandable. Creators set the win rule and fallback (<a href="#decision-1">Decision 01</a>); the system runs the test and shows what worked.</p>
                 <blockquote class="case-quote" style="margin:1rem 0;padding-left:1rem;border-left:3px solid var(--border, #e4e3de);color:var(--text-muted, #5a5a56)">
                   <p style="margin:0">“I don’t need a stats lecture — I need to know if this subject actually got more people to open.”</p>
                   <footer style="margin-top:0.35rem;font-size:0.875rem">— Creator interview, Messaging &amp; CRM research</footer>
@@ -381,6 +403,7 @@
                   </div>
                 </div>
 
+                <div class="case-chapters" data-chapters>
                 <figure class="case-decision-figure">
                   <button
                     type="button"
@@ -388,23 +411,30 @@
                     data-media-expand
                     data-media-type="video"
                     data-media-src="./assets/cs2-full-flow.mp4?v=1"
-                    data-media-poster="./assets/cs2-full-flow-poster.png?v=1"
+                    data-media-poster="./assets/cs2-full-flow-poster.webp?v=w1"
                     data-media-alt="Email A/B testing full flow — variants, test options, in-progress results, then winner sent"
                     aria-label="View the email A/B full flow full size"
                   >
                     <video
                       class="case-media-video"
-                      src="./assets/cs2-full-flow.mp4?v=1"
-                      poster="./assets/cs2-full-flow-poster.png?v=1"
-                      autoplay
+                      poster="./assets/cs2-flow-1-poster.jpg?v=1"
                       muted
-                      loop
                       playsinline
                       preload="metadata"
                       aria-hidden="true"
-                    ></video>
+                    >
+                      <source src="./assets/cs2-flow-1.webm?v=1" type="video/webm" />
+                      <source src="./assets/cs2-flow-1.mp4?v=1" type="video/mp4" />
+                    </video>
                   </button>
                 </figure>
+                <div class="case-chapter-tabs" role="group" aria-label="Full flow chapters (2× speed)">
+                  <button type="button" data-chapter aria-pressed="true" data-mp4="./assets/cs2-flow-1.mp4?v=1" data-webm="./assets/cs2-flow-1.webm?v=1" data-poster="./assets/cs2-flow-1-poster.jpg?v=1"><span>01</span> Start the test</button>
+                  <button type="button" data-chapter aria-pressed="false" data-mp4="./assets/cs2-flow-2.mp4?v=1" data-webm="./assets/cs2-flow-2.webm?v=1" data-poster="./assets/cs2-flow-2-poster.jpg?v=1"><span>02</span> Write A and B</button>
+                  <button type="button" data-chapter aria-pressed="false" data-mp4="./assets/cs2-flow-3.mp4?v=1" data-webm="./assets/cs2-flow-3.webm?v=1" data-poster="./assets/cs2-flow-3-poster.jpg?v=1"><span>03</span> Set the win rule</button>
+                  <button type="button" data-chapter aria-pressed="false" data-mp4="./assets/cs2-flow-4.mp4?v=1" data-webm="./assets/cs2-flow-4.webm?v=1" data-poster="./assets/cs2-flow-4-poster.jpg?v=1"><span>04</span> Schedule</button>
+                </div>
+                </div>
 
                 <div class="case-feature-list">
                   <div class="case-feature">
@@ -449,7 +479,7 @@
                           data-media-alt="Side-by-side edit content for Version A and Version B of an email A/B test"
                           aria-label="View variants side-by-side full size"
                         >
-                          <img src="./assets/cs2-variants.png?v=2" alt="" width="990" height="976" loading="lazy" decoding="async" />
+                          <img src="./assets/cs2-variants.png?v=2" alt="Side-by-side edit content for Version A and Version B of an email A/B test" width="990" height="976" loading="lazy" decoding="async" />
                         </button>
                       </figure>
                     </div>
@@ -460,11 +490,20 @@
                       <h4><span class="case-research-num">02</span> · Test options: creators define winning</h4>
                       <p class="case-feature-job">I want to decide how a winner is chosen — and which version wins if A and B tie.</p>
                       <p><strong>Why:</strong> four controls decide how the test runs. Creators also choose when the first test emails go out.</p>
+                      <details class="case-accordion case-deeper">
+                        <summary class="case-accordion-summary">
+                          <span class="case-accordion-title">Go deeper: the four controls</span>
+                          <span class="case-accordion-meta">Split · metric · duration · fallback</span>
+                          <span class="case-accordion-icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="case-accordion-body">
                       <p><strong>A/B test distribution</strong> — set the size of your test group: <strong>25% / 25% / 50% holdout</strong> (default) or <strong>10% / 10% / 90%</strong>.</p>
                       <p><strong>Winning metric</strong> — open rate or click rate (click only if the email has links); this determines the version sent to remaining recipients.</p>
                       <p><strong>Test duration</strong> — <strong>1–10 hours</strong> after the last test email is sent.</p>
                       <p><strong>Fallback version</strong> — Version A or B applied as the winner if A and B tie on the winning metric. Chosen in settings before the test; no separate inconclusive indicator — results show equal metrics and the fallback marked as winner.</p>
                       <p><strong>Trust copy (planned next to duration / results):</strong> short windows mostly reflect early openers; explain what the window measured — don’t overclaim (<a href="#decision-1">Decision 01</a>); a tie quietly uses the fallback you already chose.</p>
+                        </div>
+                      </details>
                     </div>
                     <figure class="case-feature-media">
                       <button
@@ -476,7 +515,7 @@
                         data-media-alt="Test options panel: A/B distribution, winning metric, test duration, and fallback version"
                         aria-label="View Test options full size"
                       >
-                        <img src="./assets/cs2-test-options.png?v=3" alt="" width="541" height="818" loading="lazy" decoding="async" />
+                        <img src="./assets/cs2-test-options.png?v=3" alt="Test options panel: A/B distribution, winning metric, test duration, and fallback version" width="541" height="818" loading="lazy" decoding="async" />
                       </button>
                     </figure>
                   </div>
@@ -496,16 +535,16 @@
                           class="case-split-scroll-top case-media-trigger"
                           data-media-expand
                           data-media-type="image"
-                          data-media-src="./assets/cs2-results-progress-full.png?v=4"
+                          data-media-src="./assets/cs2-results-progress-full.webp?v=w1"
                           data-media-split-top="./assets/cs2-results-progress-top-full.png?v=5"
                           data-media-split-nav="./assets/cs2-results-progress-nav-full.png?v=6"
-                          data-media-split-main="./assets/cs2-results-progress-main-full.png?v=3"
+                          data-media-split-main="./assets/cs2-results-progress-main-full.webp?v=w1"
                           data-media-alt="A/B test results page while the test is in progress, with metrics and side-by-side email previews"
                           aria-label="View in-progress results full size"
                         >
                           <img
                             src="./assets/cs2-results-progress-top.png?v=5"
-                            alt=""
+                            alt="A/B test results page while the test is in progress, with metrics and side-by-side email previews"
                             width="1441"
                             height="88"
                             decoding="async"
@@ -517,17 +556,17 @@
                             class="case-split-scroll-nav-wrap case-media-trigger"
                             data-media-expand
                             data-media-type="image"
-                            data-media-src="./assets/cs2-results-progress-full.png?v=4"
+                            data-media-src="./assets/cs2-results-progress-full.webp?v=w1"
                             data-media-split-top="./assets/cs2-results-progress-top-full.png?v=5"
                             data-media-split-nav="./assets/cs2-results-progress-nav-full.png?v=6"
-                            data-media-split-main="./assets/cs2-results-progress-main-full.png?v=3"
+                            data-media-split-main="./assets/cs2-results-progress-main-full.webp?v=w1"
                             data-media-alt="A/B test results page while the test is in progress, with metrics and side-by-side email previews"
                             aria-label="View in-progress results full size"
                           >
                             <img
                               class="case-split-scroll-nav"
                               src="./assets/cs2-results-progress-nav.png?v=13"
-                              alt=""
+                              alt="A/B test results page while the test is in progress, with metrics and side-by-side email previews"
                               width="280"
                               height="2526"
                               decoding="async"
@@ -539,16 +578,16 @@
                             data-media-expand
                             data-media-scroll
                             data-media-type="image"
-                            data-media-src="./assets/cs2-results-progress-full.png?v=4"
+                            data-media-src="./assets/cs2-results-progress-full.webp?v=w1"
                             data-media-split-top="./assets/cs2-results-progress-top-full.png?v=5"
                             data-media-split-nav="./assets/cs2-results-progress-nav-full.png?v=6"
-                            data-media-split-main="./assets/cs2-results-progress-main-full.png?v=3"
+                            data-media-split-main="./assets/cs2-results-progress-main-full.webp?v=w1"
                             data-media-alt="A/B test results page while the test is in progress, with metrics and side-by-side email previews"
                             aria-label="View in-progress results full size"
                           >
                             <img
-                              src="./assets/cs2-results-progress-main.png?v=10"
-                              alt=""
+                              src="./assets/cs2-results-progress-main.webp?v=w1"
+                              alt="A/B test results page while the test is in progress, with metrics and side-by-side email previews"
                               width="1161"
                               height="2526"
                               loading="lazy"
@@ -564,7 +603,7 @@
                     <div class="case-feature-text">
                       <h4><span class="case-research-num">04</span> · Winner sent to the rest</h4>
                       <p class="case-feature-job">I want to see how my winning variant performed.</p>
-                      <p><strong>Why:</strong> after the window, the winning variant goes to the remaining contacts — including when A and B tied and the pre-chosen fallback was applied as winner (equal metrics; fallback shown as winner, no “inconclusive” label). The report separates the original A/B sample from the winner send so creators can see both what the test measured and how the winner performed at full reach.</p>
+                      <p><strong>Why:</strong> after the window, the winner goes to everyone else, including on a tie, when the pre-chosen fallback wins. The report separates the test sample from the winner send, so creators see both what the test measured and how the winner did at full reach.</p>
                       <p class="case-feature-hint">Scroll the image, or click to view it larger.</p>
                     </div>
                     <figure class="case-feature-media case-feature-media--split-scroll">
@@ -575,16 +614,16 @@
                           class="case-split-scroll-top case-media-trigger"
                           data-media-expand
                           data-media-type="image"
-                          data-media-src="./assets/cs2-results-winner-full.png?v=1"
+                          data-media-src="./assets/cs2-results-winner-full.webp?v=w1"
                           data-media-split-top="./assets/cs2-results-winner-top-full.png?v=1"
                           data-media-split-nav="./assets/cs2-results-winner-nav-full.png?v=1"
-                          data-media-split-main="./assets/cs2-results-winner-main-full.png?v=1"
+                          data-media-split-main="./assets/cs2-results-winner-main-full.webp?v=w1"
                           data-media-alt="A/B test results after the winner was sent to remaining contacts, with metrics and side-by-side email previews"
                           aria-label="View winner-sent results full size"
                         >
                           <img
                             src="./assets/cs2-results-winner-top.png?v=1"
-                            alt=""
+                            alt="A/B test results after the winner was sent to remaining contacts, with metrics and side-by-side email previews"
                             width="1441"
                             height="88"
                             decoding="async"
@@ -596,17 +635,17 @@
                             class="case-split-scroll-nav-wrap case-media-trigger"
                             data-media-expand
                             data-media-type="image"
-                            data-media-src="./assets/cs2-results-winner-full.png?v=1"
+                            data-media-src="./assets/cs2-results-winner-full.webp?v=w1"
                             data-media-split-top="./assets/cs2-results-winner-top-full.png?v=1"
                             data-media-split-nav="./assets/cs2-results-winner-nav-full.png?v=1"
-                            data-media-split-main="./assets/cs2-results-winner-main-full.png?v=1"
+                            data-media-split-main="./assets/cs2-results-winner-main-full.webp?v=w1"
                             data-media-alt="A/B test results after the winner was sent to remaining contacts, with metrics and side-by-side email previews"
                             aria-label="View winner-sent results full size"
                           >
                             <img
                               class="case-split-scroll-nav"
                               src="./assets/cs2-results-winner-nav.png?v=1"
-                              alt=""
+                              alt="A/B test results after the winner was sent to remaining contacts, with metrics and side-by-side email previews"
                               width="280"
                               height="2578"
                               decoding="async"
@@ -618,16 +657,16 @@
                             data-media-expand
                             data-media-scroll
                             data-media-type="image"
-                            data-media-src="./assets/cs2-results-winner-full.png?v=1"
+                            data-media-src="./assets/cs2-results-winner-full.webp?v=w1"
                             data-media-split-top="./assets/cs2-results-winner-top-full.png?v=1"
                             data-media-split-nav="./assets/cs2-results-winner-nav-full.png?v=1"
-                            data-media-split-main="./assets/cs2-results-winner-main-full.png?v=1"
+                            data-media-split-main="./assets/cs2-results-winner-main-full.webp?v=w1"
                             data-media-alt="A/B test results after the winner was sent to remaining contacts, with metrics and side-by-side email previews"
                             aria-label="View winner-sent results full size"
                           >
                             <img
-                              src="./assets/cs2-results-winner-main.png?v=1"
-                              alt=""
+                              src="./assets/cs2-results-winner-main.webp?v=w1"
+                              alt="A/B test results after the winner was sent to remaining contacts, with metrics and side-by-side email previews"
                               width="1161"
                               height="2578"
                               loading="lazy"
@@ -677,14 +716,14 @@
                         class="case-media-trigger"
                         data-media-expand
                         data-media-type="video"
-                        data-media-src="./assets/cs2-click-report.mp4?v=2"
+                        data-media-src="./assets/cs2-click-report.mp4?v=lite1"
                         data-media-poster="./assets/cs2-click-report-poster.png?v=2"
                         data-media-alt="Email A/B results and data page with click report and specific-link performance"
                         aria-label="View click report results full size"
                       >
                         <video
                           class="case-media-video"
-                          src="./assets/cs2-click-report.mp4?v=2"
+                          src="./assets/cs2-click-report.mp4?v=lite1"
                           poster="./assets/cs2-click-report-poster.png?v=2"
                           autoplay
                           muted
@@ -744,14 +783,14 @@
                   class="case-media-trigger"
                   data-media-expand
                   data-media-type="video"
-                  data-media-src="./assets/cs2-landing-ab-example.mp4?v=1"
+                  data-media-src="./assets/cs2-landing-ab-example.mp4?v=lite1"
                   data-media-poster="./assets/cs2-landing-ab-example-poster.png?v=1"
                   data-media-alt="Landing page A/B testing using the same variant comparison and results patterns from email A/B"
                   aria-label="View landing page A/B example full size"
                 >
                   <video
                     class="case-media-video"
-                    src="./assets/cs2-landing-ab-example.mp4?v=1"
+                    src="./assets/cs2-landing-ab-example.mp4?v=lite1"
                     poster="./assets/cs2-landing-ab-example-poster.png?v=1"
                     autoplay
                     muted
@@ -765,8 +804,15 @@
             </div>
 
             <p class="case-impact-label" style="margin-top:1.75rem">Why it mattered to the business</p>
-            <p>Email A/B testing was one of the most expected email features — and competitors already had it. Creators were paying about <strong>$187/mo for outside tools</strong> just to run tests. Building it into Kajabi closed that gap, gave creators a reason to stay, and let them learn what earns opens and clicks without leaving Kajabi.</p>
+            <p>Email A/B testing was one of the most expected email features — and competitors already had it. Creators were paying about <strong>$187/mo for outside tools</strong> just to run tests. Building it into Kajabi closed that gap and let creators learn what earns opens and clicks without leaving Kajabi.</p>
 
+            <details class="case-accordion case-deeper">
+              <summary class="case-accordion-summary">
+                <span class="case-accordion-title">Go deeper: metrics we proposed after ship</span>
+                <span class="case-accordion-meta">Not measured yet · research baselines</span>
+                <span class="case-accordion-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="case-accordion-body">
             <p class="case-impact-label" style="margin-top:1.75rem">Metrics we proposed after ship</p>
             <p>Not measured yet — baselines from Messaging &amp; CRM research:</p>
             <ul class="case-constraints">
@@ -776,11 +822,13 @@
               <li>Spend on outside email tools <em>(baseline ~$187/mo)</em></li>
               <li>Creators gaining at least 1 contact / 30 days <em>(baseline 23%)</em></li>
             </ul>
+              </div>
+            </details>
 
-            <aside class="case-impact-closure" aria-label="Impact closure">
-              <p class="case-impact-closure-label">Impact closure</p>
+            <aside class="case-impact-closure" aria-label="Impact">
+              <p class="case-impact-closure-label">Impact</p>
               <ul>
-                <li><strong>Measured:</strong> what we can prove is delivery — broadcast email A/B shipped through v2, and the interview-led pivot (click report and win-by-specific-link) shipped after it. No lift numbers are claimed yet.</li>
+                <li><strong>Measured:</strong> what we can prove is delivery — broadcast email A/B shipped through v2, and the interview-led pivot (click report and win-by-specific-link) shipped after it.</li>
                 <li><strong>Not claimed here:</strong> GMV (creator sales) or retention lift caused by A/B alone.</li>
                 <li><strong>Future:</strong> track how many creators start a test, how many set a win rule before sending, support tickets asking “which email won,” and how often landing-page teams reuse the pattern.</li>
               </ul>
@@ -801,6 +849,13 @@
               <li><strong>Use creators’ own words earlier.</strong> Interviews told us the problem; support tickets told us the exact words creators use for it.</li>
               <li><strong>Measure from week one</strong> — how many creators start a test and set a win rule — instead of proposing metrics after ship.</li>
             </ul>
+            <details class="case-accordion case-deeper">
+              <summary class="case-accordion-summary">
+                <span class="case-accordion-title">Go deeper: the tradeoff I still sit with, and what I did beyond design</span>
+                <span class="case-accordion-meta">Editor redesign · strategy · teardown · pattern reuse</span>
+                <span class="case-accordion-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="case-accordion-body">
             <p><strong>Tradeoff I still sit with:</strong> we delayed a fuller editor redesign (and Classic email) so broadcast A/B could ship through v2 and the click-report pivot. That was the right call for speed and risk, and other teams still reused the patterns on landing pages. Automated email A/B is now a separate project. Side-by-side editing and preview never got the polish I originally wanted.</p>
             <p><strong>What I did beyond design:</strong></p>
             <ul class="case-constraints">
@@ -810,7 +865,13 @@
               <li>Turned post-launch interviews into the click-report pivot</li>
               <li>Defined the A/B pattern — variants, win rule, fallback, side-by-side results — that landing-page teams reused</li>
             </ul>
+              </div>
+            </details>
             <p><strong>Takeaway:</strong> An A/B test should teach you something, not just crown a winner (<a href="#decision-1">Decision 01</a>). On a small list — say 800 people — a few extra opens could just be luck. So decide before you send: what counts as success (opens or clicks), and what sends if it’s a tie. Then treat the result as a hint for next time, not final proof.</p>
+            <aside class="case-today" aria-label="If I built this today">
+              <p class="case-today-label">If I built this today</p>
+              <p>I’d prototype the results screen in code, filled with realistic small-list numbers, and test it before launch. Creators would have reacted to what an 800-person test actually shows, and the need for a click report might have surfaced before launch instead of after.</p>
+            </aside>
           </section>
 
         </div>
@@ -829,7 +890,7 @@
       <div class="container footer-inner">
         <p>&copy; <span data-year></span> Christine Noh</p>
         <nav class="footer-nav" aria-label="Footer">
-          <a class="footer-email" href="mailto:xtineysun@gmail.com">xtineysun@gmail.com</a>
+          <a class="footer-email" href="mailto:hi@christinenoh.com">hi@christinenoh.com</a>
           <a class="footer-link" href="./colophon.html" data-page-link>Colophon</a>
         </nav>
       </div>
@@ -858,6 +919,38 @@
       </div>
     </div>
 
-    <script src="./script.js?v=copyemail1"></script>
+    <script>
+      (() => {
+        const fig = document.querySelector(".case-hero-mockup--cs2");
+        const v = fig && fig.querySelector("video");
+        if (!v) return;
+        v.addEventListener("timeupdate", () => {
+          const t = v.currentTime;
+          fig.classList.toggle("is-winner", t > 1.9 && t < 4.9);
+        });
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) fig.classList.add("is-winner");
+      })();
+    </script>
+    <script src="./script.js?v=copyemail3"></script>
+      <script src="./media.js?v=deeper1"></script>
+      <div class="gesture-ui">
+      <button type="button" class="gesture-toggle" data-gesture-toggle aria-pressed="false" data-label-off="✋ Gesture mode" data-label-on="✋ Stop gesture mode">✋ Gesture mode</button>
+      <div class="gesture-panel" data-gesture-panel hidden>
+        <button type="button" class="gesture-panel-close" data-gesture-close aria-label="Close gesture legend">×</button>
+        <div data-gesture-live hidden>
+          <video class="gesture-video" data-gesture-video autoplay muted playsinline aria-label="Camera preview for hand gestures"></video>
+          <p class="gesture-status" data-gesture-status>Starting…</p>
+        </div>
+        <ul class="gesture-legend">
+          <li>☝️ Point your finger — move cursor (pauses scroll)</li>
+          <li>👍 Thumbs up — click</li>
+          <li>✋ Open palm — scroll down</li>
+          <li>✊ Fist — scroll up</li>
+          <li>✌️ Peace sign — go back</li>
+        </ul>
+        <p class="gesture-note">Video is processed on your device and never uploaded.</p>
+      </div>
+      <div class="gesture-cursor" data-gesture-cursor hidden aria-hidden="true"><span class="gesture-cursor-label" data-gesture-cursor-label></span></div>
+    <script type="module" src="./gestures.js?v=gm10"></script>
   </body>
 </html>

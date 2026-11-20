@@ -1,11 +1,27 @@
 /* Gesture mode — camera + hand-gesture navigation (homepage prototype).
    Hand tracking runs fully on-device via MediaPipe HandLandmarker.
    - Point (index finger): move the virtual cursor
-   - Pinch (thumb + index): click
-   - Open palm, move up/down: scroll
+   - Thumbs up (hold briefly): click
+   - Open palm: scroll down · Closed fist: scroll up
+   - Peace sign (hold, either hand): go back (all pages except home)
    Mouse / touch / keyboard keep working at all times. */
 
-const toggleBtn = document.querySelector("[data-gesture-toggle]");
+const toggles = [...document.querySelectorAll("[data-gesture-toggle]")];
+const isHome = document.body.classList.contains("page-home");
+const SESSION_KEY = "gesture-mode-on";
+function rememberOn(on) {
+  try { on ? sessionStorage.setItem(SESSION_KEY, "1") : sessionStorage.removeItem(SESSION_KEY); } catch { /* private mode */ }
+}
+
+function setToggles(on) {
+  toggles.forEach((btn) => {
+    btn.setAttribute("aria-pressed", on ? "true" : "false");
+    const label = btn.querySelector("[data-gesture-toggle-label]") || btn;
+    label.textContent = on
+      ? btn.dataset.labelOn || "✋ Stop gesture mode"
+      : btn.dataset.labelOff || "✋ Gesture mode";
+  });
+}
 const panel = document.querySelector("[data-gesture-panel]");
 const liveWrap = document.querySelector("[data-gesture-live]");
 const closeBtn = document.querySelector("[data-gesture-close]");
@@ -20,12 +36,29 @@ let landmarker = null;
 let rafId = null;
 let lastVideoTime = -1;
 let cursor = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-let pinchDown = false;
+let thumbFrames = 0;
+let backFrames = 0;
+let backFired = false;
+let fistFrames = 0;
+let lastFrameAt = 0;
+const SCROLL_SPEED = 650; // px per second
+let clickArmed = true;
 let lastClickAt = 0;
-let palmPrevY = null;
 
 function setStatus(msg) {
   if (statusEl) statusEl.textContent = msg;
+}
+
+function showNotice(msg) {
+  if (!panel || !statusEl) return;
+  panel.hidden = false;
+  if (liveWrap) liveWrap.hidden = false;
+  if (video) video.hidden = true;
+  setStatus(msg);
+  clearTimeout(showNotice.t);
+  showNotice.t = setTimeout(() => {
+    if (!active) { panel.hidden = true; if (video) video.hidden = false; }
+  }, 5000);
 }
 
 function dist(a, b) {
@@ -58,28 +91,34 @@ async function createLandmarker(mp) {
 }
 
 async function startGestures() {
+  if (active) return;
   if (!navigator.mediaDevices?.getUserMedia) {
     setStatus("Camera isn’t supported in this browser.");
     return;
   }
   active = true;
-  toggleBtn.setAttribute("aria-pressed", "true");
-  toggleBtn.textContent = "✋ Stop gesture mode";
+  rememberOn(true);
+  setToggles(true);
+  if (video) video.hidden = false;
   panel.hidden = false;
+  cursor = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+  cursorEl.style.transform = `translate(${cursor.x}px, ${cursor.y}px) translate(-50%, -50%)`;
   if (liveWrap) liveWrap.hidden = false;
   cursorEl.hidden = false;
   setStatus("Requesting camera…");
 
   try {
-    stream = await navigator.mediaDevices.getUserMedia({
+    const s = await navigator.mediaDevices.getUserMedia({
       video: { width: { ideal: 640 }, height: { ideal: 480 }, facingMode: "user" },
       audio: false,
     });
+    if (!active) { s.getTracks().forEach((t) => t.stop()); return; } // turned off while the prompt was open
+    stream = s;
     video.srcObject = stream;
     await video.play();
   } catch {
-    setStatus("Camera permission denied — mouse and keyboard still work.");
     stopGestures();
+    showNotice("Camera permission denied. Mouse and keyboard still work.");
     return;
   }
 
@@ -88,10 +127,12 @@ async function startGestures() {
     const mp = await import(
       "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/vision_bundle.mjs"
     );
-    landmarker = await createLandmarker(mp);
+    const lmk = await createLandmarker(mp);
+    if (!active) { try { lmk.close(); } catch {} return; }
+    landmarker = lmk;
   } catch {
-    setStatus("Couldn’t load hand tracking (check connection).");
     stopGestures();
+    showNotice("Couldn’t load hand tracking. Check your connection and try again.");
     return;
   }
 
@@ -100,15 +141,17 @@ async function startGestures() {
   loop();
 }
 
-function stopGestures() {
+function stopGestures(opts = {}) {
+  if (!opts.keepSession) rememberOn(false);
   active = false;
-  toggleBtn.setAttribute("aria-pressed", "false");
-  toggleBtn.textContent = "✋ Gesture mode";
+  setToggles(false);
   if (liveWrap) liveWrap.hidden = true;
-  panel.hidden = legendClosed;
+  panel.hidden = true;
   cursorEl.hidden = true;
-  palmPrevY = null;
-  pinchDown = false;
+  fistFrames = 0;
+  lastFrameAt = 0;
+  thumbFrames = 0;
+  clickArmed = true;
   if (rafId) cancelAnimationFrame(rafId);
   rafId = null;
   if (stream) {
@@ -121,6 +164,12 @@ function stopGestures() {
     landmarker = null;
   }
   lastVideoTime = -1;
+}
+
+function goBack() {
+  const sameSiteReferrer = document.referrer && new URL(document.referrer).origin === location.origin;
+  if (history.length > 1 && sameSiteReferrer) history.back();
+  else location.href = "./index.html";
 }
 
 function fireClick(x, y) {
@@ -152,7 +201,8 @@ function loop() {
   const lm = results?.landmarks?.[0];
   if (!lm) {
     cursorLabel.textContent = "Show your hand";
-    palmPrevY = null;
+    fistFrames = 0;
+  lastFrameAt = 0;
     return;
   }
 
@@ -161,45 +211,89 @@ function loop() {
   const ringExt = isExtended(lm, 16, 14);
   const pinkyExt = isExtended(lm, 20, 18);
   const openPalm = indexExt && middleExt && ringExt && pinkyExt;
-  const pinchDist = dist(lm[4], lm[8]);
+  const fingersCurled = !indexExt && !middleExt && !ringExt && !pinkyExt;
 
-  // Pointer position: pinch midpoint while pinching, otherwise index fingertip.
-  const anchor = pinchDist < 0.09
-    ? { x: (lm[4].x + lm[8].x) / 2, y: (lm[4].y + lm[8].y) / 2 }
-    : lm[8];
-  const targetX = (1 - anchor.x) * window.innerWidth; // mirror the selfie view
-  const targetY = anchor.y * window.innerHeight;
-  cursor.x += (targetX - cursor.x) * 0.35;
-  cursor.y += (targetY - cursor.y) * 0.35;
-  cursorEl.style.transform = `translate(${cursor.x}px, ${cursor.y}px) translate(-50%, -50%)`;
+  // Thumbs up (strict, so a fist never reads as a click):
+  // other fingers curled, thumb pointing up, tip clearly above the knuckles
+  // and well away from the curled fingers (in a fist the thumb rests on them).
+  const handSize = dist(lm[0], lm[9]) || 0.1;
+  const thumbVertical =
+    lm[4].y < lm[3].y && lm[3].y < lm[2].y &&
+    Math.abs(lm[4].y - lm[2].y) > Math.abs(lm[4].x - lm[2].x) * 1.2;
+  const tipAboveKnuckles = lm[5].y - lm[4].y > handSize * 0.35;
+  const tipAwayFromFingers =
+    Math.min(dist(lm[4], lm[6]), dist(lm[4], lm[10])) > handSize * 0.5;
+  const thumbsUp = fingersCurled && thumbVertical && tipAboveKnuckles && tipAwayFromFingers;
 
-  if (openPalm && pinchDist >= 0.05) {
-    // Grab-and-drag scroll: page follows the palm.
+  // Peace sign (either hand, any angle): index + middle up and spread into a V,
+  // ring + pinky folded. Goes back on every page except home.
+  const peace = !isHome && indexExt && middleExt && !ringExt && !pinkyExt &&
+    dist(lm[8], lm[12]) > handSize * 0.35;
+
+  // Only the pointing index finger (or an open palm, for scrolling) moves the cursor.
+  // Thumbs up freezes it, so changing hand shape doesn't knock it off target.
+  if (indexExt && !peace) {
+    const targetX = (1 - lm[8].x) * window.innerWidth; // mirror the selfie view
+    const targetY = lm[8].y * window.innerHeight;
+    cursor.x += (targetX - cursor.x) * 0.35;
+    cursor.y += (targetY - cursor.y) * 0.35;
+    cursorEl.style.transform = `translate(${cursor.x}px, ${cursor.y}px) translate(-50%, -50%)`;
+  }
+
+  // Steady scrolling: open palm scrolls down, closed fist scrolls up.
+  const now = performance.now();
+  const dt = Math.min(64, now - (lastFrameAt || now));
+  lastFrameAt = now;
+  const fist = fingersCurled && !thumbsUp;
+  fistFrames = fist ? fistFrames + 1 : 0;
+  if (openPalm || fistFrames >= 8) {
+    const dir = openPalm ? 1 : -1;
     cursorEl.classList.remove("gesture-cursor--pinch");
-    cursorLabel.textContent = "Scroll";
-    if (palmPrevY !== null) {
-      window.scrollBy(0, -(cursor.y - palmPrevY) * 2.2);
-    }
-    palmPrevY = cursor.y;
-    pinchDown = false;
+    cursorLabel.textContent = dir > 0 ? "Scroll ↓" : "Scroll ↑";
+    window.scrollBy(0, dir * SCROLL_SPEED * (dt / 1000));
+    thumbFrames = 0;
+    clickArmed = true;
     return;
   }
-  palmPrevY = null;
 
-  const pinching = pinchDist < 0.05;
-  cursorEl.classList.toggle("gesture-cursor--pinch", pinching);
-  if (pinching) {
-    cursorLabel.textContent = "Click!";
-    const now = performance.now();
-    if (!pinchDown && now - lastClickAt > 700) {
-      lastClickAt = now;
-      fireClick(cursor.x, cursor.y);
+  if (peace) {
+    backFrames += 1;
+    thumbFrames = 0;
+    cursorEl.classList.add("gesture-cursor--pinch");
+    if (backFrames >= 14 && !backFired) {
+      backFired = true;
+      cursorLabel.textContent = "Back";
+      goBack();
+    } else if (!backFired) {
+      cursorLabel.textContent = "Hold ✌️ to go back";
     }
-    pinchDown = true;
-  } else {
-    cursorLabel.textContent = indexExt && !middleExt ? "Point" : "Pinch to click";
-    pinchDown = false;
+    return;
   }
+  backFrames = 0;
+  backFired = false;
+
+  if (thumbsUp) {
+    thumbFrames += 1;
+    cursorEl.classList.add("gesture-cursor--pinch");
+    // Hold for ~10 frames (about 0.3s) before clicking; one click per thumbs up.
+    if (thumbFrames >= 10 && clickArmed) {
+      const now = performance.now();
+      if (now - lastClickAt > 700) {
+        lastClickAt = now;
+        clickArmed = false;
+        cursorLabel.textContent = "Click!";
+        fireClick(cursor.x, cursor.y);
+      }
+    } else if (clickArmed) {
+      cursorLabel.textContent = "Hold 👍";
+    }
+    return;
+  }
+
+  thumbFrames = 0;
+  clickArmed = true;
+  cursorEl.classList.remove("gesture-cursor--pinch");
+  cursorLabel.textContent = indexExt ? "Point" : "👍 to click";
 }
 
 /* Legend stays open unless the user closes it (remembered across visits) */
@@ -220,10 +314,21 @@ if (closeBtn) {
   });
 }
 
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", () => {
-    if (active) stopGestures();
-    else startGestures();
+if (toggles.length) {
+  toggles.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      if (active) stopGestures();
+      else startGestures();
+    })
+  );
+  window.addEventListener("pagehide", () => stopGestures({ keepSession: true }));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && active) stopGestures();
   });
-  window.addEventListener("beforeunload", stopGestures);
 }
+
+/* Keep gesture mode on across pages in this tab (desktop only). */
+try {
+  const desktop = matchMedia("(hover: hover) and (pointer: fine) and (min-width: 821px)").matches;
+  if (toggles.length && desktop && sessionStorage.getItem(SESSION_KEY) === "1") startGestures();
+} catch { /* ignore */ }

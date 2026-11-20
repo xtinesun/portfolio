@@ -4,14 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Turning Instagram engagement into multi-channel nurture — Christine Noh</title>
-    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./assets/favicon.svg?v=c1" type="image/svg+xml" />
+    <link rel="icon" href="./assets/favicon-32.png?v=c1" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png?v=c1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=metaclean1" />
+    <link rel="stylesheet" href="./styles.css?v=nav1-metaclean1" />
     <link rel="stylesheet" href="./mockups.css?v=cs3mobile2" />
   </head>
   <body class="page-case">
@@ -21,9 +23,13 @@
       <div class="container header-inner">
         <a class="brand" href="./index.html" data-page-link>Christine Noh</a>
         <nav class="header-nav" aria-label="Primary">
+          <a class="nav-link nav-link--section" href="./index.html#shipped" data-page-link>Shipped</a>
+          <a class="nav-link nav-link--section" href="./index.html#lab" data-page-link>Lab</a>
+          <a class="nav-link nav-link--section" href="./index.html#about-me" data-page-link>About</a>
+          <span class="nav-divider" aria-hidden="true"></span>
           <a class="nav-link" href="./resume.html" data-page-link>Resume</a>
           <a class="nav-link" href="https://www.linkedin.com/in/xtinesun" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a class="nav-link nav-link--accent" href="mailto:xtineysun@gmail.com">Email</a>
+          <a class="nav-link nav-link--accent" href="mailto:hi@christinenoh.com">Email</a>
         </nav>
       </div>
     </header>
@@ -31,28 +37,50 @@
       <a class="back-link reveal is-visible" href="./index.html#projects" data-page-link>← Back to projects</a>
 
       <figure class="case-hero-mockup case-hero-mockup--cs3 reveal" data-reveal aria-label="Hero product visual">
-        <img
-          class="case-media-img case-media-img--hero"
-          src="./assets/cs3-project-card.gif?v=hdrh1"
-          alt="New automation flow building — tag trigger through nurture steps to End"
-          width="1440"
-          height="900"
-          decoding="async"
-        />
+        <div class="c3" role="img" aria-label="An automation builds itself: an Instagram comment trigger, a Send DM step, then branches to a welcome email and SMS.">
+                  <div class="c3-win">
+                    <div class="c3-win-head">New automation</div>
+                    <div class="c3-canvas">
+                      <div class="c3-node c3-node--trig">
+                        <span class="c3-ic c3-ic--ig"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="#fff"/></svg></span>
+                        <span class="c3-txt"><small>Trigger</small><b>Comment contains “GUIDE”</b></span>
+                      </div>
+                      <i class="c3-line c3-line--1"></i>
+                      <div class="c3-node c3-node--dm">
+                        <span class="c3-ic c3-ic--dm"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.4 8.4 0 1 1 21 11.5z"/></svg></span>
+                        <span class="c3-txt"><small>Action</small><b>Send DM with guide</b></span>
+                      </div>
+                      <i class="c3-line c3-line--2"></i>
+                      <i class="c3-bar"></i>
+                      <i class="c3-line c3-line--3a"></i>
+                      <i class="c3-line c3-line--3b"></i>
+                      <div class="c3-node c3-node--sm c3-node--email">
+                        <span class="c3-ic c3-ic--email"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                        <span class="c3-txt"><b>Welcome email</b></span>
+                        <span class="c3-check c3-check--1"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                      </div>
+                      <div class="c3-node c3-node--sm c3-node--sms">
+                        <span class="c3-ic c3-ic--sms"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18h2"/></svg></span>
+                        <span class="c3-txt"><b>SMS follow-up</b></span>
+                        <span class="c3-check c3-check--2"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
       </figure>
 
       <header class="case-header reveal" data-reveal>
         <span class="project-tag">Automations 2.0 · Comment to DM · Kajabi</span>
         <h1>Turning Instagram engagement into multi-channel nurture</h1>
-        <p class="case-subtitle">Instagram comments that become contacts without getting creators flagged — then Kajabi’s first Visual Editor, so DM → email → SMS → offer lives in one canvas instead of ManyChat trees.</p>
-        <div class="case-meta-row"><span class="case-read-time">9 min read</span></div>
+        <p class="case-subtitle">Turning Instagram comments into contacts without getting creators flagged. Then Kajabi’s first Visual Editor, so the whole follow-up, from DM to email to SMS to offer, lives on one canvas.</p>
+        <div class="case-meta-row"><span class="case-read-time">7 min read · more detail in each “Go deeper”</span></div>
       </header>
 
       <section class="case-exec reveal" data-reveal aria-label="Project details">
         <dl class="case-exec-meta">
           <div class="case-exec-item">
             <dt>Role</dt>
-            <dd>Lead Product Designer</dd>
+            <dd>Senior Product Designer · Design lead</dd>
           </div>
           <div class="case-exec-item">
             <dt>Timeline</dt>
@@ -91,7 +119,7 @@
 
           <section class="case-block reveal" id="role" data-reveal data-section>
             <h2>My role &amp; constraints</h2>
-            <p><strong>Lead Product Designer</strong> — sole designer with PM David Wang through Visual Editor handoff.</p>
+            <p><strong>Senior Product Designer, design lead</strong> — sole designer with PM David Wang through Visual Editor handoff.</p>
             <p><strong>Owned:</strong> Comment to DM end-to-end (safety defaults, setup UI) and the first Automations 2.0 Visual Editor (canvas, branching, performance) through eng-ready specs.</p>
             <p><strong>Co-led:</strong> Advanced Messaging strategy — Conversation Hub–ready permissions and contact model.</p>
             <p><strong>Constraint:</strong> Maternity leave at handoff — another designer owned build and launch. Comment to DM shipped; VE launch metrics sit after my ownership.</p>
@@ -199,7 +227,7 @@
                       >
                         <img
                           src="./assets/cs3-delay.png?v=3"
-                          alt=""
+                          alt="Delay automation control set to 5 seconds, with automatically like replies and Save automation"
                           width="1128"
                           height="332"
                           loading="lazy"
@@ -226,7 +254,7 @@
                       >
                         <img
                           src="./assets/cs3-keywords.png?v=2"
-                          alt=""
+                          alt="Keyword trigger selected by default — Specific key word with Helper entered; Any comment optional"
                           width="1026"
                           height="330"
                           loading="lazy"
@@ -243,7 +271,7 @@
 
                   <article class="case-decision-item" id="decision-4">
                       <h4 class="case-decision-item-title"><span class="case-decision-num">04</span>New Visual Editor canvas — don’t stretch the old UI</h4>
-                    <p class="case-decision-item-body">I designed the initial Automations 2.0 Visual Editor. Extending Rails-era one-to-one UI for long chains would make it unusable — and Comment to DM is only one recipe on a much bigger canvas. <strong>Chose:</strong> a new canvas (pan/zoom) with multi-trigger, branching, and stacked actions across <strong>text, email, and (later) more social platforms</strong> — <strong>up to 50 actions per flow</strong>, not unlimited — plus <strong>per-step performance</strong> on the journey, and a <strong>drawer</strong> for detail config so creators keep the canvas in view. <em>Business:</em> deep multi-channel trees stay in Kajabi. <em>Design:</em> clear journey view with data on what works; intricate one-step edits (SMS copy, etc.) open beside the flow, not over it.</p>
+                    <p>I designed the first Automations 2.0 Visual Editor. Stretching the old one-to-one UI to long chains would have made it unusable, and Comment to DM is only one recipe on a much bigger canvas. <strong>Chose:</strong> a new pan-and-zoom canvas with multiple triggers, branching, and stacked actions across text, email, and later more social platforms, <strong>up to 50 actions per flow</strong>. Detailed settings open in a drawer beside the flow, so creators never lose sight of the journey.</p>
                     <div class="case-ve-flows" aria-label="Visual Editor design flows">
                       <figure class="case-ve-flow">
                         <p class="case-ve-flow-label">Triggers</p>
@@ -254,14 +282,14 @@
                           data-media-pan
                           data-media-pan-width="28996"
                           data-media-pan-height="29095"
-                          data-media-src="./assets/cs3-ve-triggers-flow.svg?v=5"
+                          data-media-src="./assets/cs3-ve-triggers-flow-zoom.webp?v=w1"
                           data-media-fallback="./assets/cs3-ve-triggers-flow.png?v=5"
                           data-media-alt="Visual Editor triggers flow — full design artboard"
                           aria-label="View the Triggers flow full size, pan, and zoom"
                         >
                           <img
-                            src="./assets/cs3-ve-triggers-flow.svg?v=5"
-                            alt=""
+                            src="./assets/cs3-ve-triggers-flow.webp?v=w1"
+                            alt="Visual Editor triggers flow — full design artboard"
                             width="1020"
                             height="1024"
                             loading="lazy"
@@ -278,14 +306,14 @@
                           data-media-pan
                           data-media-pan-width="22822"
                           data-media-pan-height="24244"
-                          data-media-src="./assets/cs3-ve-actions-flow.svg?v=5"
+                          data-media-src="./assets/cs3-ve-actions-flow-zoom.webp?v=w1"
                           data-media-fallback="./assets/cs3-ve-actions-flow.png?v=5"
                           data-media-alt="Visual Editor actions flow — full design artboard"
                           aria-label="View the Actions flow full size, pan, and zoom"
                         >
                           <img
-                            src="./assets/cs3-ve-actions-flow.svg?v=5"
-                            alt=""
+                            src="./assets/cs3-ve-actions-flow.webp?v=w1"
+                            alt="Visual Editor actions flow — full design artboard"
                             width="963"
                             height="1024"
                             loading="lazy"
@@ -314,14 +342,14 @@
                           class="case-media-trigger"
                           data-media-expand
                           data-media-hires
-                          data-media-src="./assets/cs3-setup-drawer.svg?v=3"
+                          data-media-src="./assets/cs3-setup-drawer.webp?v=w1"
                           data-media-fallback="./assets/cs3-setup-drawer.png?v=3"
                           data-media-alt="Comment to DM setup explored as a side drawer — step 2 of 3 with Next to continue"
                           aria-label="View the side drawer setup larger"
                         >
                           <img
                             src="./assets/cs3-setup-drawer.png?v=3"
-                            alt=""
+                            alt="Comment to DM setup explored as a side drawer — step 2 of 3 with Next to continue"
                             width="1024"
                             height="658"
                             loading="lazy"
@@ -340,14 +368,14 @@
                           class="case-media-trigger"
                           data-media-expand
                           data-media-hires
-                          data-media-src="./assets/cs3-setup-modal.svg?v=3"
+                          data-media-src="./assets/cs3-setup-modal.webp?v=w1"
                           data-media-fallback="./assets/cs3-setup-modal.png?v=3"
                           data-media-alt="Comment to DM setup preferred as a modal — all options on one page with accordion sections"
                           aria-label="View the modal setup larger"
                         >
                           <img
                             src="./assets/cs3-setup-modal.png?v=3"
-                            alt=""
+                            alt="Comment to DM setup preferred as a modal — all options on one page with accordion sections"
                             width="1024"
                             height="658"
                             loading="lazy"
@@ -399,9 +427,7 @@
           </section>
 
           <section class="case-block reveal" id="solution" data-reveal data-section>
-            <h2>What we built</h2>
-
-            <p class="case-impact-label">v1 — Comment to DM</p>
+            <h2>What we built: v1 Comment to DM</h2>
             <p>Shipped into Marketing → Automations (next to Email and Funnels): connect Instagram, pick a post, keywords or all-comments, delay + auto-like, DM with Kajabi link, results (delivered / opened / clicked). Lead capture without waiting on the new canvas.</p>
 
             <div class="case-flow" role="img" aria-label="Comment to DM flow">
@@ -438,14 +464,14 @@
                 data-media-expand
                 data-media-type="video"
                 data-media-hires
-                data-media-src="./assets/cs3-ctd-fullflow.mp4?v=2"
+                data-media-src="./assets/cs3-ctd-fullflow.mp4?v=lite1"
                 data-media-poster="./assets/cs3-ctd-fullflow-poster.png?v=2"
                 data-media-alt="Comment to DM full flow — connect Instagram, pick a post, set keywords and delay, send DM, view results"
                 aria-label="View the Comment to DM full flow larger"
               >
                 <video
                   class="case-media-video"
-                  src="./assets/cs3-ctd-fullflow.mp4?v=2"
+                  src="./assets/cs3-ctd-fullflow.mp4?v=lite1"
                   poster="./assets/cs3-ctd-fullflow-poster.png?v=2"
                   width="1684"
                   height="1080"
@@ -472,15 +498,14 @@
           </section>
 
           <section class="case-block reveal" id="visual-editor" data-reveal data-section>
-            <h2>What we built</h2>
-            <p class="case-impact-label">v2 — Visual Editor</p>
-            <p>A canvas far beyond Comment to DM: creators compose journeys across <strong>text, email, and — later — more social platforms</strong>, with multi-trigger, branching, and stacked actions — <strong>up to 50 per flow</strong> (vs. 1 trigger + 1 action today). Detail config opens in a <strong>drawer</strong> beside the canvas — not a modal — so node options stay tied to the flow (SMS copy and other one-step, text-heavy edits). Performance sits on the journey too — creators can see <strong>how each step runs</strong>, not just that the tree exists. Comment to DM is one recipe on that canvas. Every v1 field was shaped so it doesn’t need a redesign when it lands there.</p>
+            <h2>What we built: v2 Visual Editor</h2>
+            <p>Creators compose whole journeys on one canvas: text, email, and later more social platforms, with branching and up to 50 actions per flow (versus 1 trigger and 1 action before). Settings open in a drawer beside the flow, and Comment to DM is just one recipe on it. Every v1 field was shaped so it wouldn’t need a redesign when it moved here.</p>
             <ul class="case-constraints">
               <li>Up to <strong>50</strong> actions in one flow (not unlimited)</li>
               <li>Channels beyond Instagram DMs — text, email, expandable to more social</li>
               <li>Per-step performance on the canvas — see how each trigger and action performs</li>
               <li>Opt-in migration + starter recipes (Comment to DM, freebie → nurture → offer)</li>
-              <li>Branching &amp; wait sequenced after V1</li>
+              <li>Branching and wait steps are designed, and planned to ship after the first release of the editor</li>
             </ul>
 
             <figure class="case-decision-figure case-figure--media reveal" data-reveal>
@@ -490,14 +515,14 @@
                 data-media-expand
                 data-media-type="video"
                 data-media-hires
-                data-media-src="./assets/cs3-ve-fullflow.mp4?v=1"
+                data-media-src="./assets/cs3-ve-fullflow.mp4?v=lite1"
                 data-media-poster="./assets/cs3-ve-fullflow-poster.png?v=1"
                 data-media-alt="Visual Editor full flow — building a multi-step automation journey on the canvas"
                 aria-label="View the Visual Editor full flow larger"
               >
                 <video
                   class="case-media-video"
-                  src="./assets/cs3-ve-fullflow.mp4?v=1"
+                  src="./assets/cs3-ve-fullflow.mp4?v=lite1"
                   poster="./assets/cs3-ve-fullflow-poster.png?v=1"
                   width="1680"
                   height="1080"
@@ -529,7 +554,7 @@
                     <img
                       class="case-ve-perf-anim__frame case-ve-perf-anim__frame--off"
                       src="./assets/cs3-ve-performance-off.png?v=5"
-                      alt=""
+                      alt="Visual Editor performance toggle — metrics appear on each step when performance is turned on"
                       width="2048"
                       height="1316"
                       loading="lazy"
@@ -582,8 +607,21 @@
             </ul>
             <p><strong>What I’d change:</strong> ask engineering earlier what Comment to DM needed under the hood. It looked like a quick feature, but rebuilding how contacts and Instagram handles are stored slowed it down more than the Visual Editor.</p>
             <p><strong>On the handoff:</strong> I went on maternity leave after design and testing. I documented the v1 and v2 plan, the safety defaults, and the permissions (designed so the future Conversation Hub could use them) — so another designer could own the build without re-deciding those things.</p>
+            <details class="case-accordion case-deeper">
+              <summary class="case-accordion-summary">
+                <span class="case-accordion-title">Go deeper: what I did beyond design</span>
+                <span class="case-accordion-meta">New Design System components</span>
+                <span class="case-accordion-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="case-accordion-body">
             <p><strong>What I did beyond design:</strong> created new Design System components for the Visual Editor. Kajabi didn’t have an endless (infinite-canvas) editor, so the building blocks were net-new: canvas nodes for triggers and actions, connectors and branching, drawer-based step config, and per-step performance states — patterns other teams could reuse instead of starting from zero.</p>
+              </div>
+            </details>
             <p><strong>Lesson:</strong> on social, fast replies look like a bot and get accounts flagged. A short delay that feels human is what makes native capture safe. And one Visual Editor puts text, email, and future social in one place — instead of stopping at the DM.</p>
+            <aside class="case-today" aria-label="If I built this today">
+              <p class="case-today-label">If I built this today</p>
+              <p>I’d prototype the Visual Editor as working code with Claude and walk engineering through it early. Building it would have exposed the contact and Instagram-handle data work in week one, not halfway through the build.</p>
+            </aside>
           </section>
 
           <section class="case-block case-block--accordion reveal" id="future" data-reveal data-section>
@@ -626,7 +664,7 @@
       <div class="container footer-inner">
         <p>&copy; <span data-year></span> Christine Noh</p>
         <nav class="footer-nav" aria-label="Footer">
-          <a class="footer-email" href="mailto:xtineysun@gmail.com">xtineysun@gmail.com</a>
+          <a class="footer-email" href="mailto:hi@christinenoh.com">hi@christinenoh.com</a>
           <a class="footer-link" href="./colophon.html" data-page-link>Colophon</a>
         </nav>
       </div>
@@ -651,6 +689,26 @@
         <button type="button" class="media-modal-pan-zoom-btn" data-media-zoom-in aria-label="Zoom in">+</button>
       </div>
     </div>
-    <script src="./script.js?v=copyemail1"></script>
+    <script src="./script.js?v=copyemail3"></script>
+      <script src="./media.js?v=deeper1"></script>
+      <div class="gesture-ui">
+      <button type="button" class="gesture-toggle" data-gesture-toggle aria-pressed="false" data-label-off="✋ Gesture mode" data-label-on="✋ Stop gesture mode">✋ Gesture mode</button>
+      <div class="gesture-panel" data-gesture-panel hidden>
+        <button type="button" class="gesture-panel-close" data-gesture-close aria-label="Close gesture legend">×</button>
+        <div data-gesture-live hidden>
+          <video class="gesture-video" data-gesture-video autoplay muted playsinline aria-label="Camera preview for hand gestures"></video>
+          <p class="gesture-status" data-gesture-status>Starting…</p>
+        </div>
+        <ul class="gesture-legend">
+          <li>☝️ Point your finger — move cursor (pauses scroll)</li>
+          <li>👍 Thumbs up — click</li>
+          <li>✋ Open palm — scroll down</li>
+          <li>✊ Fist — scroll up</li>
+          <li>✌️ Peace sign — go back</li>
+        </ul>
+        <p class="gesture-note">Video is processed on your device and never uploaded.</p>
+      </div>
+      <div class="gesture-cursor" data-gesture-cursor hidden aria-hidden="true"><span class="gesture-cursor-label" data-gesture-cursor-label></span></div>
+    <script type="module" src="./gestures.js?v=gm10"></script>
   </body>
 </html>

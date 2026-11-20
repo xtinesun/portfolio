@@ -4,14 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Colophon — Christine Noh</title>
-    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./assets/favicon.svg?v=c1" type="image/svg+xml" />
+    <link rel="icon" href="./assets/favicon-32.png?v=c1" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png?v=c1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=copyemail1" />
+    <link rel="stylesheet" href="./styles.css?v=nav1" />
   </head>
   <body class="page-colophon">
     <div class="grain" aria-hidden="true"></div>
@@ -20,13 +22,17 @@
       <div class="container header-inner">
         <a class="brand" href="./index.html">Christine Noh</a>
         <nav class="header-nav" aria-label="Primary">
+          <a class="nav-link nav-link--section" href="./index.html#shipped" data-page-link>Shipped</a>
+          <a class="nav-link nav-link--section" href="./index.html#lab" data-page-link>Lab</a>
+          <a class="nav-link nav-link--section" href="./index.html#about-me" data-page-link>About</a>
+          <span class="nav-divider" aria-hidden="true"></span>
           <a class="nav-link" href="./resume.html" data-page-link>
             Resume
           </a>
           <a class="nav-link" href="https://www.linkedin.com/in/xtinesun" target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>
-          <a class="nav-link nav-link--accent" href="mailto:xtineysun@gmail.com">
+          <a class="nav-link nav-link--accent" href="mailto:hi@christinenoh.com">
             Email
           </a>
         </nav>
@@ -44,6 +50,11 @@
         </p>
 
         <section class="colophon-section">
+          <h2>Built with AI</h2>
+          <p>I design every screen and make every call. AI pair programmers help me build: <strong>Cursor</strong> for the first version, and <strong>Claude</strong> for the 2026 refresh, including the Shipped and Lab layout, copy edits, and video optimization.</p>
+        </section>
+
+        <section class="colophon-section">
           <h2>Type</h2>
           <p><strong>Lora</strong> for display — balanced, symmetric serif with timeless proportions.</p>
           <p><strong>Plus Jakarta Sans</strong> for UI — geometric clarity at small sizes.</p>
@@ -59,13 +70,14 @@
           <ul>
             <li>Vanilla HTML, CSS, and JavaScript — no framework</li>
             <li>CSS-only product mockups — no image dependencies</li>
-            <li>Respects <code>prefers-reduced-motion</code></li>
+            <li>Respects <code>prefers-reduced-motion</code>, with pause controls on every looping video</li>
+            <li>Gesture mode (in progress): on-device hand tracking (MediaPipe), loaded only when you turn it on</li>
             <li>Semantic HTML with skip links and focus-visible states</li>
           </ul>
           <div class="colophon-stats">
             <div class="colophon-stat">
               <span class="colophon-stat-num">0</span>
-              <span class="colophon-stat-label">Dependencies</span>
+              <span class="colophon-stat-label">Frameworks</span>
             </div>
             <div class="colophon-stat">
               <span class="colophon-stat-num">3</span>
@@ -89,12 +101,31 @@
       <div class="container footer-inner">
         <p>&copy; <span data-year></span> Christine Noh</p>
         <nav class="footer-nav" aria-label="Footer">
-          <a class="footer-email" href="mailto:xtineysun@gmail.com">xtineysun@gmail.com</a>
+          <a class="footer-email" href="mailto:hi@christinenoh.com">hi@christinenoh.com</a>
           <a class="footer-link" href="./index.html" data-page-link>Home</a>
         </nav>
       </div>
     </footer>
 
-    <script src="./script.js?v=copyemail1"></script>
+    <script src="./script.js?v=copyemail3"></script>
+      <div class="gesture-ui">
+      <button type="button" class="gesture-toggle" data-gesture-toggle aria-pressed="false" data-label-off="✋ Gesture mode" data-label-on="✋ Stop gesture mode">✋ Gesture mode</button>
+      <div class="gesture-panel" data-gesture-panel hidden>
+        <button type="button" class="gesture-panel-close" data-gesture-close aria-label="Close gesture legend">×</button>
+        <div data-gesture-live hidden>
+          <video class="gesture-video" data-gesture-video autoplay muted playsinline aria-label="Camera preview for hand gestures"></video>
+          <p class="gesture-status" data-gesture-status>Starting…</p>
+        </div>
+        <ul class="gesture-legend">
+          <li>☝️ Point your finger — move cursor (pauses scroll)</li>
+          <li>👍 Thumbs up — click</li>
+          <li>✋ Open palm — scroll down</li>
+          <li>✊ Fist — scroll up</li>
+          <li>✌️ Peace sign — go back</li>
+        </ul>
+        <p class="gesture-note">Video is processed on your device and never uploaded.</p>
+      </div>
+      <div class="gesture-cursor" data-gesture-cursor hidden aria-hidden="true"><span class="gesture-cursor-label" data-gesture-cursor-label></span></div>
+    <script type="module" src="./gestures.js?v=gm10"></script>
   </body>
 </html>

@@ -9,14 +9,16 @@
       content="Resume for Christine Noh, Senior Product Designer — 0→1 products, AI experiences, and creator platforms."
     />
     <meta name="theme-color" content="#C95840" />
-    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./assets/favicon.svg?v=c1" type="image/svg+xml" />
+    <link rel="icon" href="./assets/favicon-32.png?v=c1" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png?v=c1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=resumemobile1" />
+    <link rel="stylesheet" href="./styles.css?v=nav1" />
     <style>
       :root {
         --ink: #171512;
@@ -989,6 +991,10 @@
       <div class="container header-inner">
         <a class="brand" href="./index.html" data-page-link>Christine Noh</a>
         <nav class="header-nav" aria-label="Primary">
+          <a class="nav-link nav-link--section" href="./index.html#shipped" data-page-link>Shipped</a>
+          <a class="nav-link nav-link--section" href="./index.html#lab" data-page-link>Lab</a>
+          <a class="nav-link nav-link--section" href="./index.html#about-me" data-page-link>About</a>
+          <span class="nav-divider" aria-hidden="true"></span>
           <a class="nav-link" href="./resume.html" aria-current="page" data-page-link>Resume</a>
           <a class="nav-link" href="https://www.linkedin.com/in/xtinesun/" target="_blank" rel="noopener noreferrer">
             LinkedIn
@@ -1080,7 +1086,7 @@
               <li><strong>Product direction:</strong> Pushed the pivot from clip maker to full-funnel content, which <strong>doubled monthly usage</strong>; 43% of surveyed beta users replaced outside tools. Created Kajabi’s first AI design system patterns, reused across its AI&nbsp;features.</li>
               <li><strong>Messaging &amp; CRM:</strong> Shipped email A/B testing, a gap <strong>84% of creators</strong> expected Kajabi to fill, plus resend-to-unopened, contact profiles, and event&nbsp;analytics.</li>
               <li><strong>Automations &amp; growth:</strong> Shipped Comment to DM for Instagram lead capture, designed the first Visual Editor (up to 50 actions per flow), and replaced a manual domain setup behind <strong>~14K support tickets a year</strong> with 1-click&nbsp;setup.</li>
-              <li><strong>Design leadership:</strong> Grew from email and automation into CRM and analytics, then led design for Marketing&nbsp;Tools.</li>
+              <li><strong>Design leadership:</strong> Grew from email and automation into CRM and analytics, then led design for Marketing Tools, including a new marketing homepage that got <strong>19.3% more creators</strong> to their 5th contact within 30&nbsp;days.</li>
             </ul>
           </div>
           <p class="job-dates">Apr&nbsp;2020 <span class="ndash">–</span> Jul&nbsp;2025</p>
@@ -1090,7 +1096,7 @@
           <p class="early-label">Earlier</p>
           <div class="early-item">
             <p class="early-main"><strong>Product Design Consultant</strong> <span class="company">Gig Finance</span> <span class="early-desc">Freelance, alongside Kajabi. 0→1 fintech product direction and&nbsp;IA.</span></p>
-            <p class="job-dates">2020 <span class="ndash">–</span> 2021</p>
+            <p class="job-dates">2021 <span class="ndash">–</span> 2022</p>
           </div>
           <div class="early-item">
             <p class="early-main"><strong>Product Designer</strong> <span class="company">JaneTech</span> <span class="early-desc">Web and mobile products for healthcare and fashion&nbsp;clients.</span></p>
@@ -1159,5 +1165,24 @@
     </footer>
 
     <script src="./script.js?v=pdfdl2"></script>
+      <div class="gesture-ui">
+      <button type="button" class="gesture-toggle" data-gesture-toggle aria-pressed="false" data-label-off="✋ Gesture mode" data-label-on="✋ Stop gesture mode">✋ Gesture mode</button>
+      <div class="gesture-panel" data-gesture-panel hidden>
+        <button type="button" class="gesture-panel-close" data-gesture-close aria-label="Close gesture legend">×</button>
+        <div data-gesture-live hidden>
+          <video class="gesture-video" data-gesture-video autoplay muted playsinline aria-label="Camera preview for hand gestures"></video>
+          <p class="gesture-status" data-gesture-status>Starting…</p>
+        </div>
+        <ul class="gesture-legend">
+          <li>☝️ Point your finger — move cursor (pauses scroll)</li>
+          <li>👍 Thumbs up — click</li>
+          <li>✋ Open palm — scroll down</li>
+          <li>✊ Fist — scroll up</li>
+          <li>✌️ Peace sign — go back</li>
+        </ul>
+        <p class="gesture-note">Video is processed on your device and never uploaded.</p>
+      </div>
+      <div class="gesture-cursor" data-gesture-cursor hidden aria-hidden="true"><span class="gesture-cursor-label" data-gesture-cursor-label></span></div>
+    <script type="module" src="./gestures.js?v=gm10"></script>
   </body>
 </html>

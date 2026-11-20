@@ -7603,3 +7603,11 @@ body.page-deck .deck-hero .hero-scene {
 .quote-card--reactions .quote-who { margin-top: auto; padding-top: 10px; }
 @media (max-width: 820px) { .quotes-grid--team { grid-template-columns: 1fr; } .quote-card--wide { grid-column: auto; } }
 .quote-card--wide.quote-card--team .quote-text { font-size: clamp(1.3rem, 1.9vw, 1.6rem); line-height: 1.38; }
+
+/* Musear visual: static (no animation) */
+.now-visual--musear .now-wave i, .now-visual--musear .musear-dot { animation: none !important; }
+.now-visual--musear .now-wave i:nth-child(1) { height: 45%; }
+.now-visual--musear .now-wave i:nth-child(2) { height: 85%; }
+.now-visual--musear .now-wave i:nth-child(3) { height: 60%; }
+.now-visual--musear .now-wave i:nth-child(4) { height: 100%; }
+.now-visual--musear .now-wave i:nth-child(5) { height: 50%; }

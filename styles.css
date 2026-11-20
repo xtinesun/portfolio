@@ -7849,3 +7849,63 @@ body.page-deck .deck-hero .hero-scene {
 
 /* CS3 case study hero: same live automation scene as the homepage card */
 .case-hero-mockup.case-hero-mockup--cs3 { container-type: size; }
+
+/* ===== CS2 card: animated email A/B test ===== */
+.project-visual--02 { container-type: size; }
+.c2 {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: min(100cqw, 160cqh); aspect-ratio: 16 / 10;
+  container-type: inline-size; z-index: 1;
+  font-family: var(--font-sans, "Plus Jakarta Sans", sans-serif); color: #1e1c19;
+  --c2-dur: 10s;
+}
+.c2 *, .c2 *::before { box-sizing: border-box; }
+.c2-mail { position: absolute; top: 12.5cqw; width: 28cqw; padding: 1.5cqw 1.7cqw 1.7cqw; background: #fff; border-radius: 1.6cqw;
+  box-shadow: 0 1.8cqw 3.9cqw rgba(120, 40, 70, .20), 0 .3cqw .8cqw rgba(120, 40, 70, .08); }
+.c2-mail--a { left: 20cqw; }
+.c2-mail--b { left: 52cqw; }
+.c2-mail-top { display: flex; align-items: center; gap: .8cqw; margin-bottom: 1cqw; }
+.c2-variant { width: 2.4cqw; height: 2.4cqw; border-radius: 50%; border: .18cqw solid #1e1c19; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1cqw; font-weight: 700; }
+.c2-from { font-size: .95cqw; color: #877f75; font-weight: 500; }
+.c2-win { margin-left: auto; display: inline-flex; align-items: center; gap: .4cqw; padding: .35cqw .8cqw .35cqw .55cqw; border-radius: 999px; background: #22a06b; color: #fff; font-size: .95cqw; font-weight: 700; }
+.c2-win svg { width: 1.1cqw; height: 1.1cqw; }
+.c2-subject { margin: 0 0 1.2cqw; font-size: 1.45cqw; font-weight: 700; line-height: 1.25; }
+.c2-hero { position: relative; height: 7.5cqw; border-radius: 1cqw; background: linear-gradient(135deg, #ffe2c8, #f3b3c3); margin-bottom: 1.1cqw; }
+.c2-play { position: absolute; left: 50%; top: 50%; width: 2.6cqw; height: 2.6cqw; margin: -1.3cqw 0 0 -1.3cqw; border-radius: 50%; background: rgba(255, 255, 255, .9); }
+.c2-play::before { content: ""; position: absolute; left: 1.05cqw; top: .75cqw; border-left: .9cqw solid #9b3d6b; border-top: .55cqw solid transparent; border-bottom: .55cqw solid transparent; }
+.c2-lines { display: grid; gap: .55cqw; margin-bottom: 1.2cqw; }
+.c2-lines i { display: block; height: .55cqw; border-radius: 1cqw; background: #ece6dd; }
+.c2-lines i:last-child { width: 70%; }
+.c2-cta { display: block; width: fit-content; margin: 0 auto 1.5cqw; padding: .65cqw 2cqw; border-radius: 999px; background: #9b3d6b; color: #fff; font-size: 1.05cqw; font-weight: 600; }
+.c2-metric { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: .6cqw 1cqw; padding-top: 1.2cqw; border-top: 1px solid #eee8df; }
+.c2-metric-label { font-size: 1cqw; color: #877f75; font-weight: 600; }
+.c2-metric-val { font-size: 1.6cqw; font-weight: 700; }
+.c2-track { grid-column: 1 / -1; height: .8cqw; border-radius: 1cqw; background: #f3eee7; overflow: hidden; }
+.c2-fill { display: block; height: 100%; border-radius: 1cqw; background: #9b3d6b; transform-origin: left; }
+.c2-mail--b .c2-fill { background: #c9a3b5; }
+.c2-send { position: absolute; left: 50%; top: 44cqw; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 1cqw; padding: 1cqw 2cqw 1cqw 1.1cqw; border-radius: 999px; background: #fff; font-size: 1.35cqw; font-weight: 600; white-space: nowrap;
+  box-shadow: 0 1.2cqw 2.8cqw rgba(120, 40, 70, .20); }
+.c2-send-ic { width: 2.4cqw; height: 2.4cqw; border-radius: 50%; background: #9b3d6b; display: inline-flex; align-items: center; justify-content: center; }
+.c2-send-ic svg { width: 1.25cqw; height: 1.25cqw; }
+
+.c2 .c2-mail--a { animation: c2-a var(--c2-dur) infinite both; }
+.c2 .c2-mail--b { animation: c2-b var(--c2-dur) infinite both; }
+.c2 .c2-fill { animation: c2-fill var(--c2-dur) infinite both; }
+.c2 .c2-mail--b .c2-fill { animation-name: c2-fill-b; }
+.c2 .c2-metric-val { animation: c2-val var(--c2-dur) infinite both; }
+.c2 .c2-win { animation: c2-badge var(--c2-dur) infinite both; }
+.c2 .c2-send { animation: c2-send var(--c2-dur) infinite both; }
+@keyframes c2-a { 0%, 2% { opacity: 0; transform: translateY(1cqw); } 8%, 91% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+@keyframes c2-b { 0%, 5% { opacity: 0; transform: translateY(1cqw); } 11%, 50% { opacity: 1; transform: none; } 56%, 91% { opacity: .5; transform: scale(.97); } 96%, 100% { opacity: 0; transform: scale(.97); } }
+@keyframes c2-fill { 0%, 16% { transform: scaleX(0); } 40%, 91% { transform: scaleX(1); } 96%, 100% { transform: scaleX(0); } }
+@keyframes c2-fill-b { 0%, 16% { transform: scaleX(0); } 36%, 91% { transform: scaleX(1); } 96%, 100% { transform: scaleX(0); } }
+@keyframes c2-val { 0%, 34% { opacity: 0; } 40%, 91% { opacity: 1; } 96%, 100% { opacity: 0; } }
+@keyframes c2-badge { 0%, 46% { opacity: 0; transform: scale(.5); } 50% { opacity: 1; transform: scale(1.12); } 53%, 91% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+@keyframes c2-send { 0%, 60% { opacity: 0; transform: translate(-50%, 1cqw); } 66%, 91% { opacity: 1; transform: translate(-50%, 0); } 96%, 100% { opacity: 0; transform: translate(-50%, 0); } }
+@media (prefers-reduced-motion: reduce) {
+  .c2 *, .c2 *::before { animation: none !important; }
+  .c2 .c2-mail--b { opacity: .5; }
+}
+/* CS2: spacing between emails and the send bar */
+.c2-mail { top: 10.5cqw; }
+.c2-send { top: 46.5cqw; }

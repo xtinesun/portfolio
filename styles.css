@@ -7827,3 +7827,10 @@ body.page-deck .deck-hero .hero-scene {
 .c3-node--sm { top: 26.25cqw; }
 .c3-node--email { left: 3.2cqw; }
 .c3-node--sms { right: 3.2cqw; }
+/* CS3: equal space above the first step and below the last */
+.c3-node--trig { top: 5.35cqw; }
+.c3-line--1 { top: 10.25cqw; }
+.c3-node--dm { top: 14.15cqw; }
+.c3-line--2 { top: 19.05cqw; }
+.c3-bar, .c3-line--3a, .c3-line--3b { top: 22.25cqw; }
+.c3-node--sm { top: 25.55cqw; }

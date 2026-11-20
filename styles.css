@@ -7641,3 +7641,17 @@ body.page-deck .deck-hero .hero-scene {
 
 /* CS3 card v3: shadows are baked into the image */
 .project-visual--03 .project-visual-gif, .project-card:hover .project-visual--03 .project-visual-gif { filter: none; }
+
+/* CS3 card: layered scene with gentle motion */
+.cs3-scene { position: absolute; inset: 0; z-index: 1; }
+.cs3-layer { position: absolute; display: block; object-fit: contain; will-change: transform; }
+.cs3-layer--post { z-index: 1; animation: cs3-float 6.2s ease-in-out infinite; }
+.cs3-layer--dm { z-index: 2; animation: cs3-float 5.4s ease-in-out -2.1s infinite; }
+.cs3-layer--flow { z-index: 3; animation: cs3-float-sm 5.8s ease-in-out -1s infinite; }
+@keyframes cs3-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-1.4%); } }
+@keyframes cs3-float-sm { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3%); } }
+@keyframes cs3-dm-in { from { opacity: 0; translate: 4% 3%; } to { opacity: 1; translate: 0 0; } }
+.project-card:hover .cs3-layer--post { translate: -1.2% 0; transition: translate 0.6s var(--ease-out); }
+.project-card:hover .cs3-layer--dm { translate: 1.2% -1%; transition: translate 0.6s var(--ease-out); }
+.cs3-layer--post, .cs3-layer--dm { transition: translate 0.6s var(--ease-out); }
+@media (prefers-reduced-motion: reduce) { .cs3-layer { animation: none !important; } }

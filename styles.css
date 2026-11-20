@@ -7860,3 +7860,10 @@ body.page-deck .deck-hero .hero-scene {
   box-shadow: 0 .6cqw 1.6cqw rgba(20, 90, 60, .28); transition: opacity .35s var(--ease-out), transform .45s cubic-bezier(.34, 1.56, .64, 1); }
 .c2-chip svg { width: 1.15em; height: 1.15em; }
 .is-winner .c2-chip { opacity: 1; transform: translate(-100%, -50%) scale(1); }
+/* CS2 Winner chip: centered on A's bottom edge, where the eye lands after reading the email */
+.c2-chip { left: 33.1%; top: 91.6%; transform: translate(-50%, -50%) scale(.85); }
+.is-winner .c2-chip { transform: translate(-50%, -50%) scale(1); }
+/* CS2 overlay must match the clip's object-fit: cover */
+.c2-ov { width: max(100cqw, 159.76cqh); }
+.c2-chip { left: 34.3%; top: 88.8%; }
+.c2-chip { font-size: clamp(7px, 1.25cqw, 13px); }

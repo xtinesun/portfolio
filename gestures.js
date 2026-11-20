@@ -3,7 +3,7 @@
    - Point (index finger): move the virtual cursor
    - Thumbs up (hold briefly): click
    - Open palm: scroll down · Closed fist: scroll up
-   - Thumb pointing left (hold): go back (all pages except home)
+   - Thumb out to the side (hold, either hand): go back (all pages except home)
    Mouse / touch / keyboard keep working at all times. */
 
 const toggles = [...document.querySelectorAll("[data-gesture-toggle]")];
@@ -223,11 +223,12 @@ function loop() {
     Math.min(dist(lm[4], lm[6]), dist(lm[4], lm[10])) > handSize * 0.5;
   const thumbsUp = fingersCurled && thumbVertical && tipAboveKnuckles && tipAwayFromFingers;
 
-  // Thumb pointing left (as the user sees themselves in the mirrored preview):
-  // in raw camera coordinates that is toward larger x.
-  const thumbHorizontal = (lm[4].x - lm[2].x) > Math.abs(lm[4].y - lm[2].y) * 1.3;
-  const tipOutSide = lm[4].x - Math.max(lm[5].x, lm[9].x) > handSize * 0.3;
-  const thumbLeft = !isHome && fingersCurled && thumbHorizontal && tipOutSide && tipAwayFromFingers;
+  // Thumb out (either hand): thumb sideways, on the far side of the index knuckle
+  // from the pinky. Works for left and right hands because it's relative to the hand.
+  const outward = Math.sign(lm[5].x - lm[17].x) || 1;
+  const thumbSideways = Math.abs(lm[4].x - lm[2].x) > Math.abs(lm[4].y - lm[2].y) * 1.3;
+  const tipOutSide = (lm[4].x - lm[5].x) * outward > handSize * 0.3;
+  const thumbLeft = !isHome && fingersCurled && thumbSideways && tipOutSide && tipAwayFromFingers;
 
   // Only the pointing index finger (or an open palm, for scrolling) moves the cursor.
   // Thumbs up freezes it, so changing hand shape doesn't knock it off target.
@@ -264,7 +265,7 @@ function loop() {
       cursorLabel.textContent = "Back";
       goBack();
     } else if (!backFired) {
-      cursorLabel.textContent = "Hold 👈 to go back";
+      cursorLabel.textContent = "Hold 👍 sideways to go back";
     }
     return;
   }

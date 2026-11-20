@@ -7960,3 +7960,10 @@ body.page-deck .deck-hero .hero-scene {
   .about-photos .about-photo img { height: auto; aspect-ratio: 900 / 1099; }
   .about-photos .about-photo--dog img { height: auto; aspect-ratio: 900 / 1200; object-position: 50% 50%; }
 }
+/* About photos: portrait unchanged; goldendoodle photo cropped in height to end with the text column */
+@media (min-width: 761px) {
+  .about-photos { align-self: stretch; }
+  .about-photos .about-photo--dog { flex: 1 1 0; min-height: 0; }
+  .about-photos .about-photo--dog img { height: 100%; aspect-ratio: auto; object-position: 50% 24%; }
+}
+@media (min-width: 761px) { .about-photos .about-photo--dog img { object-position: 50% 30%; } }

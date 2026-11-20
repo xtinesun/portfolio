@@ -1,8 +1,8 @@
 /* Gesture mode — camera + hand-gesture navigation (homepage prototype).
    Hand tracking runs fully on-device via MediaPipe HandLandmarker.
    - Point (index finger): move the virtual cursor
-   - Pinch (thumb + index): click
-   - Open palm, move up/down: scroll
+   - Thumbs up (hold briefly): click
+   - Open palm: scroll down · Closed fist: scroll up
    Mouse / touch / keyboard keep working at all times. */
 
 const toggles = [...document.querySelectorAll("[data-gesture-toggle]")];
@@ -30,9 +30,12 @@ let landmarker = null;
 let rafId = null;
 let lastVideoTime = -1;
 let cursor = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-let pinchDown = false;
+let thumbFrames = 0;
+let fistFrames = 0;
+let lastFrameAt = 0;
+const SCROLL_SPEED = 650; // px per second
+let clickArmed = true;
 let lastClickAt = 0;
-let palmPrevY = null;
 
 function setStatus(msg) {
   if (statusEl) statusEl.textContent = msg;
@@ -133,8 +136,10 @@ function stopGestures() {
   if (liveWrap) liveWrap.hidden = true;
   panel.hidden = true;
   cursorEl.hidden = true;
-  palmPrevY = null;
-  pinchDown = false;
+  fistFrames = 0;
+  lastFrameAt = 0;
+  thumbFrames = 0;
+  clickArmed = true;
   if (rafId) cancelAnimationFrame(rafId);
   rafId = null;
   if (stream) {
@@ -178,7 +183,8 @@ function loop() {
   const lm = results?.landmarks?.[0];
   if (!lm) {
     cursorLabel.textContent = "Show your hand";
-    palmPrevY = null;
+    fistFrames = 0;
+  lastFrameAt = 0;
     return;
   }
 
@@ -187,45 +193,63 @@ function loop() {
   const ringExt = isExtended(lm, 16, 14);
   const pinkyExt = isExtended(lm, 20, 18);
   const openPalm = indexExt && middleExt && ringExt && pinkyExt;
-  const pinchDist = dist(lm[4], lm[8]);
+  const fingersCurled = !indexExt && !middleExt && !ringExt && !pinkyExt;
 
-  // Pointer position: pinch midpoint while pinching, otherwise index fingertip.
-  const anchor = pinchDist < 0.09
-    ? { x: (lm[4].x + lm[8].x) / 2, y: (lm[4].y + lm[8].y) / 2 }
-    : lm[8];
-  const targetX = (1 - anchor.x) * window.innerWidth; // mirror the selfie view
-  const targetY = anchor.y * window.innerHeight;
-  cursor.x += (targetX - cursor.x) * 0.35;
-  cursor.y += (targetY - cursor.y) * 0.35;
-  cursorEl.style.transform = `translate(${cursor.x}px, ${cursor.y}px) translate(-50%, -50%)`;
+  // Thumbs up: other fingers curled, thumb extended and pointing up (y grows downward).
+  const thumbOut = dist(lm[4], lm[0]) > dist(lm[2], lm[0]) * 1.25;
+  const thumbUp =
+    lm[4].y < lm[3].y && lm[3].y < lm[2].y && lm[4].y < lm[5].y &&
+    Math.abs(lm[4].y - lm[2].y) > Math.abs(lm[4].x - lm[2].x);
+  const thumbsUp = fingersCurled && thumbOut && thumbUp;
 
-  if (openPalm && pinchDist >= 0.05) {
-    // Grab-and-drag scroll: page follows the palm.
+  // Only the pointing index finger (or an open palm, for scrolling) moves the cursor.
+  // Thumbs up freezes it, so changing hand shape doesn't knock it off target.
+  if (indexExt) {
+    const targetX = (1 - lm[8].x) * window.innerWidth; // mirror the selfie view
+    const targetY = lm[8].y * window.innerHeight;
+    cursor.x += (targetX - cursor.x) * 0.35;
+    cursor.y += (targetY - cursor.y) * 0.35;
+    cursorEl.style.transform = `translate(${cursor.x}px, ${cursor.y}px) translate(-50%, -50%)`;
+  }
+
+  // Steady scrolling: open palm scrolls down, closed fist scrolls up.
+  const now = performance.now();
+  const dt = Math.min(64, now - (lastFrameAt || now));
+  lastFrameAt = now;
+  const fist = fingersCurled && !thumbOut;
+  fistFrames = fist ? fistFrames + 1 : 0;
+  if (openPalm || fistFrames >= 8) {
+    const dir = openPalm ? 1 : -1;
     cursorEl.classList.remove("gesture-cursor--pinch");
-    cursorLabel.textContent = "Scroll";
-    if (palmPrevY !== null) {
-      window.scrollBy(0, -(cursor.y - palmPrevY) * 2.2);
-    }
-    palmPrevY = cursor.y;
-    pinchDown = false;
+    cursorLabel.textContent = dir > 0 ? "Scroll ↓" : "Scroll ↑";
+    window.scrollBy(0, dir * SCROLL_SPEED * (dt / 1000));
+    thumbFrames = 0;
+    clickArmed = true;
     return;
   }
-  palmPrevY = null;
 
-  const pinching = pinchDist < 0.05;
-  cursorEl.classList.toggle("gesture-cursor--pinch", pinching);
-  if (pinching) {
-    cursorLabel.textContent = "Click!";
-    const now = performance.now();
-    if (!pinchDown && now - lastClickAt > 700) {
-      lastClickAt = now;
-      fireClick(cursor.x, cursor.y);
+  if (thumbsUp) {
+    thumbFrames += 1;
+    cursorEl.classList.add("gesture-cursor--pinch");
+    // Hold for ~6 frames (about 0.2s) before clicking; one click per thumbs up.
+    if (thumbFrames >= 6 && clickArmed) {
+      const now = performance.now();
+      if (now - lastClickAt > 700) {
+        lastClickAt = now;
+        clickArmed = false;
+        cursorLabel.textContent = "Click!";
+        fireClick(cursor.x, cursor.y);
+      }
+    } else if (clickArmed) {
+      cursorLabel.textContent = "Hold 👍";
     }
-    pinchDown = true;
-  } else {
-    cursorLabel.textContent = indexExt && !middleExt ? "Point" : "Pinch to click";
-    pinchDown = false;
+    return;
   }
+
+  thumbFrames = 0;
+  clickArmed = true;
+  cursorEl.classList.remove("gesture-cursor--pinch");
+  cursorLabel.textContent = indexExt ? "Point" : "👍 to click";
 }
 
 /* Legend stays open unless the user closes it (remembered across visits) */

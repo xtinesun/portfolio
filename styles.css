@@ -7604,3 +7604,4 @@ body.page-deck .deck-hero .hero-scene {
 .quote-card--reactions .quote-text { margin-bottom: 8px; font-size: clamp(1.3rem, 1.8vw, 1.5rem); }
 .quote-card--reactions .quote-who { margin-top: auto; padding-top: 10px; }
 @media (max-width: 820px) { .quotes-grid--team { grid-template-columns: 1fr; } .quote-card--wide { grid-column: auto; } }
+.quote-card--wide.quote-card--team .quote-text { font-size: clamp(1.3rem, 1.9vw, 1.6rem); line-height: 1.38; }

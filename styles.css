@@ -7597,3 +7597,10 @@ body.page-deck .deck-hero .hero-scene {
 .quote-card--team .quote-text { font-size: clamp(1.05rem, 1.4vw, 1.2rem); }
 @media (max-width: 820px) { .quotes-grid--3 { grid-template-columns: 1fr; } }
 .quotes-grid--3 { grid-template-columns: repeat(3, 1fr); }
+
+.quotes-grid--team { grid-template-columns: repeat(3, 1fr); }
+.quote-card--wide { grid-column: span 2; }
+.quote-text--aside { font-size: 1rem !important; color: var(--text-muted); font-style: italic; }
+.quote-card--reactions .quote-text { margin-bottom: 8px; font-size: clamp(1.3rem, 1.8vw, 1.5rem); }
+.quote-card--reactions .quote-who { margin-top: auto; padding-top: 10px; }
+@media (max-width: 820px) { .quotes-grid--team { grid-template-columns: 1fr; } .quote-card--wide { grid-column: auto; } }

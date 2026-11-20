@@ -7850,3 +7850,13 @@ body.page-deck .deck-hero .hero-scene {
 /* CS3 case study hero: same live automation scene as the homepage card */
 .case-hero-mockup.case-hero-mockup--cs3 { container-type: size; }
 
+
+/* CS2 card: light touches on the original A/B clip */
+.project-visual--02 { container-type: size; }
+.c2-ov { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(100cqw, 159.76cqh); aspect-ratio: 1080 / 676; z-index: 3; pointer-events: none; }
+.c2-chip { position: absolute; left: 49.5%; top: 12.4%; transform: translate(-100%, -50%) scale(.85); opacity: 0;
+  display: inline-flex; align-items: center; gap: .35em; padding: .45em .85em .45em .6em; border-radius: 999px;
+  background: #22a06b; color: #fff; font-family: var(--font-sans); font-size: clamp(9px, 1.25cqw, 13px); font-weight: 700; white-space: nowrap;
+  box-shadow: 0 .6cqw 1.6cqw rgba(20, 90, 60, .28); transition: opacity .35s var(--ease-out), transform .45s cubic-bezier(.34, 1.56, .64, 1); }
+.c2-chip svg { width: 1.15em; height: 1.15em; }
+.is-winner .c2-chip { opacity: 1; transform: translate(-100%, -50%) scale(1); }

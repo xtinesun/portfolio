@@ -240,7 +240,7 @@
                   muted
                   loop
                   playsinline
-                  preload="none"
+                  preload="auto"
                   poster="./assets/cs2-project-card-poster.jpg?v=1"
                   width="1080"
                   height="676"
@@ -250,6 +250,7 @@
                   <source src="./assets/cs2-project-card.webm?v=1" type="video/webm" />
                   <source src="./assets/cs2-project-card.mp4?v=1" type="video/mp4" />
                 </video>
+                <div class="c2-ov" aria-hidden="true"><span class="c2-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Winner</span></div>
                 <span class="project-index" aria-hidden="true">02</span>
               </div>
               <div class="project-body">
@@ -508,21 +509,20 @@
         const vids = document.querySelectorAll("video[data-hover-play]");
         if (!vids.length) return;
         const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        const canHover = window.matchMedia("(hover: hover)").matches;
         const play = (v) => { const p = v.play(); if (p) p.catch(() => {}); };
         vids.forEach((v) => {
-          const card = v.closest(".project-card") || v;
-          if (reduce) return; // poster only
-          if (canHover) {
-            card.addEventListener("mouseenter", () => play(v));
-            card.addEventListener("focusin", () => play(v));
-            card.addEventListener("mouseleave", () => { v.pause(); v.currentTime = 0; });
-            card.addEventListener("focusout", () => { v.pause(); v.currentTime = 0; });
-          } else if ("IntersectionObserver" in window) {
+          const wrap = v.parentElement;
+          // Winner chip appears while B is dimmed in the clip
+          v.addEventListener("timeupdate", () => {
+            const t = v.currentTime;
+            wrap.classList.toggle("is-winner", t > 1.9 && t < 4.9);
+          });
+          if (reduce) { wrap.classList.add("is-winner"); return; } // poster + chip, no motion
+          if ("IntersectionObserver" in window) {
             new IntersectionObserver((entries) => {
-              entries.forEach((e) => (e.isIntersecting ? play(v) : v.pause()));
-            }, { threshold: 0.5 }).observe(v);
-          }
+              entries.forEach((en) => (en.isIntersecting ? play(v) : v.pause()));
+            }, { threshold: 0.4 }).observe(v);
+          } else { play(v); }
         });
       })();
     </script>

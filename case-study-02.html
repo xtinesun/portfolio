@@ -50,14 +50,15 @@
           loop
           playsinline
           preload="auto"
-          poster="./assets/cs2-hero-card-poster.jpg?v=1"
+          poster="./assets/cs2-hero-card-v2-poster.jpg?v=1"
           width="1600"
           height="1000"
           aria-label="Email A/B variants side by side — B dims as A is highlighted"
         >
-          <source src="./assets/cs2-hero-card.webm?v=1" type="video/webm" />
-          <source src="./assets/cs2-hero-card.mp4?v=1" type="video/mp4" />
+          <source src="./assets/cs2-hero-card-v2.webm?v=1" type="video/webm" />
+          <source src="./assets/cs2-hero-card-v2.mp4?v=1" type="video/mp4" />
         </video>
+        <div class="c2-ov" aria-hidden="true"><span class="c2-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Winner</span></div>
       </figure>
 
       <header class="case-header reveal" data-reveal>
@@ -917,6 +918,18 @@
       </div>
     </div>
 
+    <script>
+      (() => {
+        const fig = document.querySelector(".case-hero-mockup--cs2");
+        const v = fig && fig.querySelector("video");
+        if (!v) return;
+        v.addEventListener("timeupdate", () => {
+          const t = v.currentTime;
+          fig.classList.toggle("is-winner", t > 1.9 && t < 4.9);
+        });
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) fig.classList.add("is-winner");
+      })();
+    </script>
     <script src="./script.js?v=copyemail1"></script>
       <script src="./media.js?v=deeper1"></script>
       <div class="gesture-ui">

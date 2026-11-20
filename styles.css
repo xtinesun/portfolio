@@ -7923,3 +7923,8 @@ body.page-deck .deck-hero .hero-scene {
 .about-list li { border-bottom: 0; border-top: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border)); padding: 14px 0 6px; font-size: 0.9375rem; line-height: 1.55; }
 .about-photo { max-width: 400px; }
 @media (max-width: 760px) { .about-list { grid-template-columns: 1fr; } }
+
+/* CS2 case study hero: same Winner chip as the homepage card (clip is contained, not cropped) */
+.case-hero-mockup.case-hero-mockup--cs2 { container-type: size; }
+.case-hero-mockup--cs2 .c2-ov { width: min(100cqw, 160cqh); }
+.case-hero-mockup--cs2 .c2-chip { font-size: clamp(8px, 1.15cqw, 15px); }

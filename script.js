@@ -1552,7 +1552,7 @@ function showCopyToast(message) {
   }, 2200);
 }
 
-document.querySelectorAll('.nav-link--accent[href^="mailto:"]').forEach((link) => {
+document.querySelectorAll('.nav-link--accent[href^="mailto:"], [data-copy-email][href^="mailto:"]').forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
     const raw = (link.getAttribute("href") || "").replace(/^mailto:/i, "");
@@ -1562,7 +1562,7 @@ document.querySelectorAll('.nav-link--accent[href^="mailto:"]').forEach((link) =
       return;
     }
     copyTextToClipboard(email)
-      .then(() => showCopyToast("Email address copied"))
+      .then(() => showCopyToast(`Email copied: ${email}`))
       .catch(() => {
         window.location.href = link.href;
       });

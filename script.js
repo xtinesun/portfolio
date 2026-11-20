@@ -1562,7 +1562,7 @@ document.querySelectorAll('.nav-link--accent[href^="mailto:"], [data-copy-email]
       return;
     }
     copyTextToClipboard(email)
-      .then(() => showCopyToast(`Email copied: ${email}`))
+      .then(() => showCopyToast("Email copied"))
       .catch(() => {
         window.location.href = link.href;
       });

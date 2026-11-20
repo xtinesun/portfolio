@@ -101,6 +101,8 @@ async function startGestures() {
   setToggles(true);
   if (video) video.hidden = false;
   panel.hidden = false;
+  cursor = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+  cursorEl.style.transform = `translate(${cursor.x}px, ${cursor.y}px) translate(-50%, -50%)`;
   if (liveWrap) liveWrap.hidden = false;
   cursorEl.hidden = false;
   setStatus("Requesting camera…");

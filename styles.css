@@ -522,7 +522,7 @@ body.page-home main {
 .gesture-toggle {
   position: fixed;
   right: 20px;
-  bottom: 20px;
+  top: calc(var(--header-h) + 14px);
   z-index: 10000;
   padding: 10px 18px;
   border: 1px solid var(--border);
@@ -543,7 +543,7 @@ body.page-home main {
 .gesture-panel {
   position: fixed;
   right: 20px;
-  bottom: 72px;
+  top: calc(var(--header-h) + 66px);
   z-index: 10000;
   width: 208px;
   padding: 12px;
@@ -7312,10 +7312,10 @@ body.page-deck .deck-hero .hero-scene {
 
 @media (min-width: 801px) {
   .now-card--featured { flex-direction: row; }
-  .now-card--featured .now-visual { flex: 1 1 0; aspect-ratio: auto; min-height: 100%; }
-  .now-card--featured .now-body { flex: 1.15 1 0; display: flex; flex-direction: column; justify-content: center; }
+  .now-card--featured .now-visual { flex: 0 0 40%; aspect-ratio: auto; min-height: 100%; }
+  .now-card--featured .now-body { flex: 1 1 0; display: flex; flex-direction: column; justify-content: center; }
   .now-card--compact { flex-direction: row; }
-  .now-card--compact .now-visual { flex: 0 0 34%; aspect-ratio: auto; }
+  .now-card--compact .now-visual { flex: 0 0 40%; aspect-ratio: auto; }
   .now-card--compact .now-body { flex: 1 1 0; }
 }
 
@@ -7569,9 +7569,7 @@ body.page-deck .deck-hero .hero-scene {
   .about-grid { grid-template-columns: 1fr; }
   .about-photo { max-width: 360px; }
 }
-@media (hover: hover) and (pointer: fine) and (min-width: 821px) {
-  .site-footer { padding-bottom: 72px; }
-}
+
 .about { padding-top: clamp(32px, 4vw, 56px); }
 
 /* "Go deeper" accordions inside case studies */

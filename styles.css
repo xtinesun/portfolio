@@ -522,7 +522,7 @@ body.page-home main {
 .gesture-toggle {
   position: fixed;
   right: 20px;
-  top: calc(var(--header-h) + 14px);
+  bottom: 20px;
   z-index: 10000;
   padding: 10px 18px;
   border: 1px solid var(--border);
@@ -543,7 +543,7 @@ body.page-home main {
 .gesture-panel {
   position: fixed;
   right: 20px;
-  top: calc(var(--header-h) + 66px);
+  bottom: 72px;
   z-index: 10000;
   width: 208px;
   padding: 12px;
@@ -7611,3 +7611,7 @@ body.page-deck .deck-hero .hero-scene {
 .now-visual--musear .now-wave i:nth-child(3) { height: 60%; }
 .now-visual--musear .now-wave i:nth-child(4) { height: 100%; }
 .now-visual--musear .now-wave i:nth-child(5) { height: 50%; }
+
+@media (hover: hover) and (pointer: fine) and (min-width: 821px) {
+  .site-footer { padding-bottom: 72px; }
+}

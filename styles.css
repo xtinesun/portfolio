@@ -7615,8 +7615,3 @@ body.page-deck .deck-hero .hero-scene {
 @media (hover: hover) and (pointer: fine) and (min-width: 821px) {
   .site-footer { padding-bottom: 72px; }
 }
-
-/* Gesture card: toggle sits top-right, beside the status line */
-.now-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.now-head .now-status { margin: 0; }
-.now-head .now-toggle { margin: 0; flex: 0 0 auto; }

@@ -7569,10 +7569,12 @@ body.page-deck .deck-hero .hero-scene {
   .about-photo { max-width: 360px; }
 }
 @media (hover: hover) and (pointer: fine) and (min-width: 821px) {
-  body.page-home .site-footer { padding-bottom: 72px; }
+  .site-footer { padding-bottom: 72px; }
 }
 .about { padding-top: clamp(32px, 4vw, 56px); }
 
 /* "Go deeper" accordions inside case studies */
 .case-deeper { margin-top: clamp(16px, 2.5vw, 24px); }
 .case-decision-body .case-deeper .case-accordion-body { padding-top: 8px; }
+
+@media print { .gesture-ui { display: none !important; } }

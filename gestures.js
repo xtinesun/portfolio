@@ -3,9 +3,15 @@
    - Point (index finger): move the virtual cursor
    - Thumbs up (hold briefly): click
    - Open palm: scroll down · Closed fist: scroll up
+   - Thumb pointing left (hold): go back (all pages except home)
    Mouse / touch / keyboard keep working at all times. */
 
 const toggles = [...document.querySelectorAll("[data-gesture-toggle]")];
+const isHome = document.body.classList.contains("page-home");
+const SESSION_KEY = "gesture-mode-on";
+function rememberOn(on) {
+  try { on ? sessionStorage.setItem(SESSION_KEY, "1") : sessionStorage.removeItem(SESSION_KEY); } catch { /* private mode */ }
+}
 
 function setToggles(on) {
   toggles.forEach((btn) => {
@@ -31,6 +37,8 @@ let rafId = null;
 let lastVideoTime = -1;
 let cursor = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 let thumbFrames = 0;
+let backFrames = 0;
+let backFired = false;
 let fistFrames = 0;
 let lastFrameAt = 0;
 const SCROLL_SPEED = 650; // px per second
@@ -89,6 +97,7 @@ async function startGestures() {
     return;
   }
   active = true;
+  rememberOn(true);
   setToggles(true);
   if (video) video.hidden = false;
   panel.hidden = false;
@@ -130,7 +139,8 @@ async function startGestures() {
   loop();
 }
 
-function stopGestures() {
+function stopGestures(opts = {}) {
+  if (!opts.keepSession) rememberOn(false);
   active = false;
   setToggles(false);
   if (liveWrap) liveWrap.hidden = true;
@@ -152,6 +162,12 @@ function stopGestures() {
     landmarker = null;
   }
   lastVideoTime = -1;
+}
+
+function goBack() {
+  const sameSiteReferrer = document.referrer && new URL(document.referrer).origin === location.origin;
+  if (history.length > 1 && sameSiteReferrer) history.back();
+  else location.href = "./index.html";
 }
 
 function fireClick(x, y) {
@@ -207,6 +223,12 @@ function loop() {
     Math.min(dist(lm[4], lm[6]), dist(lm[4], lm[10])) > handSize * 0.5;
   const thumbsUp = fingersCurled && thumbVertical && tipAboveKnuckles && tipAwayFromFingers;
 
+  // Thumb pointing left (as the user sees themselves in the mirrored preview):
+  // in raw camera coordinates that is toward larger x.
+  const thumbHorizontal = (lm[4].x - lm[2].x) > Math.abs(lm[4].y - lm[2].y) * 1.3;
+  const tipOutSide = lm[4].x - Math.max(lm[5].x, lm[9].x) > handSize * 0.3;
+  const thumbLeft = !isHome && fingersCurled && thumbHorizontal && tipOutSide && tipAwayFromFingers;
+
   // Only the pointing index finger (or an open palm, for scrolling) moves the cursor.
   // Thumbs up freezes it, so changing hand shape doesn't knock it off target.
   if (indexExt) {
@@ -221,7 +243,7 @@ function loop() {
   const now = performance.now();
   const dt = Math.min(64, now - (lastFrameAt || now));
   lastFrameAt = now;
-  const fist = fingersCurled && !thumbsUp;
+  const fist = fingersCurled && !thumbsUp && !thumbLeft;
   fistFrames = fist ? fistFrames + 1 : 0;
   if (openPalm || fistFrames >= 8) {
     const dir = openPalm ? 1 : -1;
@@ -232,6 +254,22 @@ function loop() {
     clickArmed = true;
     return;
   }
+
+  if (thumbLeft) {
+    backFrames += 1;
+    thumbFrames = 0;
+    cursorEl.classList.add("gesture-cursor--pinch");
+    if (backFrames >= 14 && !backFired) {
+      backFired = true;
+      cursorLabel.textContent = "Back";
+      goBack();
+    } else if (!backFired) {
+      cursorLabel.textContent = "Hold 👈 to go back";
+    }
+    return;
+  }
+  backFrames = 0;
+  backFired = false;
 
   if (thumbsUp) {
     thumbFrames += 1;
@@ -282,8 +320,14 @@ if (toggles.length) {
       else startGestures();
     })
   );
-  window.addEventListener("beforeunload", stopGestures);
+  window.addEventListener("pagehide", () => stopGestures({ keepSession: true }));
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && active) stopGestures();
   });
 }
+
+/* Keep gesture mode on across pages in this tab (desktop only). */
+try {
+  const desktop = matchMedia("(hover: hover) and (pointer: fine) and (min-width: 821px)").matches;
+  if (toggles.length && desktop && sessionStorage.getItem(SESSION_KEY) === "1") startGestures();
+} catch { /* ignore */ }

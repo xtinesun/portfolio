@@ -883,5 +883,24 @@
 
     <script src="./script.js?v=copyemail1"></script>
       <script src="./media.js?v=1"></script>
+      <div class="gesture-ui">
+      <button type="button" class="gesture-toggle" data-gesture-toggle aria-pressed="false" data-label-off="✋ Gesture mode" data-label-on="✋ Stop gesture mode">✋ Gesture mode</button>
+      <div class="gesture-panel" data-gesture-panel hidden>
+        <button type="button" class="gesture-panel-close" data-gesture-close aria-label="Close gesture legend">×</button>
+        <div data-gesture-live hidden>
+          <video class="gesture-video" data-gesture-video autoplay muted playsinline aria-label="Camera preview for hand gestures"></video>
+          <p class="gesture-status" data-gesture-status>Starting…</p>
+        </div>
+        <ul class="gesture-legend">
+          <li>☝️ Point your finger — move cursor</li>
+          <li>👍 Thumbs up — click</li>
+          <li>✋ Open palm — scroll down</li>
+          <li>✊ Fist — scroll up</li>
+          <li>👈 Thumb left — go back</li>
+        </ul>
+        <p class="gesture-note">Video is processed on your device and never uploaded.</p>
+      </div>
+      <div class="gesture-cursor" data-gesture-cursor hidden aria-hidden="true"><span class="gesture-cursor-label" data-gesture-cursor-label></span></div>
+    <script type="module" src="./gestures.js?v=gm6"></script>
   </body>
 </html>

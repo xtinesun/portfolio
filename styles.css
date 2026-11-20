@@ -7846,3 +7846,6 @@ body.page-deck .deck-hero .hero-scene {
 .case-leader-quote { margin: clamp(20px, 3vw, 28px) 0; padding: 16px 20px; border-left: 3px solid var(--accent-bold); background: var(--accent-bold-soft); border-radius: 0 12px 12px 0; }
 .case-leader-quote p { margin: 0; font-family: var(--font-serif); font-size: clamp(1.05rem, 1.6vw, 1.2rem); line-height: 1.45; color: var(--text); }
 .case-leader-quote cite { display: block; margin-top: 8px; font-style: normal; font-size: 0.8125rem; font-weight: 600; color: var(--text-muted); }
+
+/* CS3 case study hero: same live automation scene as the homepage card */
+.case-hero-mockup.case-hero-mockup--cs3 { container-type: size; }

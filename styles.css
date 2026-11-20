@@ -7918,11 +7918,20 @@ body.page-deck .deck-hero .hero-scene {
 .now-more .now-notes { margin-top: 8px; }
 .now { padding-bottom: clamp(56px, 7vw, 88px); }
 
-/* About: How I work as a 2×2 grid */
-.about-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; border-top: 0; }
-.about-list li { border-bottom: 0; border-top: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border)); padding: 14px 0 6px; font-size: 0.9375rem; line-height: 1.55; }
-.about-photo { max-width: 400px; }
-@media (max-width: 760px) { .about-list { grid-template-columns: 1fr; } }
+/* About: list borders tuned for the sage block */
+.about-list { border-top-color: color-mix(in srgb, var(--accent) 22%, var(--border)); }
+.about-list li { border-bottom-color: color-mix(in srgb, var(--accent) 22%, var(--border)); }
+
+/* About photos: portrait + goldendoodle stacked, same width, sharing the text column's height */
+.about-photos { display: flex; flex-direction: column; gap: 12px; align-self: stretch; min-height: 0; }
+.about-photos .about-photo { min-height: 0; flex: 3 1 0; }
+.about-photos .about-photo--dog { flex: 2 1 0; }
+.about-photos .about-photo img { height: 100%; aspect-ratio: auto; object-fit: cover; object-position: 50% 22%; }
+.about-photos .about-photo--dog img { object-position: 50% 42%; }
+@media (max-width: 760px) {
+  .about-photos { flex-direction: row; max-width: 520px; }
+  .about-photos .about-photo, .about-photos .about-photo--dog { flex: 1 1 0; aspect-ratio: 4 / 5; max-width: none; }
+}
 
 /* CS2 case study hero: same Winner chip as the homepage card (clip is contained, not cropped) */
 .case-hero-mockup.case-hero-mockup--cs2 { container-type: size; }

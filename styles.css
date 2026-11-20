@@ -7975,3 +7975,8 @@ body.page-deck .deck-hero .hero-scene {
   .about-photos .about-photo--dog { flex: none; height: 275px; }
   .about-photos .about-photo--dog img { height: 100%; aspect-ratio: auto; object-position: 50% 36%; }
 }
+/* About: goldendoodle photo shown as cropped by Christine, uncropped on the page */
+@media (min-width: 761px) {
+  .about-photos .about-photo--dog { height: auto; }
+  .about-photos .about-photo--dog img { height: auto; aspect-ratio: 900 / 805; object-position: 50% 50%; }
+}

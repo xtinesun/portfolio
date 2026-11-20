@@ -7837,3 +7837,12 @@ body.page-deck .deck-hero .hero-scene {
 /* CS3: keep the scene centered at any card shape (the panel can be taller or wider than 16:10) */
 .project-visual--03 { container-type: size; }
 .c3 { top: 50%; bottom: auto; left: 50%; height: auto; width: min(100cqw, 160cqh); max-width: none; aspect-ratio: 16 / 10; transform: translate(-50%, -50%); }
+
+/* Press line + leadership quote (CS1) */
+.case-press { font-size: 0.8125rem; color: var(--text-muted); }
+.case-press a { color: var(--text); text-decoration: underline; text-decoration-color: var(--border-hover); text-underline-offset: 3px; }
+.case-press a:hover { text-decoration-color: var(--accent-bold); }
+.case-meta-row { display: flex; flex-wrap: wrap; gap: 6px 20px; align-items: baseline; }
+.case-leader-quote { margin: clamp(20px, 3vw, 28px) 0; padding: 16px 20px; border-left: 3px solid var(--accent-bold); background: var(--accent-bold-soft); border-radius: 0 12px 12px 0; }
+.case-leader-quote p { margin: 0; font-family: var(--font-serif); font-size: clamp(1.05rem, 1.6vw, 1.2rem); line-height: 1.45; color: var(--text); }
+.case-leader-quote cite { display: block; margin-top: 8px; font-style: normal; font-size: 0.8125rem; font-weight: 600; color: var(--text-muted); }

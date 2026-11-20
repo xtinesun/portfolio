@@ -8050,3 +8050,30 @@ body.page-deck .deck-hero .hero-scene {
 #insights .case-insight-quotes .pull-quote,
 #insights .case-insight-quotes .pull-quote + .pull-quote { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: clamp(22px, 3.2vw, 32px) 0; font-size: clamp(1.2rem, 2.2vw, 1.45rem); }
 #insights .case-research-bridge { border-top: 0; }
+
+/* ===== Homepage: vertical numbered section rail (replaces top-nav section links on wide screens) ===== */
+.section-rail { display: none; }
+@media (min-width: 1280px) {
+  .page-home .header-nav .nav-link--section { display: none; }
+  .section-rail {
+    position: fixed; left: clamp(20px, 2.4vw, 40px); top: 50%; transform: translateY(-50%); z-index: 40;
+    display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
+  }
+  .rail-item {
+    display: inline-flex; align-items: center; height: 38px; border-radius: 19px;
+    background: var(--bg-elevated); border: 1px solid var(--border-hover); color: var(--text-muted);
+    text-decoration: none; overflow: hidden; box-shadow: 0 2px 8px rgba(60, 40, 30, .06);
+    transition: background .25s, color .25s, border-color .25s, box-shadow .25s;
+  }
+  .rail-num { flex: 0 0 36px; width: 36px; text-align: center; font-size: 0.875rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .rail-label {
+    max-width: 0; opacity: 0; white-space: nowrap; font-size: 0.875rem; font-weight: 600;
+    transition: max-width .3s var(--ease-out), opacity .2s, padding .3s var(--ease-out); padding-right: 0;
+  }
+  .rail-item:hover, .rail-item:focus-visible { color: var(--text); border-color: var(--accent-bold); box-shadow: 0 6px 18px rgba(60, 40, 30, .10); }
+  .rail-item:hover .rail-label, .rail-item:focus-visible .rail-label { max-width: 120px; opacity: 1; padding-right: 16px; }
+  .rail-item:focus-visible { outline: 2px solid var(--accent-bold); outline-offset: 2px; }
+  .rail-item.is-active { background: var(--accent-bold); border-color: var(--accent-bold); color: #fff; }
+}
+@media (prefers-reduced-motion: reduce) { .rail-label { transition: none; } }
+#shipped, #lab, #about-me, #words { scroll-margin-top: calc(var(--header-h) + 16px); }

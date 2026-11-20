@@ -109,6 +109,12 @@
       </div>
     </header>
 
+    <nav class="section-rail" aria-label="Sections on this page">
+      <a class="rail-item" href="#shipped" data-rail="shipped"><span class="rail-num" aria-hidden="true">1</span><span class="rail-label">Shipped</span></a>
+      <a class="rail-item" href="#lab" data-rail="lab"><span class="rail-num" aria-hidden="true">2</span><span class="rail-label">Lab</span></a>
+      <a class="rail-item" href="#about-me" data-rail="about-me"><span class="rail-num" aria-hidden="true">3</span><span class="rail-label">About me</span></a>
+    </nav>
+
     <main id="main-content">
       <section class="intro container" id="about">
         <p class="intro-role reveal" data-reveal>Senior Product Designer · Gen AI · 0→1</p>
@@ -540,6 +546,19 @@
         track.addEventListener("scroll", sync, { passive: true });
         window.addEventListener("resize", sync);
         sync();
+      })();
+    </script>
+    <script>
+      (() => {
+        const items = [...document.querySelectorAll(".rail-item")];
+        if (!items.length || !("IntersectionObserver" in window)) return;
+        const byId = Object.fromEntries(items.map((a) => [a.dataset.rail, a]));
+        const set = (id) => items.forEach((a) => a.classList.toggle("is-active", a.dataset.rail === id));
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => { if (e.isIntersecting) set(e.target.id); });
+        }, { rootMargin: "-45% 0px -50% 0px" });
+        Object.keys(byId).forEach((id) => { const s = document.getElementById(id); if (s) io.observe(s); });
+        window.addEventListener("scroll", () => { if (scrollY < 200) set(""); }, { passive: true });
       })();
     </script>
     <script src="./script.js?v=copyemail3"></script>

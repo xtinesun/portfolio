@@ -8053,7 +8053,7 @@ body.page-deck .deck-hero .hero-scene {
 
 /* ===== Homepage: vertical numbered section rail (replaces top-nav section links on wide screens) ===== */
 .section-rail { display: none; }
-@media (min-width: 1280px) {
+@media (min-width: 821px) {
   .page-home .header-nav .nav-link--section { display: none; }
   .section-rail {
     position: fixed; left: clamp(20px, 2.4vw, 40px); top: 50%; transform: translateY(-50%); z-index: 40;

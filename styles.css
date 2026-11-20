@@ -504,11 +504,19 @@ body.page-home main {
 }
 
 /* ── Gesture mode (homepage prototype) ── */
-/* Started from the Gesture mode card in the Lab section. The floating toggle stays off. */
-.gesture-toggle,
+/* Start from the Lab card or the floating toggle (desktop only). */
 .gesture-panel[hidden],
 .gesture-cursor[hidden] {
   display: none !important;
+}
+
+/* Phones & tablets: hand tracking is a desktop experience */
+.now-desktop-note { display: none; margin: 8px 0 0; font-size: 0.8125rem; color: var(--text-muted); }
+@media (hover: none), (pointer: coarse), (max-width: 820px) {
+  .gesture-toggle,
+  .now-card .now-toggle,
+  .now-card .now-privacy { display: none !important; }
+  .now-desktop-note { display: block; }
 }
 
 .gesture-toggle {
@@ -535,7 +543,7 @@ body.page-home main {
 .gesture-panel {
   position: fixed;
   right: 20px;
-  bottom: 20px;
+  bottom: 72px;
   z-index: 10000;
   width: 208px;
   padding: 12px;
@@ -7424,9 +7432,9 @@ body.page-deck .deck-hero .hero-scene {
 .case-spotlight {
   margin: clamp(20px, 3vw, 28px) 0 clamp(36px, 5vw, 56px);
   padding: clamp(20px, 3vw, 28px);
-  border: 1px solid var(--accent-bold-border);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  background: var(--accent-bold-soft);
+  background: var(--bg-elevated);
 }
 .case-spotlight-label {
   margin: 0 0 8px;

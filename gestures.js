@@ -38,6 +38,18 @@ function setStatus(msg) {
   if (statusEl) statusEl.textContent = msg;
 }
 
+function showNotice(msg) {
+  if (!panel || !statusEl) return;
+  panel.hidden = false;
+  if (liveWrap) liveWrap.hidden = false;
+  if (video) video.hidden = true;
+  setStatus(msg);
+  clearTimeout(showNotice.t);
+  showNotice.t = setTimeout(() => {
+    if (!active) { panel.hidden = true; if (video) video.hidden = false; }
+  }, 5000);
+}
+
 function dist(a, b) {
   return Math.hypot(a.x - b.x, a.y - b.y);
 }
@@ -68,27 +80,31 @@ async function createLandmarker(mp) {
 }
 
 async function startGestures() {
+  if (active) return;
   if (!navigator.mediaDevices?.getUserMedia) {
     setStatus("Camera isn’t supported in this browser.");
     return;
   }
   active = true;
   setToggles(true);
+  if (video) video.hidden = false;
   panel.hidden = false;
   if (liveWrap) liveWrap.hidden = false;
   cursorEl.hidden = false;
   setStatus("Requesting camera…");
 
   try {
-    stream = await navigator.mediaDevices.getUserMedia({
+    const s = await navigator.mediaDevices.getUserMedia({
       video: { width: { ideal: 640 }, height: { ideal: 480 }, facingMode: "user" },
       audio: false,
     });
+    if (!active) { s.getTracks().forEach((t) => t.stop()); return; } // turned off while the prompt was open
+    stream = s;
     video.srcObject = stream;
     await video.play();
   } catch {
-    setStatus("Camera permission denied — mouse and keyboard still work.");
     stopGestures();
+    showNotice("Camera permission denied. Mouse and keyboard still work.");
     return;
   }
 
@@ -97,10 +113,12 @@ async function startGestures() {
     const mp = await import(
       "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/vision_bundle.mjs"
     );
-    landmarker = await createLandmarker(mp);
+    const lmk = await createLandmarker(mp);
+    if (!active) { try { lmk.close(); } catch {} return; }
+    landmarker = lmk;
   } catch {
-    setStatus("Couldn’t load hand tracking (check connection).");
     stopGestures();
+    showNotice("Couldn’t load hand tracking. Check your connection and try again.");
     return;
   }
 
@@ -236,4 +254,7 @@ if (toggles.length) {
     })
   );
   window.addEventListener("beforeunload", stopGestures);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && active) stopGestures();
+  });
 }

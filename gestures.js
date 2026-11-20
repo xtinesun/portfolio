@@ -195,12 +195,17 @@ function loop() {
   const openPalm = indexExt && middleExt && ringExt && pinkyExt;
   const fingersCurled = !indexExt && !middleExt && !ringExt && !pinkyExt;
 
-  // Thumbs up: other fingers curled, thumb extended and pointing up (y grows downward).
-  const thumbOut = dist(lm[4], lm[0]) > dist(lm[2], lm[0]) * 1.25;
-  const thumbUp =
-    lm[4].y < lm[3].y && lm[3].y < lm[2].y && lm[4].y < lm[5].y &&
-    Math.abs(lm[4].y - lm[2].y) > Math.abs(lm[4].x - lm[2].x);
-  const thumbsUp = fingersCurled && thumbOut && thumbUp;
+  // Thumbs up (strict, so a fist never reads as a click):
+  // other fingers curled, thumb pointing up, tip clearly above the knuckles
+  // and well away from the curled fingers (in a fist the thumb rests on them).
+  const handSize = dist(lm[0], lm[9]) || 0.1;
+  const thumbVertical =
+    lm[4].y < lm[3].y && lm[3].y < lm[2].y &&
+    Math.abs(lm[4].y - lm[2].y) > Math.abs(lm[4].x - lm[2].x) * 1.2;
+  const tipAboveKnuckles = lm[5].y - lm[4].y > handSize * 0.35;
+  const tipAwayFromFingers =
+    Math.min(dist(lm[4], lm[6]), dist(lm[4], lm[10])) > handSize * 0.5;
+  const thumbsUp = fingersCurled && thumbVertical && tipAboveKnuckles && tipAwayFromFingers;
 
   // Only the pointing index finger (or an open palm, for scrolling) moves the cursor.
   // Thumbs up freezes it, so changing hand shape doesn't knock it off target.
@@ -216,7 +221,7 @@ function loop() {
   const now = performance.now();
   const dt = Math.min(64, now - (lastFrameAt || now));
   lastFrameAt = now;
-  const fist = fingersCurled && !thumbOut;
+  const fist = fingersCurled && !thumbsUp;
   fistFrames = fist ? fistFrames + 1 : 0;
   if (openPalm || fistFrames >= 8) {
     const dir = openPalm ? 1 : -1;
@@ -231,8 +236,8 @@ function loop() {
   if (thumbsUp) {
     thumbFrames += 1;
     cursorEl.classList.add("gesture-cursor--pinch");
-    // Hold for ~6 frames (about 0.2s) before clicking; one click per thumbs up.
-    if (thumbFrames >= 6 && clickArmed) {
+    // Hold for ~10 frames (about 0.3s) before clicking; one click per thumbs up.
+    if (thumbFrames >= 10 && clickArmed) {
       const now = performance.now();
       if (now - lastClickAt > 700) {
         lastClickAt = now;

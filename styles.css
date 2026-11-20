@@ -8077,3 +8077,4 @@ body.page-deck .deck-hero .hero-scene {
 }
 @media (prefers-reduced-motion: reduce) { .rail-label { transition: none; } }
 #shipped, #lab, #about-me, #words { scroll-margin-top: calc(var(--header-h) + 16px); }
+.closing .now-cta { background: transparent; border: 1px solid var(--border-hover); }

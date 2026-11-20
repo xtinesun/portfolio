@@ -910,7 +910,7 @@ body.page-home main {
   color: var(--accent-bold);
   background: var(--accent-bold-soft);
   border: 1px solid var(--accent-bold-border);
-  border-radius: 999px;
+  border-radius: 8px;
   padding: 5px 11px;
   font-variant-numeric: tabular-nums;
 }

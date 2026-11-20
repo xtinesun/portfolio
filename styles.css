@@ -7834,3 +7834,6 @@ body.page-deck .deck-hero .hero-scene {
 .c3-line--2 { top: 19.05cqw; }
 .c3-bar, .c3-line--3a, .c3-line--3b { top: 22.25cqw; }
 .c3-node--sm { top: 25.55cqw; }
+/* CS3: keep the scene centered at any card shape (the panel can be taller or wider than 16:10) */
+.project-visual--03 { container-type: size; }
+.c3 { top: 50%; bottom: auto; left: 50%; height: auto; width: min(100cqw, 160cqh); max-width: none; aspect-ratio: 16 / 10; transform: translate(-50%, -50%); }

@@ -50,7 +50,7 @@
         <span class="project-tag">Automations 2.0 · Comment to DM · Kajabi</span>
         <h1>Turning Instagram engagement into multi-channel nurture</h1>
         <p class="case-subtitle">Turning Instagram comments into contacts without getting creators flagged. Then Kajabi’s first Visual Editor, so the whole follow-up, from DM to email to SMS to offer, lives on one canvas.</p>
-        <div class="case-meta-row"><span class="case-read-time">9 min read</span></div>
+        <div class="case-meta-row"><span class="case-read-time">7 min read · more detail in each “Go deeper”</span></div>
       </header>
 
       <section class="case-exec reveal" data-reveal aria-label="Project details">
@@ -248,7 +248,7 @@
 
                   <article class="case-decision-item" id="decision-4">
                       <h4 class="case-decision-item-title"><span class="case-decision-num">04</span>New Visual Editor canvas — don’t stretch the old UI</h4>
-                    <p class="case-decision-item-body">I designed the initial Automations 2.0 Visual Editor. Extending Rails-era one-to-one UI for long chains would make it unusable — and Comment to DM is only one recipe on a much bigger canvas. <strong>Chose:</strong> a new canvas (pan/zoom) with multi-trigger, branching, and stacked actions across <strong>text, email, and (later) more social platforms</strong> — <strong>up to 50 actions per flow</strong>, not unlimited — plus <strong>per-step performance</strong> on the journey, and a <strong>drawer</strong> for detail config so creators keep the canvas in view. <em>Business:</em> deep multi-channel trees stay in Kajabi. <em>Design:</em> clear journey view with data on what works; intricate one-step edits (SMS copy, etc.) open beside the flow, not over it.</p>
+                    <p>I designed the first Automations 2.0 Visual Editor. Stretching the old one-to-one UI to long chains would have made it unusable, and Comment to DM is only one recipe on a much bigger canvas. <strong>Chose:</strong> a new pan-and-zoom canvas with multiple triggers, branching, and stacked actions across text, email, and later more social platforms, <strong>up to 50 actions per flow</strong>. Detailed settings open in a drawer beside the flow, so creators never lose sight of the journey.</p>
                     <div class="case-ve-flows" aria-label="Visual Editor design flows">
                       <figure class="case-ve-flow">
                         <p class="case-ve-flow-label">Triggers</p>
@@ -476,7 +476,7 @@
 
           <section class="case-block reveal" id="visual-editor" data-reveal data-section>
             <h2>What we built: v2 Visual Editor</h2>
-            <p>A canvas far beyond Comment to DM: creators compose journeys across <strong>text, email, and — later — more social platforms</strong>, with multi-trigger, branching, and stacked actions — <strong>up to 50 per flow</strong> (vs. 1 trigger + 1 action today). Detail config opens in a <strong>drawer</strong> beside the canvas — not a modal — so node options stay tied to the flow (SMS copy and other one-step, text-heavy edits). Performance sits on the journey too — creators can see <strong>how each step runs</strong>, not just that the tree exists. Comment to DM is one recipe on that canvas. Every v1 field was shaped so it doesn’t need a redesign when it lands there.</p>
+            <p>Creators compose whole journeys on one canvas: text, email, and later more social platforms, with branching and up to 50 actions per flow (versus 1 trigger and 1 action before). Settings open in a drawer beside the flow, and Comment to DM is just one recipe on it. Every v1 field was shaped so it wouldn’t need a redesign when it moved here.</p>
             <ul class="case-constraints">
               <li>Up to <strong>50</strong> actions in one flow (not unlimited)</li>
               <li>Channels beyond Instagram DMs — text, email, expandable to more social</li>
@@ -584,7 +584,16 @@
             </ul>
             <p><strong>What I’d change:</strong> ask engineering earlier what Comment to DM needed under the hood. It looked like a quick feature, but rebuilding how contacts and Instagram handles are stored slowed it down more than the Visual Editor.</p>
             <p><strong>On the handoff:</strong> I went on maternity leave after design and testing. I documented the v1 and v2 plan, the safety defaults, and the permissions (designed so the future Conversation Hub could use them) — so another designer could own the build without re-deciding those things.</p>
+            <details class="case-accordion case-deeper">
+              <summary class="case-accordion-summary">
+                <span class="case-accordion-title">Go deeper: what I did beyond design</span>
+                <span class="case-accordion-meta">New Design System components</span>
+                <span class="case-accordion-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="case-accordion-body">
             <p><strong>What I did beyond design:</strong> created new Design System components for the Visual Editor. Kajabi didn’t have an endless (infinite-canvas) editor, so the building blocks were net-new: canvas nodes for triggers and actions, connectors and branching, drawer-based step config, and per-step performance states — patterns other teams could reuse instead of starting from zero.</p>
+              </div>
+            </details>
             <p><strong>Lesson:</strong> on social, fast replies look like a bot and get accounts flagged. A short delay that feels human is what makes native capture safe. And one Visual Editor puts text, email, and future social in one place — instead of stopping at the DM.</p>
             <aside class="case-today" aria-label="If I built this today">
               <p class="case-today-label">If I built this today</p>
@@ -658,7 +667,7 @@
       </div>
     </div>
     <script src="./script.js?v=copyemail1"></script>
-      <script src="./media.js?v=1"></script>
+      <script src="./media.js?v=deeper1"></script>
       <div class="gesture-ui">
       <button type="button" class="gesture-toggle" data-gesture-toggle aria-pressed="false" data-label-off="✋ Gesture mode" data-label-on="✋ Stop gesture mode">✋ Gesture mode</button>
       <div class="gesture-panel" data-gesture-panel hidden>

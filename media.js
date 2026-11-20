@@ -69,3 +69,19 @@
     v.addEventListener("ended", () => load(current + 1, !reduce));
   });
 })();
+
+/* Open a collapsed "Go deeper" section when a link points inside it */
+(() => {
+  const openFor = (hash) => {
+    if (!hash || hash.length < 2) return;
+    let el;
+    try { el = document.querySelector(hash); } catch { return; }
+    const d = el && el.closest("details");
+    if (d && !d.open) d.open = true;
+  };
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (a) openFor(a.getAttribute("href"));
+  });
+  openFor(location.hash);
+})();

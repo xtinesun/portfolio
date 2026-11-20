@@ -7967,3 +7967,4 @@ body.page-deck .deck-hero .hero-scene {
   .about-photos .about-photo--dog img { height: 100%; aspect-ratio: auto; object-position: 50% 24%; }
 }
 @media (min-width: 761px) { .about-photos .about-photo--dog img { object-position: 50% 30%; } }
+@media (min-width: 761px) { .about-photos .about-photo--dog img { object-position: 50% 35%; } }

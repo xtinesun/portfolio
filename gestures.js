@@ -3,7 +3,7 @@
    - Point (index finger): move the virtual cursor
    - Thumbs up (hold briefly): click
    - Open palm: scroll down · Closed fist: scroll up
-   - Thumb out to the side (hold, either hand): go back (all pages except home)
+   - Peace sign (hold, either hand): go back (all pages except home)
    Mouse / touch / keyboard keep working at all times. */
 
 const toggles = [...document.querySelectorAll("[data-gesture-toggle]")];
@@ -225,19 +225,14 @@ function loop() {
     Math.min(dist(lm[4], lm[6]), dist(lm[4], lm[10])) > handSize * 0.5;
   const thumbsUp = fingersCurled && thumbVertical && tipAboveKnuckles && tipAwayFromFingers;
 
-  // Thumb out (either hand): thumb sideways, on the far side of the index knuckle
-  // from the pinky. Works for left and right hands because it's relative to the hand.
-  // Measured from the palm's center, so it works whichever way the hand is turned
-  // (a "hitchhiker" fist stacks the knuckles vertically, so left/right of the
-  // index knuckle isn't reliable) and whichever side the thumb points.
-  const palmX = (lm[0].x + lm[5].x + lm[9].x + lm[13].x + lm[17].x) / 5;
-  const thumbSideways = Math.abs(lm[4].x - lm[2].x) > Math.abs(lm[4].y - lm[2].y) * 1.1;
-  const thumbFarOut = Math.abs(lm[4].x - palmX) > handSize * 0.65;
-  const thumbLeft = !isHome && fingersCurled && thumbSideways && thumbFarOut && tipAwayFromFingers;
+  // Peace sign (either hand, any angle): index + middle up and spread into a V,
+  // ring + pinky folded. Goes back on every page except home.
+  const peace = !isHome && indexExt && middleExt && !ringExt && !pinkyExt &&
+    dist(lm[8], lm[12]) > handSize * 0.35;
 
   // Only the pointing index finger (or an open palm, for scrolling) moves the cursor.
   // Thumbs up freezes it, so changing hand shape doesn't knock it off target.
-  if (indexExt) {
+  if (indexExt && !peace) {
     const targetX = (1 - lm[8].x) * window.innerWidth; // mirror the selfie view
     const targetY = lm[8].y * window.innerHeight;
     cursor.x += (targetX - cursor.x) * 0.35;
@@ -249,7 +244,7 @@ function loop() {
   const now = performance.now();
   const dt = Math.min(64, now - (lastFrameAt || now));
   lastFrameAt = now;
-  const fist = fingersCurled && !thumbsUp && !thumbLeft;
+  const fist = fingersCurled && !thumbsUp;
   fistFrames = fist ? fistFrames + 1 : 0;
   if (openPalm || fistFrames >= 8) {
     const dir = openPalm ? 1 : -1;
@@ -261,7 +256,7 @@ function loop() {
     return;
   }
 
-  if (thumbLeft) {
+  if (peace) {
     backFrames += 1;
     thumbFrames = 0;
     cursorEl.classList.add("gesture-cursor--pinch");
@@ -270,7 +265,7 @@ function loop() {
       cursorLabel.textContent = "Back";
       goBack();
     } else if (!backFired) {
-      cursorLabel.textContent = "Hold 👍 sideways to go back";
+      cursorLabel.textContent = "Hold ✌️ to go back";
     }
     return;
   }

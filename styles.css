@@ -7937,3 +7937,8 @@ body.page-deck .deck-hero .hero-scene {
 .case-hero-mockup.case-hero-mockup--cs2 { container-type: size; }
 .case-hero-mockup--cs2 .c2-ov { width: min(100cqw, 160cqh); }
 .case-hero-mockup--cs2 .c2-chip { font-size: clamp(8px, 1.15cqw, 15px); }
+/* About photos: give the goldendoodle enough room to show head to paws */
+.about-photos .about-photo { flex: 1 1 0; }
+.about-photos .about-photo--dog { flex: 1.45 1 0; }
+.about-photos .about-photo--dog img { object-position: 50% 86%; }
+@media (max-width: 760px) { .about-photos .about-photo, .about-photos .about-photo--dog { flex: 1 1 0; } }

@@ -7815,3 +7815,15 @@ body.page-deck .deck-hero .hero-scene {
 @keyframes c3-hl { 0%, 49% { background: transparent; } 52%, 91% { background: #fff4d6; } 96%, 100% { background: transparent; } }
 /* CS3: window 25% larger, still centered */
 .c3-win { transform: scale(1.25); transform-origin: 50% 50%; }
+/* CS3: more breathing room inside the window, window centered both ways */
+.c3-win { left: 29cqw; top: 11.75cqw; width: 42cqw; height: 39cqw; }
+.c3-node--trig { top: 6.05cqw; }
+.c3-line--1 { top: 10.95cqw; }
+.c3-node--dm { top: 14.85cqw; }
+.c3-line--2 { top: 19.75cqw; }
+.c3-bar { top: 22.95cqw; left: 11.45cqw; right: 11.45cqw; }
+.c3-line--3a { top: 22.95cqw; left: 11.45cqw; }
+.c3-line--3b { top: 22.95cqw; right: 11.45cqw; }
+.c3-node--sm { top: 26.25cqw; }
+.c3-node--email { left: 3.2cqw; }
+.c3-node--sms { right: 3.2cqw; }

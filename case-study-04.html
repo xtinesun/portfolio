@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopping accidental duplicate orders at checkout — Christine Noh</title>
+    <link rel="icon" href="./assets/favicon.svg?v=c1" type="image/svg+xml" />
+    <link rel="icon" href="./assets/favicon-32.png?v=c1" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png?v=c1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=nav1-metaclean1-moda1" />
+    <link rel="stylesheet" href="./mockups.css?v=cs3mobile2" />
+  </head>
+  <body class="page-case">
+    <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" data-page-link aria-label="Christine Noh — Home">Christine Noh</a>
+        <nav class="header-nav" aria-label="Primary">
+          <span class="nav-divider" aria-hidden="true"></span>
+          <a class="nav-link" href="./resume.html" data-page-link>Resume</a>
+          <a class="nav-link" href="https://www.linkedin.com/in/xtinesun" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="nav-link nav-link--accent" href="mailto:hi@christinenoh.com">Email</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container case-wrap">
+      <a class="back-link reveal is-visible" href="./index.html#earlier" data-page-link>← Back to projects</a>
+
+      <figure class="case-hero-mockup case-hero-mockup--moda case-hero-mockup--cart reveal" data-reveal aria-label="Hero visual">
+        <img class="case-media-img" src="./assets/moda/cart-bag-options.webp?v=1" alt="Shopping bag redesign options for Moda Operandi, with each unit shown as its own line" width="3710" height="3413" decoding="async" fetchpriority="high" />
+      </figure>
+
+      <header class="case-header reveal" data-reveal>
+        <span class="project-tag">Add to Bag · E-commerce · Moda Operandi</span>
+        <h1>Stopping accidental duplicate orders at checkout</h1>
+        <p class="case-subtitle">Shoppers on a luxury fashion site were buying the same item in the same size twice without noticing. I traced it to a three-second button state on the product page, then shipped the fix in a deliberate order so the result could be measured, even without analytics.</p>
+        <div class="case-meta-row">
+          <span class="case-read-time">4 min read</span>
+        </div>
+      </header>
+
+      <section class="case-exec reveal" data-reveal aria-label="Project details">
+        <dl class="case-exec-meta">
+          <div class="case-exec-item"><dt>Role</dt><dd>UX/UI Designer · Purchase squad</dd></div>
+          <div class="case-exec-item"><dt>Timeline</dt><dd>2 weeks · 2019</dd></div>
+          <div class="case-exec-item"><dt>Team</dt><dd>1 designer · 1 PM · 1 eng</dd></div>
+        </dl>
+      </section>
+
+      <aside class="case-tldr reveal" data-reveal aria-label="Case study summary">
+        <p class="case-tldr-label">At a glance</p>
+        <ul class="case-tldr-list">
+          <li><strong>Gap:</strong> Shoppers bought the same item twice by accident, which meant support contacts, returns, and lost trust.</li>
+          <li><strong>Bet:</strong> Make “already in your bag” impossible to miss on the product page, and ship that first so its impact could be isolated.</li>
+          <li><strong>Result:</strong> Contacts tagged “duplicate order / user error” fell <strong>~18% quarter over quarter</strong> after the product page change.</li>
+        </ul>
+      </aside>
+
+      <div class="case-layout">
+        <nav class="case-nav" aria-label="Case study sections" data-case-nav>
+          <p class="case-nav-label">On this page</p>
+          <ul>
+            <li><a href="#role" data-nav-link>My role</a></li>
+            <li><a href="#problem" data-nav-link>The problem</a></li>
+            <li><a href="#research" data-nav-link>Research</a></li>
+            <li><a href="#decisions" data-nav-link>Design exploration</a></li>
+            <li><a href="#sequencing" data-nav-link>The key decision</a></li>
+            <li><a href="#outcome" data-nav-link>Outcome</a></li>
+            <li><a href="#reflection" data-nav-link>Reflection</a></li>
+          </ul>
+        </nav>
+
+        <div class="case-content">
+          <section class="case-block reveal" id="role" data-reveal data-section>
+            <h2>My role &amp; constraints</h2>
+            <p><strong>UX/UI Designer on the Purchase squad</strong>, working with a PM and an engineer to redesign the add-to-bag flow from the product page through the cart.</p>
+            <p><strong>Owned:</strong> the problem framing, session-replay research, a 14-retailer competitive audit, design exploration, and the release plan.</p>
+            <p><strong>Constraint:</strong> one data analyst for a company of 200+, and a cart that wasn’t set up for tracking, so there were no numbers to show where duplicates came from.</p>
+            <p><strong>Success metric:</strong> fewer customer experience contacts and returns caused by duplicate-order user error.</p>
+          </section>
+
+          <section class="case-block reveal" id="problem" data-reveal data-section>
+            <h2>The problem</h2>
+            <p>Shoppers were ordering the same item in the same size more than once in a single order, often without noticing until it arrived. Each one meant a support contact, a return, or both. On a luxury site, that also chips away at trust.</p>
+            <p>The customer experience team had a theory: when the site lagged, the confirmation didn’t appear fast enough, so shoppers tapped again.</p>
+            <blockquote class="case-quote" style="margin:1rem 0;padding-left:1rem;border-left:3px solid var(--border, #e4e3de);color:var(--text-muted, #5a5a56)">
+              <p style="margin:0">“Sometimes you add something to bag and the ‘Item Added to Bag’ pop-up does not come up, so you get click happy and click again.”</p>
+              <footer style="margin-top:0.35rem;font-size:0.875rem">— Customer experience team</footer>
+            </blockquote>
+            <p class="case-impact-label" style="margin-top:1.5rem">The original flow</p>
+            <p>The button changed from “Add to Bag” to “Item Added to Bag” for a few seconds, a mini-cart dropped down, and then everything reset. In the cart, a duplicate showed up only as a “2” in a quantity drop-down.</p>
+            <div class="case-media-row case-media-row--3">
+              <figure class="case-decision-figure case-figure--media">
+                <button type="button" class="case-media-trigger" data-media-expand data-media-hires
+                  data-media-src="./assets/moda/cart-audit-1.webp?v=1" data-media-alt="Original product page before adding to bag" aria-label="View larger: Original product page before adding to bag">
+                  <img src="./assets/moda/cart-audit-1.webp?v=1" alt="Original product page before adding to bag" width="803" height="538" loading="lazy" decoding="async" />
+                </button>
+              </figure>
+              <figure class="case-decision-figure case-figure--media">
+                <button type="button" class="case-media-trigger" data-media-expand data-media-hires
+                  data-media-src="./assets/moda/cart-audit-2.webp?v=1" data-media-alt="Original product page right after adding, with the temporary mini-cart" aria-label="View larger: Original product page right after adding, with the temporary mini-cart">
+                  <img src="./assets/moda/cart-audit-2.webp?v=1" alt="Original product page right after adding, with the temporary mini-cart" width="802" height="538" loading="lazy" decoding="async" />
+                </button>
+              </figure>
+              <figure class="case-decision-figure case-figure--media">
+                <button type="button" class="case-media-trigger" data-media-expand data-media-hires
+                  data-media-src="./assets/moda/cart-audit-3.webp?v=1" data-media-alt="Original cart, where a duplicate shows only as quantity 2" aria-label="View larger: Original cart, where a duplicate shows only as quantity 2">
+                  <img src="./assets/moda/cart-audit-3.webp?v=1" alt="Original cart, where a duplicate shows only as quantity 2" width="802" height="539" loading="lazy" decoding="async" />
+                </button>
+              </figure>
+            </div>
+            <p class="case-impact-label" style="margin-top:1.5rem">How might we</p>
+            <p><strong>…make it obvious, at a glance, that an item is already in the bag?</strong></p>
+          </section>
+
+          <section class="case-block reveal" id="research" data-reveal data-section>
+            <h2>Research</h2>
+            <ol class="case-research">
+              <li class="case-research-item">
+                <h3><span class="case-research-num">01</span>Session replays showed the added state was too short-lived</h3>
+                <p class="case-research-finding">In FullStory, duplicates came from slow loads that hid the confirmation, a mini-cart that disappeared after about 3 seconds, and a button that cycled back to “Add to Bag” before people noticed. Returning shoppers also forgot they had added the item in an earlier visit. And in the cart, shoppers reviewing their order didn’t catch the duplicate.</p>
+              </li>
+              <li class="case-research-item">
+                <h3><span class="case-research-num">02</span>14 retailers, 3 patterns worth borrowing</h3>
+                <p class="case-research-finding">I audited add-to-bag flows across 14 retailers, went deeper on 7 direct competitors with a similar business model, and narrowed them to the 3 clearest patterns.</p>
+              </li>
+              <li class="case-research-item">
+                <h3><span class="case-research-num">03</span>It isn’t just us</h3>
+                <p class="case-research-finding">Baymard Institute’s large-scale checkout testing found the same behavior: shoppers often add duplicates by mistake, and many don’t catch them when they review the cart.</p>
+              </li>
+            </ol>
+              <figure class="case-decision-figure case-figure--media">
+                <button type="button" class="case-media-trigger" data-media-expand data-media-hires
+                  data-media-src="./assets/moda/cart-competitive.webp?v=1" data-media-alt="Competitive audit of add-to-bag flows across retailers" aria-label="View larger: Competitive audit of add-to-bag flows across retailers">
+                  <img src="./assets/moda/cart-competitive.webp?v=1" alt="Competitive audit of add-to-bag flows across retailers" width="2000" height="921" loading="lazy" decoding="async" />
+                </button>
+                <figcaption>Competitive audit of add-to-bag confirmation patterns.</figcaption>
+              </figure>
+              <figure class="case-decision-figure case-figure--media">
+                <button type="button" class="case-media-trigger" data-media-expand data-media-hires
+                  data-media-src="./assets/moda/cart-flows.webp?v=1" data-media-alt="Add-to-bag flow comparison of the three strongest competitor patterns" aria-label="View larger: Add-to-bag flow comparison of the three strongest competitor patterns">
+                  <img src="./assets/moda/cart-flows.webp?v=1" alt="Add-to-bag flow comparison of the three strongest competitor patterns" width="2872" height="1161" loading="lazy" decoding="async" />
+                </button>
+                <figcaption>The three clearest competitor flows, mapped step by step.</figcaption>
+              </figure>
+          </section>
+
+          <section class="case-decisions reveal" id="decisions" data-reveal data-section>
+            <div class="case-section-box case-decisions-box">
+              <header class="case-decisions-head">
+                <h2 class="case-decisions-heading">Design exploration</h2>
+                <p class="case-decisions-lede">Four directions for the product page, then a rethink of the cart. Each round fixed something the last one left unclear.</p>
+              </header>
+              <div class="case-decisions-group">
+                <div class="case-decisions-stack">
+                  <article class="case-decision-item case-decision-item--media" id="decision-1">
+                    <div class="case-decision-copy">
+                      <h4 class="case-decision-item-title"><span class="case-decision-num">01</span>Make the added state persistent</h4>
+                      <p class="case-decision-item-body">Instead of reverting after a few seconds, the button stays changed for the size that’s in the bag, the way a visited link changes color in search results. Returning shoppers can see it’s already there.</p>
+                    </div>
+              <figure class="case-decision-figure case-figure--media">
+                <button type="button" class="case-media-trigger" data-media-expand data-media-hires
+                  data-media-src="./assets/moda/cart-design-2.webp?v=1" data-media-alt="Design 2: button keeps an added state for the selected size" aria-label="View larger: Design 2: button keeps an added state for the selected size">
+                  <img src="./assets/moda/cart-design-2.webp?v=1" alt="Design 2: button keeps an added state for the selected size" width="1466" height="1789" loading="lazy" decoding="async" />
+                </button>
+              </figure>
+                  </article>
+                  <article class="case-decision-item case-decision-item--media" id="decision-2">
+                    <div class="case-decision-copy">
+                      <h4 class="case-decision-item-title"><span class="case-decision-num">02</span>Give Favorite a real button style</h4>
+                      <p class="case-decision-item-body">The Favorite control had no outline and didn’t read as a button. A secondary style fixed that without competing with Add to Bag.</p>
+                    </div>
+              <figure class="case-decision-figure case-figure--media">
+                <button type="button" class="case-media-trigger" data-media-expand data-media-hires
+                  data-media-src="./assets/moda/cart-design-3.webp?v=1" data-media-alt="Design 3: persistent added state plus a secondary Favorite button" aria-label="View larger: Design 3: persistent added state plus a secondary Favorite button">
+                  <img src="./assets/moda/cart-design-3.webp?v=1" alt="Design 3: persistent added state plus a secondary Favorite button" width="1466" height="1789" loading="lazy" decoding="async" />
+                </button>
+              </figure>
+                  </article>
+                  <article class="case-decision-item case-decision-item--media" id="decision-3">
+                    <div class="case-decision-copy">
+                      <h4 class="case-decision-item-title"><span class="case-decision-num">03</span>Make a second unit a deliberate choice</h4>
+                      <p class="case-decision-item-body">After adding, “Add to Bag” becomes “Add One More,” with a direct link to the shopping bag below it. A second unit has to be a deliberate choice, and the path to checkout gets shorter. <em>Scoped to v2 because of engineering capacity.</em></p>
+                    </div>
+              <figure class="case-decision-figure case-figure--media">
+                <button type="button" class="case-media-trigger" data-media-expand data-media-hires
+                  data-media-src="./assets/moda/cart-design-4.webp?v=1" data-media-alt="Design 4: Add One More plus a Shopping Bag link after adding" aria-label="View larger: Design 4: Add One More plus a Shopping Bag link after adding">
+                  <img src="./assets/moda/cart-design-4.webp?v=1" alt="Design 4: Add One More plus a Shopping Bag link after adding" width="1466" height="1789" loading="lazy" decoding="async" />
+                </button>
+              </figure>
+                  </article>
+                  <article class="case-decision-item" id="decision-4">
+                    <div class="case-decision-copy">
+                      <h4 class="case-decision-item-title"><span class="case-decision-num">04</span>One line per unit in the cart</h4>
+                      <p class="case-decision-item-body">In the cart, each unit gets its own line so a duplicate is impossible to miss. <strong>Trade-off:</strong> shoppers lose quantity editing in the cart, and long carts get longer. That was worth testing, but not worth shipping blind.</p>
+                    </div>
+
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="case-block reveal" id="sequencing" data-reveal data-section>
+            <h2>The key decision: ship in phases without data</h2>
+            <p>With no tracking on the cart, shipping both fixes at once would have made it impossible to tell which one worked. So I made the release itself the experiment:</p>
+            <ul class="case-constraints">
+              <li><strong>v1: product page only.</strong> The persistent added state shipped, and the cart stayed as it was, so any change in duplicates could be traced to the product page.</li>
+              <li><strong>Measure with what we had.</strong> I set up a feedback loop with the customer experience team, using contacts tagged “duplicate order / user error” as the success metric in place of analytics.</li>
+              <li><strong>v2: decide from v1.</strong> The cart redesign and the direct path to checkout were planned based on what v1 showed.</li>
+            </ul>
+              <figure class="case-feature-media case-feature-media--scroll case-feature-media--tall">
+                <button type="button" class="case-media-trigger case-media-trigger--scroll" data-media-expand data-media-scroll
+                  data-media-src="./assets/moda/cart-final-bag.webp?v=1" data-media-alt="Shopping bag design with each unit on its own line" aria-label="View larger: Shopping bag design with each unit on its own line">
+                  <img src="./assets/moda/cart-final-bag.webp?v=1" alt="Shopping bag design with each unit on its own line" loading="lazy" width="1440" height="2946" />
+                </button>
+              </figure>
+              <p class="case-feature-hint">Shopping bag direction for v2: one line per unit. Scroll the image, or click to view it larger.</p>
+          </section>
+
+          <section class="case-block reveal" id="outcome" data-reveal data-section>
+            <h2>Outcome</h2>
+            <figure class="case-figure reveal" data-reveal aria-label="Outcome">
+              <div class="case-stats-grid case-stats-grid--single">
+                <div class="case-stat-block">
+                  <span class="case-stat-num">~18%</span>
+                  <p class="case-stat-caption">fewer customer experience contacts tagged “duplicate order / user error,” quarter over quarter, after the product page change</p>
+                </div>
+              </div>
+            </figure>
+            <p>The product page change alone moved the number. That confirmed what the session replays suggested: the problem started on the product page, where the added state disappeared too quickly to notice.</p>
+          </section>
+
+          <section class="case-block case-block--reflection reveal" id="reflection" data-reveal data-section>
+            <h2>Reflection</h2>
+            <ul class="case-constraints">
+              <li><strong>A small UI detail can carry real business cost.</strong> A button state that lasted three seconds was generating support tickets and returns.</li>
+              <li><strong>When data is missing, plan the release so it produces the data.</strong> Shipping in a deliberate order made v1 the experiment.</li>
+              <li><strong>Constraints decide the order, not the ambition.</strong> The ideal flow stayed on the roadmap, sequenced for when there was capacity to build it.</li>
+            </ul>
+            <aside class="case-today" aria-label="If I built this today">
+              <p class="case-today-label">If I built this today</p>
+              <p>I’d prototype the persistent added state in code, including the slow-load case, and watch a few shoppers use it before launch. The edge case that caused the problem, a lagging confirmation, is exactly what a static mockup can’t show.</p>
+            </aside>
+          </section>
+        </div>
+      </div>
+      <section class="case-more reveal" data-reveal aria-label="More projects">
+        <h2>More projects</h2>
+        <ul class="case-more-list">
+          <li><a href="./case-study-01.html" data-page-link><span class="case-more-label"><span class="case-more-num">01</span> Turning creator content into a marketing funnel</span> <span class="case-more-arrow">→</span></a></li>
+          <li><a href="./case-study-02.html" data-page-link><span class="case-more-label"><span class="case-more-num">02</span> Email A/B testing as a learning loop for small lists</span> <span class="case-more-arrow">→</span></a></li>
+          <li><a href="./case-study-03.html" data-page-link><span class="case-more-label"><span class="case-more-num">03</span> Turning Instagram engagement into multi-channel nurture</span> <span class="case-more-arrow">→</span></a></li>
+          <li><a href="./case-study-05.html" data-page-link><span class="case-more-label"><span class="case-more-num">05</span> Personalization before the data was ready</span> <span class="case-more-arrow">→</span></a></li>
+        </ul>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span data-year></span> Christine Noh</p>
+        <nav class="footer-nav" aria-label="Footer">
+          <a class="footer-email" href="mailto:hi@christinenoh.com">hi@christinenoh.com</a>
+          <a class="footer-link" href="./colophon.html" data-page-link>Colophon</a>
+        </nav>
+      </div>
+    </footer>
+    <div class="media-modal" data-media-modal hidden aria-hidden="true">
+      <div class="media-modal-backdrop" data-media-modal-close tabindex="-1" aria-hidden="true"></div>
+      <div class="media-modal-dialog" role="dialog" aria-modal="true" aria-label="Expanded media view">
+        <img class="media-modal-image" data-media-modal-image alt="" hidden />
+        <video class="media-modal-video" data-media-modal-video muted loop playsinline controls hidden></video>
+        <button type="button" class="media-modal-close" data-media-modal-close aria-label="Close expanded view">Close</button>
+      </div>
+      <div class="media-modal-pan-zoom" data-media-pan-zoom hidden>
+        <button type="button" class="media-modal-pan-zoom-btn" data-media-zoom-out aria-label="Zoom out">−</button>
+        <button
+          type="button"
+          class="media-modal-pan-zoom-label"
+          data-media-zoom-label
+          data-media-zoom-fit
+          aria-label="Fit entire artboard to view"
+          title="Fit to view"
+        >Fit</button>
+        <button type="button" class="media-modal-pan-zoom-btn" data-media-zoom-in aria-label="Zoom in">+</button>
+      </div>
+    </div>
+    <script src="./script.js?v=copyemail3"></script>
+      <script src="./media.js?v=deeper1"></script>
+      <div class="gesture-ui">
+      <button type="button" class="gesture-toggle" data-gesture-toggle aria-pressed="false" data-label-off="✋ Gesture mode" data-label-on="✋ Stop gesture mode">✋ Gesture mode</button>
+      <div class="gesture-panel" data-gesture-panel hidden>
+        <button type="button" class="gesture-panel-close" data-gesture-close aria-label="Close gesture legend">×</button>
+        <div data-gesture-live hidden>
+          <video class="gesture-video" data-gesture-video autoplay muted playsinline aria-label="Camera preview for hand gestures"></video>
+          <p class="gesture-status" data-gesture-status>Starting…</p>
+        </div>
+        <ul class="gesture-legend">
+          <li>☝️ Point your finger — move cursor (pauses scroll)</li>
+          <li>👍 Thumbs up — click</li>
+          <li>✋ Open palm — scroll down</li>
+          <li>✊ Fist — scroll up</li>
+          <li>✌️ Peace sign — go back</li>
+        </ul>
+        <p class="gesture-note">Video is processed on your device and never uploaded.</p>
+      </div>
+      <div class="gesture-cursor" data-gesture-cursor hidden aria-hidden="true"><span class="gesture-cursor-label" data-gesture-cursor-label></span></div>
+    <script type="module" src="./gestures.js?v=gm10"></script>
+  </body>
+</html>

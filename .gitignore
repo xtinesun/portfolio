@@ -16,3 +16,7 @@ assets/_triad*
 assets/_print*
 _print_resume.html
 *.tmp
+
+# Original UXfolio downloads (WebP versions in assets/moda are what the site uses)
+assets/moda/src/
+_backup/

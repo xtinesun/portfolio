@@ -9,15 +9,19 @@
 - Resume (web): https://christinenoh.com/resume.html
 
 ## Creative Director, Church of Southland (part-time volunteer, Sep 2025 – Feb 2026)
-During a career break for parental leave and family care (Jul 2025 – Sep 2026). Led the brand and experience for the church's 25th anniversary event, facilitated leadership alignment on the vision, guided the creative team, updated the church logo and café signage, and introduced kanban, workload sizing, and weekly standups for the design team.
+During a career break for parental leave and family care (Aug 2025 – Aug 2026). Led the brand and experience for the church's 25th anniversary event, facilitated leadership alignment on the vision, guided the creative team, updated the church logo and café signage, and introduced kanban, workload sizing, and weekly standups for the design team.
 
 ## Shipped (Kajabi, 2020–2025, Senior Product Designer)
 - [Creator Studio — Gen AI, 0→1](https://christinenoh.com/case-study-01.html): Kajabi's first paid AI product. Turns one existing piece of content into an editable marketing funnel. 131 paid in ~2 weeks (109% of goal), 17.2k assets generated, 43% of surveyed beta users replaced 1+ outside tools. Monthly usage doubled after the pivot from clip maker to full-funnel content, which she pushed for. Only designer on an 11-person cross-functional team (PM, PMM, research, engineering); launched with Adobe.
 - [Email A/B testing — experimentation](https://christinenoh.com/case-study-02.html): A/B testing for small email lists; creators set the win rule and fallback. Closed a gap 84% of surveyed creators expected.
 - [Comment to DM and Visual Editor — automation](https://christinenoh.com/case-study-03.html): Instagram comment capture that turns engagement into contacts, plus the design of Kajabi's first Visual Editor for multi-channel flows.
 
+## Earlier (Moda Operandi, 2018–2019, Product Designer)
+- [Stopping accidental duplicate orders — e-commerce](https://christinenoh.com/case-study-04.html): Redesigned the product page add-to-bag confirmation after session replays showed the added state disappeared in ~3 seconds. Shipped the product page change first so its impact could be isolated without analytics; customer experience contacts tagged "duplicate order / user error" fell ~18% quarter over quarter.
+- [Personalization before the data was ready — design sprint](https://christinenoh.com/case-study-05.html): Co-led a 5-day sprint across seven functions to decide what a luxury retailer could personalize before its data infrastructure was ready. Produced a 3-month roadmap, shipped a no-results search fix, and tested "see similar" and "How to style it" with returning customers.
+
 ## Lab (independent, Sep 2026–present)
-- Musear: proof of concept for an iPhone app that gives Muse, an AI assistant, an ear and a voice, straight from the phone with no extra hardware. Built in Xcode with Claude. Next: connect Claude to Figma through MCP to design the UX.
+- Audire (formerly ClaudEar): proof of concept for an iPhone app that gives AI an ear and a voice through Siri ("Hey Siri, ask Claude"), starting with Claude, straight from the phone with no extra hardware. Next: support for other AI agents, using iOS Shortcuts as a fallback to work around API limitations. Built in Xcode with Claude. Next: connect Claude to Figma through MCP to design the UX.
 - Gesture mode (in progress): on-device hand tracking to browse christinenoh.com with your hands.
 
 ## Skills
